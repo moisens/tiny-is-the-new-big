@@ -8,6 +8,13 @@ const Nav = () => {
       <div className="logo">Tiny is the new big</div>
       <div className="navlink__content">
         <ul className="nav__ul">
+          <div className="nav__li dropdown">Home
+            <ul className="nav__ul__dropdown">
+              <li className="nav__li__dropdown">About</li>
+              <li className="nav__li__dropdown">Services</li>
+              <li className="nav__li__dropdown">Contact</li>
+            </ul>
+          </div>
           {linkNav.map((link) => {
             const { id, text, url } = link;
             return (
