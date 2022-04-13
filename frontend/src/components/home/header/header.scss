@@ -3,6 +3,7 @@
   height: auto;
   //background-color: lightcoral;
   display: flex;
+  padding-bottom: 120px;
 
   .header__content__text {
     //background-color: lightgrey;
@@ -69,6 +70,7 @@
       background-color: lightblue;
       border: none;
       border-radius: 22px;
+      z-index: 200;
 
       img {
         width: 100%;
