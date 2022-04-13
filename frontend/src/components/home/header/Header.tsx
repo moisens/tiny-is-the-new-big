@@ -18,10 +18,17 @@ const Header = () => {
         </div>
       </section>
       <section className="header__content__image">
-        <div className="header__img"></div>
-        <div className="header__notifications">1</div>
-        <div className="header__notifications">2</div>
-        <div className="header__notifications">3</div>
+        <div className="header__img">
+          <img
+            src={
+              "https://res.cloudinary.com/dr7qigh2d/image/upload/v1649812416/tiny%20is%20the%20new%20big/andrea-davis-nbI8gqbBaHo-unsplash_yddx2k.jpg"
+            }
+            alt=""
+          />
+          <div className="header__notifications">1</div>
+          <div className="header__notifications">2</div>
+          <div className="header__notifications">3</div>
+        </div>
       </section>
     </header>
   );
