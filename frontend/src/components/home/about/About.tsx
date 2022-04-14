@@ -2,8 +2,10 @@ import "./about.scss";
 import FilledStar from "../../../assets/filled-star.svg";
 import Company from "../../../assets/company.svg";
 import Button from "../../button/Button";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <section className="about__container">
       <div className="about__image__content">
@@ -43,7 +45,12 @@ const About = () => {
                   <img src={FilledStar} alt="stars" />
                   <img src={FilledStar} alt="stars" />
                 </div>
-                <Button className="about__contact" type="button" title="Contact" />
+                <Button
+                  className="about__contact"
+                  type="button"
+                  title="Contact"
+                  handleClick={() => navigate("#contact")}
+                />
               </div>
             </div>
           </div>
@@ -54,7 +61,9 @@ const About = () => {
           <div className="company__illu">
             <img src={Company} alt="company" />
           </div>
-          <h4 className="about__title__H4">About <span className="span__title">Our company</span></h4>
+          <h4 className="about__title__H4">
+            About <span className="span__title">Our company</span>
+          </h4>
         </div>
         <div className="about__desc">
           <h2 className="about__title__H2">
