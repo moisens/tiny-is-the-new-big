@@ -143,6 +143,7 @@
   height: auto;
   //background-color: lightgray;
   padding-right: 40px;
+  z-index: 100;
 
   .about__company {
     //background-color: lightslategray;
@@ -181,7 +182,7 @@
   }
   .about__desc {
     .about__title__H2 {
-      font-size: 30px;
+      font-size: 1.875rem;
       font-weight: bold;
       padding-bottom: 20px;
     }
