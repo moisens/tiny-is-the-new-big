@@ -1,23 +1,26 @@
 .about__container {
   max-width: 100%;
   height: auto;
-  background-color: red;
+  //background-color: red;
   margin-top: 130px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(555px, 1fr));
+  //gap: 60px;
+  //display: flex;
+  //justify-content: flex-start;
+  //align-items: flex-start;
   padding-bottom: 200px;
 }
 
 .about__image__content {
-  background-color: lightblue;
-  width: 45vw;
+  //background-color: lightblue;
+  //width: 45vw;
   height: auto;
-  padding: 0 0 20px 25px;
+  padding: 0 100px 20px 25px;
   position: relative;
 
   .about__image {
-    width: 555px;
+    width: 100%;
     height: 435px;
     background-color: lightsalmon;
     border-radius: 22px;
@@ -142,7 +145,54 @@
 }
 
 .about__text__content {
-  width: 55vw;
   height: auto;
-  background-color: lightgray;
+  //background-color: lightgray;
+  padding-right: 40px;
+
+  .about__company {
+    //background-color: lightslategray;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 18px;
+    width: 100%;
+
+    .company__illu {
+      width: 47px;
+      height: 47px;
+      background-color: #fff;
+      border: solid 0.4px #2dc1df;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 70%;
+        background-size: contain;
+        object-fit: contain;
+      }
+    }
+    .about__title__H4 {
+      font-size: 1.125rem;
+      font-weight: 400;
+
+      .span__title {
+        font-weight: 600;
+        color: #2dc1df;
+      }
+    }
+  }
+  .about__desc {
+    .about__title__H2 {
+      font-size: 30px;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+    .about__description__P {
+      font-size: 1.375rem;
+      line-height: 1.5;
+    }
+  }
 }

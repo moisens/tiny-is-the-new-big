@@ -1,5 +1,6 @@
 import "./about.scss";
 import FilledStar from "../../../assets/filled-star.svg";
+import Company from "../../../assets/company.svg";
 import Button from "../../button/Button";
 
 const About = () => {
@@ -50,7 +51,10 @@ const About = () => {
       </div>
       <div className="about__text__content">
         <div className="about__company">
-          <h4 className="about__title__H4">About Our company</h4>
+          <div className="company__illu">
+            <img src={Company} alt="company" />
+          </div>
+          <h4 className="about__title__H4">About <span className="span__title">Our company</span></h4>
         </div>
         <div className="about__desc">
           <h2 className="about__title__H2">
