@@ -5,17 +5,20 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   type: "button" | "submit";
   title: string;
   otherProps?: string;
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({
   className = "",
   type,
   title,
+  handleClick,
   ...otherProps
+  
 }: ButtonProps) => {
   return (
     <button
-      //onClick={(e) => {console.log(e)}}
+      onClick={(e) => handleClick(e)}//onClick={handleClick} => without the event
       className={className}
       type={type}
       {...otherProps}

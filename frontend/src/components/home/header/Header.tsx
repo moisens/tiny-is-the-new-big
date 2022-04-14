@@ -1,7 +1,9 @@
 import Button from "../../button/Button";
 import "./header.scss";
+import { useNavigate, Navigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <header className="header__container">
       <section className="header__content__text">
@@ -12,9 +14,24 @@ const Header = () => {
           beautiful eco-friendly tiny home.
         </p>
         <div className="header__btn__container">
-          <Button className="header__btns buy__btn" type="button" title="Buy" />
-          <Button className="header__btns" type="button" title="Rent" />
-          <Button className="header__btns" type="button" title="Location" />
+          <Button
+            className="header__btns buy__btn"
+            type="button"
+            title="Buy"
+            handleClick={() => navigate("/buy")}
+          />
+          <Button
+            className="header__btns"
+            type="button"
+            title="Rent"
+            handleClick={() => navigate("/rent")}
+          />
+          <Button
+            className="header__btns"
+            type="button"
+            title="Location"
+            handleClick={() => navigate("/location")}
+          />
         </div>
       </section>
       <section className="header__content__image">
