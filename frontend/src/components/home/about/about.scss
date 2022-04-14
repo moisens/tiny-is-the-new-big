@@ -5,18 +5,13 @@
   margin-top: 130px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(555px, 1fr));
-  //gap: 60px;
-  //display: flex;
-  //justify-content: flex-start;
-  //align-items: flex-start;
-  padding-bottom: 200px;
+  padding-bottom: 120px;
 }
 
 .about__image__content {
   //background-color: lightblue;
-  //width: 45vw;
   height: auto;
-  padding: 0 100px 20px 25px;
+  padding: 0 100px 200px 25px;
   position: relative;
 
   .about__image {
@@ -56,8 +51,8 @@
     height: auto;
     border-radius: 8px;
     position: absolute;
-    bottom: -60px;
-    left: 86px;
+    bottom: 120px;
+    left: 100px;
   }
   .slider__container {
     margin: 0 auto;
