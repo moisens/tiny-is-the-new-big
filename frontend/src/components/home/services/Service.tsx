@@ -64,6 +64,7 @@ const Service = () => {
           </p>
         </div>
       </div>
+      <div className="services__triangle2"></div>
     </section>
   );
 };
