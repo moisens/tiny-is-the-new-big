@@ -1,6 +1,6 @@
 .location__container {
   max-width: 100%;
-  background-color: #f5f5f5;
+  //background-color: #f5f5f5;
   padding-bottom: 200px;
 }
 
@@ -12,8 +12,10 @@
   gap: 76px;
 
   .location__text {
-    //background-color: rgb(211, 211, 211);
+    //background-color: rgb(226, 24, 24);
     padding: 70px 0 0 25px;
+    z-index: 200;
+
     .illu__container {
       //background-color: red;
       display: flex;
@@ -80,6 +82,7 @@
   .location__slider {
     //background-color: lightgreen;
     padding-top: 70px;
+    z-index: 200;
 
     .slider__container {
       //background-color: lightskyblue;
@@ -196,4 +199,22 @@
       }
     }
   }
+}
+
+.location__map {
+  width: 100%;
+  height: 800px;
+  background-size: contain;
+  object-fit: contain;
+  object-position: top;
+  margin-top: -400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+
+  img {
+    width: 100%;
+  }
+  
 }

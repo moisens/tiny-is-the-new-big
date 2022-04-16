@@ -1,6 +1,7 @@
 import "./location.scss";
 import PinLocation from "../../../assets/location.svg";
 import FilledStar from "../../../assets/filled-star.svg";
+import World from "../../../assets/world.png";
 
 const Location = () => {
   return (
@@ -12,7 +13,7 @@ const Location = () => {
               <img src={PinLocation} alt="location" />
             </div>
             <h4 className="title__H4">
-              Our <span className="span__title">Loccations</span>
+              Our <span className="span__title">Locations</span>
             </h4>
           </div>
           <h2 className="title__H2">
@@ -121,6 +122,9 @@ const Location = () => {
             {/*end slide 2*/}
           </div>
         </div>
+      </div>
+      <div className="location__map">
+        <img src={World} alt="" />
       </div>
     </section>
   );
