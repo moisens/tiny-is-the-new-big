@@ -55,6 +55,7 @@ const PeopleSays = () => {
           </div>
         </div>
       </div>
+      <div className="people__triangle2"></div>
     </section>
   );
 };
