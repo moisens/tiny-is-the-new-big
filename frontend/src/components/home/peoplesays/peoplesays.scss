@@ -1,0 +1,130 @@
+.people__container {
+  max-width: 100%;
+  background-color: #edfdf8;
+  padding-bottom: 200px;
+
+  .people__titleH2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    padding-bottom: 76px;
+    text-align: center;
+  }
+}
+
+.people__triangle1 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 400px 100vw 0 0;
+  border-color: #fff transparent transparent transparent;
+}
+
+.people__slider {
+  background-color: #fff;
+  max-width: 655px;
+  height: auto;
+  border-radius: 22px;
+  margin: 0 auto;
+  box-shadow: 0px 10px 15px -6px rgb(0 0 0 / 10%);
+}
+.peoplesSlider__container {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  background-color: hsl(43, 100%, 99%);
+  border: solid 0.4px #2dc1df;
+  border-radius: 22px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  .slider__previous {
+    position: absolute;
+    top: 50%;
+    left: 48px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+  .slider__next {
+    position: absolute;
+    top: 50%;
+    right: 48px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .peopleSlide__content {
+    background-color: rgb(255, 255, 255);
+    padding: 70px 0 0 0;
+    margin: 0 auto;
+    height: 460px;
+    //display: flex;
+
+    .peopleSlider__img {
+      width: 655px;
+
+      .people__avatar {
+        width: 150px;
+        height: 150px;
+        background-color: lightgray;
+        border-radius: 75px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          object-fit: cover;
+          border: solid 3px #2dc1df;
+          border-radius: 75px;
+        }
+      }
+      .people__person {
+        font-size: 1.375rem;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 5px;
+      }
+    }
+    .people__stars {
+      padding-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .star {
+        width: 24px;
+        height: 24px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .people__saying {
+      text-align: center;
+      width: 90%;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      padding-bottom: 0px;
+      margin: 0 auto;
+    }
+  }
+}
