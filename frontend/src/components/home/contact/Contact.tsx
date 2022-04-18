@@ -7,9 +7,11 @@ const Contact = () => {
       <div className="contact__content">
         <div className="contact__text">
           <div className="contact__illuContainer">
-            <div className="contact__illu">
-              <MdOutlineContactPage size="1rem" color="#08A1BA" />
-            </div>
+            <MdOutlineContactPage
+              size="1rem"
+              color="#08A1BA"
+              className="contact__illu"
+            />
             <h4 className="contact__titleH4">
               Contact <span className="span__title">Us</span>
             </h4>
@@ -38,6 +40,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div className="contact__form">Form</div>
     </section>
   );
 };

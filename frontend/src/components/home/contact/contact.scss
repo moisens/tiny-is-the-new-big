@@ -1,5 +1,101 @@
 .contact__container {
   width: 100%;
   height: auto;
-  background-color: lightgray;
+  //background-color: lightgray;
+}
+
+.contact__content {
+  //background-color: lightblue;
+  max-width: 100vw;
+  //width: 100%;
+  height: auto;
+  //display: grid;
+  //grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+
+  .contact__text {
+    min-width: 600px;
+    //background-color: lightgreen;
+    padding: 70px 0 18px 25px;
+
+    .contact__illuContainer {
+      //background-color: red;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px;
+      padding: 0 0 18px 0;
+
+      .contact__illu {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border: solid 0.4px #2dc1df;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+      }
+      .contact__titleH4 {
+        font-size: 1.125rem;
+        font-weight: 400;
+
+        .span__title {
+          font-weight: 600;
+          color: #2dc1df;
+        }
+      }
+    }
+    .contact__titleH2 {
+      font-size: 1.875rem;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+    .contact__description {
+      font-size: 1.125rem;
+      line-height: 1.5;
+      padding: 0 0 60px 0;
+    }
+  }
+  .contact__images {
+    background-color: lightgrey;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    height: 398px;
+
+    .image__container {
+      background-color: red;
+
+      &:nth-child(1) {
+        background-color: #2dc1df;
+        min-width: 300px;
+        min-height: 300px;
+        margin-top: 100px;
+      }
+      &:nth-child(2) {
+        background-color: #2ddf42;
+        min-width: 227px;
+        min-height: 227px;
+        z-index: 900;
+      }
+      &:nth-child(3) {
+        background-color: #df2d57;
+        min-width: 161px;
+        min-height: 161px;
+        margin-top: 120px;
+      }
+
+      
+    }
+  }
+}
+
+.contact__form {
+  background-color: lightcoral;
 }
