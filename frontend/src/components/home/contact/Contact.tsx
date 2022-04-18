@@ -24,19 +24,13 @@ const Contact = () => {
         </div>
         <div className="contact__images">
           <div className="image__container">
-            <div className="image__content">
-              <img src="" alt="" />
-            </div>
+            <img src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1650301425/tiny%20is%20the%20new%20big/tierra-mallorca-NpTbVOkkom8-unsplash_fcohsm.jpg" alt="" />
           </div>
           <div className="image__container">
-            <div className="image__content">
-              <img src="" alt="" />
-            </div>
+            <img src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1650300934/tiny%20is%20the%20new%20big/aysegul-yahsi-9QRqI6RbHWU-unsplash_m3dhn6.jpg" alt="" />
           </div>
           <div className="image__container">
-            <div className="image__content">
-              <img src="" alt="" />
-            </div>
+            <img src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1650301404/tiny%20is%20the%20new%20big/jet-dela-cruz-Gf6puSx3h6Y-unsplash_nfndgh.jpg" alt="" />
           </div>
         </div>
       </div>
