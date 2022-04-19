@@ -82,6 +82,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div className="contact__triangle2"></div>
     </section>
   );
 };
