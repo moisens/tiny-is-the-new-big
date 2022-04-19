@@ -1,7 +1,6 @@
 .contact__container {
   width: 100%;
   height: auto;
-  padding-bottom: 200px;
 }
 
 .contact__content {
@@ -138,6 +137,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 60px;
+  padding-bottom: 160px;
 }
 
 .form__content {
@@ -254,4 +254,11 @@
       cursor: pointer;
     }
   }
+}
+.contact__triangle2 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 200px 100vw;
+  border-color: transparent transparent #EDFDF8 transparent;
 }
