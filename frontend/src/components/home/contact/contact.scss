@@ -137,6 +137,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 60px;
 }
 
 .form__content {
@@ -202,6 +203,55 @@
 
     &:hover {
       background: #181b52;
+    }
+  }
+}
+
+.form__call {
+  //background-color: red;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+
+  .call__btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    width: 189px;
+    height: 65px;
+    border: solid 0.4px #08a1ba;
+    border-radius: 94.5px;
+    padding-left: 25px;
+    background-color: #fff;
+    font-size: 1.125rem;
+    cursor: pointer;
+  }
+  .call__dropdown {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 289px;
+    height: 65px;
+    padding: 0 10px 0 25px;
+    border: solid 0.4px #08a1ba;
+    border-radius: 9px;
+
+    .call__P {
+      font-size: 1.125rem;
+
+      .call__country {
+        color: #08a1ba;
+        font-weight: 700;
+        padding-right: 15px;
+      }
+    }
+    .call__arrowdown {
+      cursor: pointer;
     }
   }
 }
