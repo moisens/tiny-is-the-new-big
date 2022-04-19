@@ -7,6 +7,8 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const newYear = new Date().getFullYear();
+
   return (
     <footer className="footer__container">
       <div className="footer__content">
@@ -69,7 +71,7 @@ const Footer = () => {
       </div>
       <div className="footer__date">
         <AiOutlineCopyrightCircle />
-        <p className="date__now">www.tinyroof.com - 2022</p>
+        <p className="date__now">www.tinyhousing.com - {`${newYear}`}</p>
       </div>
     </footer>
   );
