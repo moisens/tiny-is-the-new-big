@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
       <div className="footer__date">
         <AiOutlineCopyrightCircle />
-        <p className="date__now">www.tinyroof.com - {`${newYear}`}</p>
+        <p className="date__now">www.tinyhousing.com - {`${newYear}`}</p>
       </div>
     </footer>
   );

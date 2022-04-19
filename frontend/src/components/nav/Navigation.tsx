@@ -1,31 +1,17 @@
 import "./nav.scss";
 import { linkNav } from "../../utils/utils";
-import { Link, NavLink } from "react-router-dom";
 import Profile from "../../assets/profil.svg";
 import Like from "../../assets/like.svg";
 import Menu from "../../assets/menu.svg";
+import LinkList from "./LinkList";
 
 const Nav = () => {
   return (
     <nav className="nav__container">
-      <div className="logo">Tiny is the new big</div>
+      <div className="logo">tinyhousing</div>
       <div className="navlink__content">
         <ul className="nav__ul">
-          {linkNav.map((link) => {
-            const { id, text, url } = link;
-            return (
-              <li className="nav__li" key={id}>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive ? "nav__a activeLink" : "nav__a"
-                  }
-                  to={url}
-                >
-                  {text}
-                </NavLink>
-              </li>
-            );
-          })}
+          <LinkList linksData= {linkNav} />
         </ul>
       </div>
       <div className="menu__like__connect">
