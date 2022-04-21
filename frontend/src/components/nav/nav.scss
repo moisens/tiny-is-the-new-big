@@ -11,6 +11,8 @@
   .navlink__content {
     //background-color: red;
     flex-grow: 0.6;
+    position: relative;
+
     .nav__ul {
       display: flex;
       justify-content: flex-end;
@@ -19,7 +21,14 @@
 
       .nav__li {
         list-style-type: none;
-        padding: 20px 5px;
+        padding: auto 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .nav__arrowdown {
+          margin-left: -5px;
+        }
 
         .nav__a {
           text-decoration: none;
@@ -38,6 +47,40 @@
             top: 58px;
           }
         }
+      }
+    }
+    .nav__dropdown {
+      background-color: #fff;
+      width: 120px;
+      position: absolute;
+      left: 63%;
+      top: 83px;
+      z-index: 900;
+      overflow: hidden;
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      display: none;
+
+      .dropdown__li {
+        list-style-type: none;
+        line-height: 1.5;
+        padding: 15px 80px 15px 0;
+        font-size: 1.125rem;
+
+        a {
+          text-decoration: none;
+          color: #000;
+          //background-color: lightblue;
+          padding: 15px 80px 15px 15px;
+
+          &:hover {
+            background-color: #181b52;
+            border-left: solid 3px #08a1ba;
+            color: #fff;
+          }
+        }
+      }
+      &.isVisible {
+        display: block;
       }
     }
   }
@@ -88,5 +131,11 @@
         width: 100%;
       }
     }
+  }
+  &.sticky__nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100000;
   }
 }

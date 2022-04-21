@@ -5,7 +5,7 @@ import World from "../../../assets/world.png";
 
 const Location = () => {
   return (
-    <section className="location__container">
+    <section className="location__container" id="location">
       <div className="location__content">
         <div className="location__text">
           <div className="illu__container">

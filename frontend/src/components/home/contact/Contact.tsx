@@ -5,7 +5,7 @@ import { RiArrowDownSFill } from "react-icons/ri";
 
 const Contact = () => {
   return (
-    <section className="contact__container">
+    <section className="contact__container" id="contact">
       <div className="contact__content">
         <div className="contact__text">
           <div className="contact__illuContainer">

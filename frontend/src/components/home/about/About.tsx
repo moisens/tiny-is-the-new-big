@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const About = () => {
   const navigate = useNavigate();
   return (
-    <section className="about__container">
+    <section className="about__container" id="about">
       <div className="about__image__content">
         <div className="about__image">
           <img
