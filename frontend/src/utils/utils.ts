@@ -25,3 +25,22 @@ export const linkNav = [
   //  url: "/contact"
   //},
 ];
+
+
+export const dropdownLinks = [
+  {
+    id: "b7205456-c196",
+    text: "About",
+    url: "#about"
+  },
+  {
+    id: "b7205ae6-c196",
+    text: "Services",
+    url: "#services"
+  },
+  {
+    id: "b7205d98-c196",
+    text: "Contact",
+    url: "#contact"
+  },
+]
