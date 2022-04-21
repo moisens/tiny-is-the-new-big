@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-interface ILinkProps {
+export interface ILinkProps {
   linksData: { id: string; text: string; url: string }[];
   //linksData: LinkType[]; => Can also write like this!!!
 }

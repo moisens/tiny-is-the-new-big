@@ -4,6 +4,7 @@ import Profile from "../../assets/profil.svg";
 import Like from "../../assets/like.svg";
 import Menu from "../../assets/menu.svg";
 import LinkList from "./LinkList";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -11,7 +12,18 @@ const Nav = () => {
       <div className="logo">tinyhousing</div>
       <div className="navlink__content">
         <ul className="nav__ul">
-          <LinkList linksData= {linkNav} />
+          <li className="nav__li">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) =>
+                isActive ? "nav__a activeLink" : "nav__a"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <LinkList linksData={linkNav} />
+          <li>Contact</li>
         </ul>
       </div>
       <div className="menu__like__connect">

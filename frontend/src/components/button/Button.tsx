@@ -1,6 +1,4 @@
-import { ChangeEventHandler } from "react";
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   className: string;
   type: "button" | "submit";
   title: string;

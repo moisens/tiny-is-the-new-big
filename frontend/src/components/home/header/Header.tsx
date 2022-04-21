@@ -1,6 +1,6 @@
 import Button from "../../button/Button";
 import "./header.scss";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -18,19 +18,19 @@ const Header = () => {
             className="header__btns buy__btn"
             type="button"
             title="Buy"
-            handleClick={() => navigate("/buy")}
+            handleClick={() => navigate("buy")}
           />
           <Button
             className="header__btns"
             type="button"
             title="Rent"
-            handleClick={() => navigate("/rent")}
+            handleClick={() => navigate("rent")}
           />
           <Button
             className="header__btns"
             type="button"
             title="Location"
-            handleClick={() => navigate("/location")}
+            handleClick={() => navigate("/ocation")}
           />
         </div>
       </section>
