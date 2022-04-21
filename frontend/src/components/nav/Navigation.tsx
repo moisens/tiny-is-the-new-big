@@ -1,9 +1,10 @@
 import "./nav.scss";
-import { linkNav } from "../../utils/utils";
+import { linkNav, dropdownLinks } from "../../utils/utils";
 import Profile from "../../assets/profil.svg";
 import Like from "../../assets/like.svg";
 import Menu from "../../assets/menu.svg";
 import LinkList from "./LinkList";
+import DropdowList from "./DropdowList";
 import { NavLink, Link } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
 
@@ -28,10 +29,7 @@ const Nav = () => {
         </ul>
         {/*dropdown links for Home page*/}
         <ul className="nav__dropdown">
-          <li className="dropdown__li"><a href="/#about">About</a></li>
-          <li className="dropdown__li"><a href="/#service">Services</a></li>
-          <li className="dropdown__li"><a href="/#location">Locations</a></li>
-          <li className="dropdown__li"><a href="/#contact">Contact</a></li>
+          <DropdowList linksData={dropdownLinks} />
         </ul>
         {/*End dropdown links for Home page*/}
       </div>

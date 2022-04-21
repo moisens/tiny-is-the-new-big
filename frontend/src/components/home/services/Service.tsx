@@ -7,7 +7,7 @@ import Location from "../../../assets/location.svg";
 
 const Service = () => {
   return (
-    <section className="services__container" id="service">
+    <section className="services__container" id="services">
       <div className="services__triangle1"></div>
       <div className="services__content">
         <div className="services__illu__title">
