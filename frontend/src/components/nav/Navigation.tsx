@@ -7,8 +7,15 @@ import LinkList from "./LinkList";
 import DropdowList from "./DropdowList";
 import { NavLink, Link } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { useState } from "react";
 
 const Nav = () => {
+  const [isDropdown, setIsDropdown] = useState(false);
+
+  const handleDropDown = () => {
+    setIsDropdown(!isDropdown);
+  };
+
   return (
     <nav className="nav__container sticky__nav">
       <div className="logo">tinyhousing</div>
@@ -23,15 +30,26 @@ const Nav = () => {
             >
               Home
             </NavLink>
-            <RiArrowDownSFill className="nav__arrowdown" color="#08A1BA" />
+            <RiArrowDownSFill
+              className="nav__arrowdown"
+              color="#08A1BA"
+              onClick={handleDropDown}
+            />
           </li>
           <LinkList linksData={linkNav} />
+          {/*dropdown links for Home page*/}
+          <ul
+            className={`${
+              isDropdown ? "nav__dropdown isVisible" : "nav__dropdown"
+            }`}
+          >
+            <DropdowList
+              linksData={dropdownLinks}
+              setIsDropdown={setIsDropdown}
+            />
+          </ul>
+          {/*End dropdown links for Home page*/}
         </ul>
-        {/*dropdown links for Home page*/}
-        <ul className="nav__dropdown">
-          <DropdowList linksData={dropdownLinks} />
-        </ul>
-        {/*End dropdown links for Home page*/}
       </div>
       <div className="menu__like__connect">
         <div className="nav__like">
