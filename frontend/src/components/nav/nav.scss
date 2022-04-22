@@ -18,6 +18,8 @@
       justify-content: flex-end;
       align-items: center;
       font-size: 20px;
+      position: relative;
+      //background-color: lightcoral;
 
       .nav__li {
         list-style-type: none;
@@ -28,6 +30,12 @@
 
         .nav__arrowdown {
           margin-left: -5px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #181b52;
+            color: #fff;
+          }
         }
 
         .nav__a {
@@ -48,41 +56,42 @@
           }
         }
       }
-    }
-    .nav__dropdown {
-      background-color: #fff;
-      width: 120px;
-      position: absolute;
-      left: 63%;
-      top: 83px;
-      z-index: 900;
-      overflow: hidden;
-      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-      display: none;
-
-      .dropdown__li {
-        list-style-type: none;
-        line-height: 1.5;
-        padding: 15px 80px 15px 0;
-        font-size: 1.125rem;
-
-        a {
-          text-decoration: none;
-          color: #000;
-          //background-color: lightblue;
-          padding: 15px 80px 15px 15px;
-
-          &:hover {
-            background-color: #181b52;
-            border-left: solid 3px #08a1ba;
-            color: #fff;
+      .nav__dropdown {
+        background-color: #fff;
+        width: 120px;
+        position: absolute;
+        left: 63%;
+        top: 63px;
+        z-index: 900;
+        overflow: hidden;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        display: none;
+  
+        .dropdown__li {
+          list-style-type: none;
+          line-height: 1.5;
+          padding: 15px 80px 15px 0;
+          font-size: 1.125rem;
+  
+          a {
+            text-decoration: none;
+            color: #000;
+            //background-color: lightblue;
+            padding: 15px 80px 15px 15px;
+  
+            &:hover {
+              background-color: #181b52;
+              border-left: solid 3px #08a1ba;
+              color: #fff;
+            }
           }
         }
-      }
-      &.isVisible {
-        display: block;
+        &.isVisible {
+          display: block;
+        }
       }
     }
+    
   }
   .menu__like__connect {
     //background-color: lightseagreen;
