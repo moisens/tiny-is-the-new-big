@@ -6,6 +6,7 @@ interface ButtonProps {
   handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
+
 const Button = ({
   className = "",
   type,
@@ -16,7 +17,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      onClick={(e) => handleClick(e)}//onClick={handleClick} => without the event
+      onClick={handleClick}//(e) => handleClick(e) => with the event
       className={className}
       type={type}
       {...otherProps}

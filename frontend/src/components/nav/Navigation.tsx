@@ -37,7 +37,7 @@ const Nav = () => {
             />
           </li>
           <LinkList linksData={linkNav} />
-          {/*dropdown links for Home page*/}
+          {/*dropdown links*/}
           <ul
             className={`${
               isDropdown ? "nav__dropdown isVisible" : "nav__dropdown"
@@ -48,7 +48,7 @@ const Nav = () => {
               setIsDropdown={setIsDropdown}
             />
           </ul>
-          {/*End dropdown links for Home page*/}
+          {/*End dropdown links*/}
         </ul>
       </div>
       <div className="menu__like__connect">
