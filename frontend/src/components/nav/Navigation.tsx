@@ -2,18 +2,26 @@ import "./nav.scss";
 import { linkNav, dropdownLinks } from "../../utils/utils";
 import Profile from "../../assets/profil.svg";
 import Like from "../../assets/like.svg";
-import Menu from "../../assets/menu.svg";
 import LinkList from "./LinkList";
 import DropdowList from "./DropdowList";
 import { NavLink, Link } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { CgClose } from "react-icons/cg";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { AiOutlineUser } from "react-icons/ai"
 import { useState } from "react";
 
 const Nav = () => {
   const [isDropdown, setIsDropdown] = useState(false);
+  const [toggleBurger, setToggleBurger] = useState(false);
 
   const handleDropDown = () => {
     setIsDropdown(!isDropdown);
+  };
+
+  const handleTogglrBurger = () => {
+    setToggleBurger(!toggleBurger);
   };
 
   return (
@@ -53,14 +61,20 @@ const Nav = () => {
       </div>
       <div className="menu__like__connect">
         <div className="nav__like">
-          <img src={Like} alt="like" />
+          <BsHeart size="2rem" />
         </div>
         <div className="nav__connect">
-          <img src={Profile} alt="profile" />
+          <AiOutlineUser size="2rem" color="#181b52" />
         </div>
-        <div className="nav__menu">
-          <img src={Menu} alt="menu" />
+        {/*Toggle menu*/}
+        <div className="nav__menu" onClick={handleTogglrBurger}>
+          {toggleBurger ? (
+            <CgClose size="2rem" className="menu__burger" />
+          ) : (
+            <HiOutlineMenuAlt2 size="2rem" className="menu__burger" />
+          )}
         </div>
+        {/*End Toggle menu*/}
       </div>
     </nav>
   );
