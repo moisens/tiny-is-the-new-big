@@ -1,9 +1,8 @@
 import "./nav.scss";
 import { linkNav, dropdownLinks } from "../../utils/utils";
-import Profile from "../../assets/profil.svg";
-import Like from "../../assets/like.svg";
 import LinkList from "./LinkList";
 import DropdowList from "./DropdowList";
+import Sidebarav from "./Sidebarav";
 import { NavLink, Link } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
@@ -28,7 +27,7 @@ const Nav = () => {
     <nav className="nav__container sticky__nav">
       <div className="logo">tinyhousing</div>
       <div className="navlink__content">
-        <ul className="nav__ul">
+        <ul className="nav__ul active">
           <li className="nav__li">
             <NavLink
               to={"/"}
@@ -76,6 +75,9 @@ const Nav = () => {
         </div>
         {/*End Toggle menu*/}
       </div>
+      {/*Sidebar*/}
+      {/* <Sidebarav /> */}
+      {/*End Sidebar*/}
     </nav>
   );
 };

@@ -1,17 +1,20 @@
+/*********
+  Nav
+ *********/
 .nav__container {
-  //background-color: rgb(235, 134, 134);
+  background-color: rgb(235, 134, 134);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
 
   .logo {
     background-color: lightcoral;
   }
 
   .navlink__content {
-    //background-color: red;
+    background-color: red;
     flex-grow: 0.6;
-    position: relative;
 
     .nav__ul {
       display: flex;
@@ -19,6 +22,8 @@
       align-items: center;
       font-size: 20px;
       position: relative;
+      //height: 0;
+      //padding: 31.4px 0;
       //background-color: lightcoral;
 
       .nav__li {
@@ -131,28 +136,67 @@
       width: 35.72px;
       height: 35.72px;
       cursor: pointer;
-      display: none;
+
+      background-color: #181b52;
+      border: none;
+      border-radius: 9px;
 
       .menu__burger {
-        color: #181b52;
+        color: #fff;
+        padding: 2px;
       }
-
-      
     }
   }
   &.sticky__nav {
     position: sticky;
     top: 0;
-    background-color: rgb(255, 255, 255);
+    //background-color: rgb(255, 255, 255);
     z-index: 100000;
   }
 }
 
+/*********
+  Sidebar Nav
+ *********/
+.modal__sidebar {
+  width: 100vw;
+  height: calc(100vh - 63px);
+  position: absolute;
+  top: 63px;
+  left: 0;
+  background-color: hsla(0, 0%, 21%, 0.5);
+  transform: translate(-100vw);
 
+  &.active__modal {
+    transform: translate(0vw);
+  }
+}
+
+/********************
+Media queries 
+********************/
 @media screen and (max-width: 1022px) {
-  .nav__menu {
-    background-color: red;
-    display: block;
-    
+  .navlink__content {
+    background-color: lightgreen;
+    position: absolute;
+    top: 63px;
+    width: 100vw;
+    height: calc(100vh - 62.8px);
+
+    .nav__ul {
+      width: 100%;
+      background-color: lightgrey;
+
+      &.active {
+        height: auto !important;
+        position: absolute;
+        top: 63px;
+        background-color: rgb(124, 102, 250);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
   }
 }
