@@ -66,19 +66,19 @@
         overflow: hidden;
         box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
         display: none;
-  
+
         .dropdown__li {
           list-style-type: none;
           line-height: 1.5;
           padding: 15px 80px 15px 0;
           font-size: 1.125rem;
-  
+
           a {
             text-decoration: none;
             color: #000;
             //background-color: lightblue;
             padding: 15px 80px 15px 15px;
-  
+
             &:hover {
               background-color: #181b52;
               border-left: solid 3px #08a1ba;
@@ -91,7 +91,6 @@
         }
       }
     }
-    
   }
   .menu__like__connect {
     //background-color: lightseagreen;
@@ -114,37 +113,46 @@
     }
 
     .nav__connect {
-      background: linear-gradient(
-        90deg,
-        rgba(34, 193, 195, 1) 0%,
-        rgba(45, 193, 223, 1) 100%
-      );
-      width: 50px;
-      height: 50px;
-      border: none;
+      width: 35.72px;
+      height: 35.72px;
+      border: solid 2px #181b52;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 25px;
+      padding-top: 1px;
       cursor: pointer;
     }
 
     .nav__menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 35.72px;
       height: 35.72px;
-      display: none;
       cursor: pointer;
+      display: none;
 
-      img {
-        width: 100%;
+      .menu__burger {
+        color: #181b52;
       }
+
+      
     }
   }
   &.sticky__nav {
     position: sticky;
     top: 0;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     z-index: 100000;
+  }
+}
+
+
+@media screen and (max-width: 1022px) {
+  .nav__menu {
+    background-color: red;
+    display: block;
+    
   }
 }
