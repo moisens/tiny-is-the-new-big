@@ -2,7 +2,7 @@
   Nav
  *********/
 .nav__container {
-  background-color: rgb(235, 134, 134);
+  background-color: #6CEFC5;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -13,7 +13,7 @@
   }
 
   .navlink__content {
-    background-color: red;
+    //background-color: red;
     flex-grow: 0.6;
 
     .nav__ul {
@@ -136,6 +136,7 @@
       width: 35.72px;
       height: 35.72px;
       cursor: pointer;
+      display: none;
 
       background-color: #181b52;
       border: none;
@@ -176,26 +177,69 @@
 Media queries 
 ********************/
 @media screen and (max-width: 1022px) {
+  .nav__container {
+    height: 62.8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      padding: 0 0 0 25px;
+    }
+
+    .menu__like__connect {
+      padding: 0 25px 0 0;
+
+      .nav__menu {
+        display: flex;
+      }
+    }
+  }
+
   .navlink__content {
-    background-color: lightgreen;
+    background-color: #ecfdf8;
     position: absolute;
     top: 63px;
     width: 100vw;
-    height: calc(100vh - 62.8px);
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 
     .nav__ul {
       width: 100%;
-      background-color: lightgrey;
 
       &.active {
         height: auto !important;
         position: absolute;
         top: 63px;
-        background-color: rgb(124, 102, 250);
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
+
+        .nav__li {
+          .nav__a {
+            //background-color: lightcoral;
+            width: 100vw;
+            padding: 40px 0;
+            padding-left: 25px;
+
+            &.activeLink::after {
+              content: " ";
+              background-color: #08a1ba;
+              display: flex;
+              width: 100px;
+              height: 5px;
+              position: absolute;
+              top: 98px;
+            }
+            &:hover {
+              background-color: #6cefc5;
+              color: #fff;
+              border-left: solid 7px #181b52;
+            }
+          }
+        }
       }
     }
   }
