@@ -8,8 +8,8 @@ import { RiArrowDownSFill } from "react-icons/ri";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai"
-import { useState } from "react";
+import { AiOutlineUser } from "react-icons/ai";
+import { useState, useEffect, useRef } from "react";
 
 const Nav = () => {
   const [isDropdown, setIsDropdown] = useState(false);
@@ -23,11 +23,24 @@ const Nav = () => {
     setToggleBurger(!toggleBurger);
   };
 
+  const navbarLinksContainer = useRef<HTMLDivElement>(null!); //When we are sure that it will never be null. No need the ?.
+  const navbarUlLinks = useRef<HTMLUListElement>(null!);
+
+  useEffect(() => {
+    const heightRefLinks: number =
+      navbarUlLinks.current.getBoundingClientRect().height;
+    if (toggleBurger) {
+      navbarLinksContainer.current.style.height = `${heightRefLinks}px`;
+    } else {
+      navbarLinksContainer.current.style.height = `0px`;
+    }
+  }, [toggleBurger]);
+
   return (
     <nav className="nav__container sticky__nav">
       <div className="logo">tinyhousing</div>
-      <div className="navlink__content">
-        <ul className="nav__ul active">
+      <div className="navlink__content" ref={navbarLinksContainer}>
+        <ul className="nav__ul active" ref={navbarUlLinks}>
           <li className="nav__li">
             <NavLink
               to={"/"}
