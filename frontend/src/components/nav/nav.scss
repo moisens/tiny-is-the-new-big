@@ -222,6 +222,10 @@ Media queries
               border-left: solid 7px #181b52;
             }
           }
+          .nav__arrowdown {
+            margin-left: -388px;
+            z-index: 900;
+          }
         }
       }
     }

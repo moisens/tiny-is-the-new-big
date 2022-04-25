@@ -2,7 +2,6 @@ import "./nav.scss";
 import { linkNav, dropdownLinks } from "../../utils/utils";
 import LinkList from "./LinkList";
 import DropdowList from "./DropdowList";
-import Sidebarav from "./Sidebarav";
 import { NavLink, Link } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
@@ -23,6 +22,19 @@ const Nav = () => {
     setToggleBurger(!toggleBurger);
   };
 
+  const handleSidebarAfterClick = () => {
+    setToggleBurger(false);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  //Handling sidebar nav open & close
   const navbarLinksContainer = useRef<HTMLDivElement>(null!); //When we are sure that it will never be null. No need the ?.
   const navbarUlLinks = useRef<HTMLUListElement>(null!);
 
@@ -47,6 +59,7 @@ const Nav = () => {
               className={({ isActive }) =>
                 isActive ? "nav__a activeLink" : "nav__a"
               }
+              onClick={handleSidebarAfterClick}
             >
               Home
             </NavLink>
@@ -56,7 +69,10 @@ const Nav = () => {
               onClick={handleDropDown}
             />
           </li>
-          <LinkList linksData={linkNav} />
+          <LinkList
+            linksData={linkNav}
+            handleSidebarAfterClick={handleSidebarAfterClick}
+          />
           {/*dropdown links*/}
           <ul
             className={`${
@@ -66,6 +82,7 @@ const Nav = () => {
             <DropdowList
               linksData={dropdownLinks}
               setIsDropdown={setIsDropdown}
+              handleSidebarAfterClick={handleSidebarAfterClick}
             />
           </ul>
           {/*End dropdown links*/}
@@ -88,9 +105,6 @@ const Nav = () => {
         </div>
         {/*End Toggle menu*/}
       </div>
-      {/*Sidebar*/}
-      {/* <Sidebarav /> */}
-      {/*End Sidebar*/}
     </nav>
   );
 };
