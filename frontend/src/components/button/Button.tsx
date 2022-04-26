@@ -7,8 +7,7 @@ interface AsButtonProps extends BaseProps {
   onClick: () => void;
   href?: never;
   className: string;
-  //otherProps: string;
-  //handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 interface AsLinkProps extends BaseProps {
@@ -16,8 +15,7 @@ interface AsLinkProps extends BaseProps {
   href: string;
   onClick?: never;
   className: string;
-  //otherProps: string;
-  //handleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 type ButtonProps = AsButtonProps | AsLinkProps;
@@ -26,7 +24,7 @@ const Button = ({
   children,
   as,
   href,
-  onClick,
+  handleClick,
   className = "",
 }: ButtonProps) => {
   return (
@@ -37,8 +35,16 @@ const Button = ({
         </a>
       )}
 
-      {as === "button" && <button onClick={onClick}>{children}</button>}
-      {as === "submit" && <button onClick={onClick}>{children}</button>}
+      {as === "button" && (
+        <button className={className} onClick={handleClick}>
+          {children}
+        </button>
+      )}
+      {as === "submit" && (
+        <button className={className} onClick={handleClick}>
+          {children}
+        </button>
+      )}
     </>
   );
 };
