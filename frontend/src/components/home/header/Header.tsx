@@ -14,24 +14,15 @@ const Header = () => {
           beautiful eco-friendly tiny home.
         </p>
         <div className="header__btn__container">
-          <Button
-            className="header__btns buy__btn"
-            type="button"
-            title="Buy"
-            handleClick={() => navigate("buy")}
-          />
-          <Button
-            className="header__btns"
-            type="button"
-            title="Rent"
-            handleClick={() => navigate("rent")}
-          />
-          <Button
-            className="header__btns"
-            type="button"
-            title="Location"
-            handleClick={() => navigate("/ocation")}
-          />
+          <Button className="header__btns" as="a" href="/buy">
+            Buy
+          </Button>
+          <Button className="header__btns" as="a" href="/rent">
+            Rent
+          </Button>
+          <Button className="header__btns" as="a" href="/location">
+            Location
+          </Button>
         </div>
       </section>
       <section className="header__content__image">

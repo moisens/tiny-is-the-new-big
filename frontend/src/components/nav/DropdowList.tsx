@@ -5,13 +5,20 @@ const DropdowList = (props: ILinkProps) => {
 
   const handleCloseDropdown = () => {
     setIsDropdown?.(false);
-  }
+  };
 
   return (
     <>
       {linksData.map((link) => (
-        <li className="dropdown__li" key={link.id} onClick={() => {handleCloseDropdown(), handleSidebarAfterClick()}}>
-          <a href={link.url}>{link.text}</a>
+        <li
+          className="dropdown__li"
+          key={link.id}
+          onClick={handleCloseDropdown}
+        >
+          {/*On small device, close the sidebar after clicking on link in the dropdown menu*/}
+          <a href={link.url} onClick={handleSidebarAfterClick}>
+            {link.text}
+          </a>
         </li>
       ))}
     </>
