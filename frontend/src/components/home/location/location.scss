@@ -60,20 +60,30 @@
       //width: 75%;
     }
     .location__btn {
-      padding: 18px 40px;
+      
       font-size: 1.75rem;
+      width: 280px;
       font-weight: 400;
       cursor: pointer;
       border: solid 0.4px #08a1ba;
       border-radius: 40px;
       background: linear-gradient(90deg, #22c1c3 0%, #2dc1df 100%);
-      color: #fff;
       transition: all 0.7s ease-in;
       margin-bottom: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         background: #181b52;
         transition: all 0.7s ease-in;
+      }
+      .location__a {
+        color: #fff;
+        text-decoration: none;
+        padding: 18px 41px;
+        border-radius: 40px;
+
       }
     }
   }

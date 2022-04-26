@@ -2,6 +2,7 @@ import "./location.scss";
 import PinLocation from "../../../assets/location.svg";
 import FilledStar from "../../../assets/filled-star.svg";
 import World from "../../../assets/world.png";
+import Button from "../../../components/button/Button"
 
 const Location = () => {
   return (
@@ -24,7 +25,9 @@ const Location = () => {
             towing system. Living with less, means moving towards a future with
             reduced environmental impact.
           </p>
-          <button className="location__btn">All the locations</button>
+          <div className="location__btn">
+            <Button className="location__a" as="a" href="/location">All the locations</Button>
+          </div>
         </div>
         <div className="location__slider">
           <div className="slider__container">
