@@ -1,15 +1,13 @@
 import Button from "../../button/Button";
 import "./header.scss";
-import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const navigate = useNavigate();
   return (
     <header className="header__container">
       <section className="header__content__text">
         <h1 className="header__title">Your dream tiny house awaits.</h1>
         <p className="header__description">
-          Housing made easy. Tiny is the new big offers you the possibility to
+          Housing made easy. tinyhousing offers you the possibility to
           buy, rent tiny houses. We also help you to find a location for your
           beautiful eco-friendly tiny home.
         </p>

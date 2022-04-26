@@ -45,12 +45,13 @@ const About = () => {
                   <img src={FilledStar} alt="stars" />
                   <img src={FilledStar} alt="stars" />
                 </div>
+                <div className="about__contact">
                 <Button
-                  className="about__contact"
-                  type="button"
-                  title="Contact"
-                  handleClick={() => navigate("#contact")}
-                />
+                  className="about__a"
+                  as="a"
+                  href="#contact"
+                >Contact</Button>
+                </div>
               </div>
             </div>
           </div>
