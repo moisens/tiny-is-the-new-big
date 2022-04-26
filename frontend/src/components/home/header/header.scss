@@ -36,20 +36,22 @@
         border-radius: 40px;
         background-color: #fff;
         transition: all 0.3s;
+        text-decoration: none;
+        color: #181B52;
 
-        &.buy__btn {
-          background: linear-gradient(
-            90deg,
-            rgba(34, 193, 195, 1) 0%,
-            rgba(45, 193, 223, 1) 100%
-          );
-          color: #fff;
-          &:hover {
-            color: #181B52;
-          }
-        }
+        
         &:hover {
           background-color: #181B52;
+          color: #fff;
+          transition: all 0.3s;
+        }
+      }
+      .header__btns:nth-child(1) {
+        background: linear-gradient(90deg, #22c1c3 0%, #2dc1df 100%);
+        color: #fff;
+
+        &:hover {
+          background: #181B52;
           color: #fff;
           transition: all 0.3s;
         }
