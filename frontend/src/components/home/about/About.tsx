@@ -1,11 +1,9 @@
 import "./about.scss";
-import FilledStar from "../../../assets/filled-star.svg";
 import Company from "../../../assets/company.svg";
-import Button from "../../button/Button";
-import { useNavigate } from "react-router-dom";
+import { founders } from "../../../utils/utils";
+import Founders from "./Founders";
 
 const About = () => {
-  const navigate = useNavigate();
   return (
     <section className="about__container" id="about">
       <div className="about__image__content">
@@ -25,35 +23,8 @@ const About = () => {
         <div className="about__slider">
           <div className="slider__container">
             {/*Map from here*/}
-            <div className="about__slide">
-              <div className="slider__img">
-                <div className="about__avatar">
-                  <img
-                    src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1649899897/tiny%20is%20the%20new%20big/christopher-campbell-rDEOVtE7vOs-unsplash_vnbxj5.jpg"
-                    alt="avatar"
-                  />
-                </div>
-                <p className="about__person">
-                  Kyra Nerys <span className="about__position">Co-founder</span>
-                </p>
-              </div>
-              <div className="slider__btn">
-                <div className="about__stars">
-                  <img src={FilledStar} alt="stars" />
-                  <img src={FilledStar} alt="stars" />
-                  <img src={FilledStar} alt="stars" />
-                  <img src={FilledStar} alt="stars" />
-                  <img src={FilledStar} alt="stars" />
-                </div>
-                <div className="about__contact">
-                <Button
-                  className="about__a"
-                  as="a"
-                  href="#contact"
-                >Contact</Button>
-                </div>
-              </div>
-            </div>
+            <Founders founders={founders} />
+            {/*End*/}
           </div>
         </div>
       </div>
@@ -84,3 +55,37 @@ const About = () => {
 };
 
 export default About;
+
+/*
+
+<div className="about__slide">
+              <div className="slider__img">
+                <div className="about__avatar">
+                  <img
+                    src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1649899897/tiny%20is%20the%20new%20big/christopher-campbell-rDEOVtE7vOs-unsplash_vnbxj5.jpg"
+                    alt="avatar"
+                  />
+                </div>
+                <p className="about__person">
+                  Kyra Nerys <span className="about__position">Co-founder</span>
+                </p>
+              </div>
+              <div className="slider__btn">
+                <div className="about__stars">
+                  <img src={FilledStar} alt="stars" />
+                  <img src={FilledStar} alt="stars" />
+                  <img src={FilledStar} alt="stars" />
+                  <img src={FilledStar} alt="stars" />
+                  <img src={FilledStar} alt="stars" />
+                </div>
+                <div className="about__contact">
+                <Button
+                  className="about__a"
+                  as="a"
+                  href="#contact"
+                >Contact</Button>
+                </div>
+              </div>
+            </div>
+
+*/
