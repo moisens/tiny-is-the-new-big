@@ -10,3 +10,18 @@ export interface ILinkProps {
 //  text: string;
 //  url: string
 //}
+
+export interface FoundersProps {
+  foundersItems: {
+    id: string;
+    name: string;
+    title: string;
+    image: string;
+    icons: TIcons[],
+    contact: string;
+  }[];
+}
+
+export interface IconProps<TIcons> {
+  iconsItems: { id: string; star: JSX.Element }[];
+}

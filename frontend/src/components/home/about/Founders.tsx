@@ -1,10 +1,16 @@
 import Button from "../../button/Button";
+import IconsComponent from "./IconsComponent";
+import { FoundersProps } from "../../../types/Interface";
 
-const Founders = ({ founders }) => {
+const Founders = (props: FoundersProps) => {
+  const { foundersItems } = props;
+  console.log(foundersItems);
+
   return (
     <>
-      {founders.map((founder) => {
+      {foundersItems.map((founder) => {
         const { id, name, title, image, icons, contact } = founder;
+
         return (
           <div className="about__slide" key={id}>
             <div className="slider__img">
@@ -18,9 +24,7 @@ const Founders = ({ founders }) => {
             </div>
             <div className="slider__btn">
               <div className="about__stars">
-                {icons.map((stars) => (
-                  <div key={stars.id}>{stars.star}</div>
-                ))}
+                <IconsComponent iconsItems={icons} />
               </div>
               <div className="about__contact">
                 <Button className="about__a" as="a" href="#contact">
