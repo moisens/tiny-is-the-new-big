@@ -23,7 +23,7 @@ const About = () => {
         <div className="about__slider">
           <div className="slider__container">
             {/*Map from here*/}
-            <Founders founders={founders} />
+            <Founders foundersItems={founders} />
             {/*End*/}
           </div>
         </div>
