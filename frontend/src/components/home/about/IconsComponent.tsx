@@ -1,6 +1,6 @@
 import { IconProps } from "../../../types/Interface";
 
-const IconsComponent = <TIcons,>(props: IconProps<TIcons>) => {
+const IconsComponent = (props: IconProps) => {
   const { iconsItems } = props;
 
   return (
