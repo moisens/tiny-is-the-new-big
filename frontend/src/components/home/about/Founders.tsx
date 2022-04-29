@@ -1,18 +1,50 @@
 import Button from "../../button/Button";
 import IconsComponent from "./IconsComponent";
 import { FoundersProps } from "../../../types/Interface";
+import { useState, useEffect } from "react";
 
 const Founders = (props: FoundersProps) => {
   const { foundersItems } = props;
-  console.log(foundersItems);
+  
+
+  const [index, setIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const lastIndex = foundersItems.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, foundersItems]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 2000);
+    return () => clearInterval(slider);
+  }, [index]);
 
   return (
     <>
-      {foundersItems.map((founder) => {
+      {foundersItems.map((founder, founderIndex) => {
+
         const { id, name, title, image, icons, contact } = founder;
+        let position: string = "nextSlide";
+
+        if (founderIndex === index) {
+          position = "activeSlide";
+        }
+        if (
+          founderIndex === index - 1 ||
+          (index === 0 && founderIndex === foundersItems.length - 1)
+        ) {
+          position = "lastSlide";
+        }
 
         return (
-          <div className="about__slide" key={id}>
+          <div className={`about__slide ${position}`} key={id}>
             <div className="slider__img">
               <div className="about__avatar">
                 <img src={image} alt={name} title={name} />
