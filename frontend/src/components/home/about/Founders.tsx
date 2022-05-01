@@ -1,5 +1,5 @@
 import Button from "../../button/Button";
-import IconsComponent from "./IconsComponent";
+import IconsComponent from "../iconsComponent/IconsComponent";
 import { FoundersProps } from "../../../types/Interface";
 import { useState, useEffect } from "react";
 

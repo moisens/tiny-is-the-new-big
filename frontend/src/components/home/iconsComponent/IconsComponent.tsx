@@ -6,7 +6,7 @@ const IconsComponent = (props: IconProps) => {
   return (
     <>
       {iconsItems.map((stars) => (
-        <div key={stars.id}>{stars.star}</div>
+        <div key={stars.id} className="star">{stars.star}</div>
       ))}
     </>
   );

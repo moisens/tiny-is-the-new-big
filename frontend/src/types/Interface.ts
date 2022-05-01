@@ -18,3 +18,13 @@ export interface FoundersProps {
 export interface IconProps {
   iconsItems: { id: string; star: JSX.Element }[];
 }
+
+export interface SliderPeople {
+  sliderPeople: {
+    id: string;
+    name: string;
+    text: string;
+    image: string;
+    icons: { id: string; star: JSX.Element }[];
+  }[];
+}
