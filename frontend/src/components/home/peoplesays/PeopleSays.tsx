@@ -1,5 +1,6 @@
 import "./peoplesays.scss";
 import Slider from "./Slider";
+import { sliderPeople } from "../../../utils/utils"
 
 
 const PeopleSays = () => {
@@ -8,7 +9,7 @@ const PeopleSays = () => {
       <div className="people__triangle1"></div>
       <h2 className="people__titleH2">What people say about us.</h2>
       <div className="people__slider">
-        <Slider />
+        <Slider sliderPeople={sliderPeople} />
       </div>
       <div className="people__triangle2"></div>
     </section>
