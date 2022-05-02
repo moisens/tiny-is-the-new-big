@@ -29,7 +29,6 @@ export interface SliderPeople {
   }[];
 }
 
-
 export interface ServiceProps {
   services: {
     id: string;
@@ -38,3 +37,17 @@ export interface ServiceProps {
     text: string;
   }[];
 }
+
+export interface ContactProps {
+  countries: {
+    id: string;
+    defaultValues: string;
+    options: { id: string; country: string }[];
+  }[];
+}
+
+export interface OptionsProps {
+  options: { id: string; country: string }[]
+}
+
+

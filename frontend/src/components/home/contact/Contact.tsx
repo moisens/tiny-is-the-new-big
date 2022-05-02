@@ -3,6 +3,9 @@ import { MdOutlineContactPage } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
 import { RiArrowDownSFill } from "react-icons/ri";
 
+import { countries } from "../../../utils/form-utils";
+import SelectServices from "./Dropdown"
+
 const Contact = () => {
   return (
     <section className="contact__container" id="contact">
@@ -45,15 +48,7 @@ const Contact = () => {
             <input type="text" placeholder="Last name" id="lastName" className="input__input"/>
           </div>
           <div className="input__container">
-            <label htmlFor="country" />
-            <select id="country" className="input__input">
-              <option value="" className="input__option">Country</option>
-              <option value="belgium" className="input__option">Belgium</option>
-              <option value="canada">Canada</option>
-              <option value="australia">Australia</option>
-              <option value="switzerland">Switzerland</option>
-              <option value="uk">Uk</option>
-            </select>
+            <SelectServices countries={countries} /> {/*rename into dataDropdownList => dataDropdownList={countries}*/}
             <label htmlFor="service" />
             <select id="service" className="input__input">
               <option value="">Choose a service</option>
