@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 
 const Founders = (props: FoundersProps) => {
   const { foundersItems } = props;
-  
 
   const [index, setIndex] = useState<number>(0);
 
@@ -19,17 +18,9 @@ const Founders = (props: FoundersProps) => {
     }
   }, [index, foundersItems]);
 
-  useEffect(() => {
-    let slider = setInterval(() => {
-      setIndex(index + 1);
-    }, 2000);
-    return () => clearInterval(slider);
-  }, [index]);
-
   return (
     <>
       {foundersItems.map((founder, founderIndex) => {
-
         const { id, name, title, image, icons, contact } = founder;
         let position: string = "nextSlide";
 
