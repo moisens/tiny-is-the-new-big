@@ -25,11 +25,9 @@ const Service = () => {
         interior commodo ligula eget dolor. Cum sociis panoramic views penatibus
         et magnis dis downtown loft montes, nascetur soaring views mus.
       </p>
-      {/*Tab*/}
       <div className="services__tab__container">
         <Tab services={servicesData} />
       </div>
-      {/*End Tab*/}
       <div className="services__triangle2"></div>
     </section>
   );
