@@ -28,3 +28,13 @@ export interface SliderPeople {
     icons: { id: string; star: JSX.Element }[];
   }[];
 }
+
+
+export interface ServiceProps {
+  services: {
+    id: string;
+    title: string;
+    icon: JSX.Element;
+    text: string;
+  }[];
+}
