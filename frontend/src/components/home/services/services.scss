@@ -111,10 +111,31 @@
       .btns__icons__container {
         width: 28px;
         height: 28px;
+        color: #08a1ba;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
           width: 100%;
         }
+      }
+      &.activeTab__btn {
+        //background-color: #08a1ba;
+        color: #08a1ba;
+      }
+    }
+
+    .services__btns {
+      &.activeTab__btn::after {
+        content: " ";
+        background-color: #08a1ba;
+        display: flex;
+        width: 10%;
+        height: 6px;
+        border-radius: 9px;
+        position: absolute;
+        top: 67px;
       }
     }
 
@@ -145,5 +166,13 @@
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
     box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.1);
+
+    .services__tab__P {
+      display: none;
+
+      &.activeTab__text {
+        display: block;
+      }
+    }
   }
 }
