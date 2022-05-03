@@ -155,7 +155,7 @@
     align-items: flex-start;
     //background-color: red;
     margin-bottom: 20px;
-    
+
     //.dropdown__container {
     //  width: 289px;
     //  height: auto;
@@ -188,40 +188,7 @@
         background-color: transparent;
       }
     }
-    .dropdown__select {
-      background-color: #fff;
-      width: 289px;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border: solid 0.4px #08a1ba;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-left-radius: 9px;
-      border-bottom-right-radius: 9px;
-      display: none;
-
-      .dropdown__selectLi {
-        list-style-type: none;
-        padding: 15px 0 15px 25px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #181b52;
-          color: #fff;
-        }
-      }
-      .dropdown__selectLi:nth-child(5) {
-        &:hover {
-          border-bottom-left-radius: 9px;
-          border-bottom-right-radius: 9px;
-        }
-      }
-      &.isSelected {
-        display: block;
-      }
-    }
+    
   }
   .input__email {
     width: 598px;
@@ -284,28 +251,37 @@
     font-size: 1.125rem;
     cursor: pointer;
   }
-  .call__dropdown {
-    background-color: #fff;
+  .input__container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 289px;
-    height: 65px;
-    padding: 0 10px 0 25px;
-    border: solid 0.4px #08a1ba;
-    border-radius: 9px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
 
-    .call__P {
+    .input__input {
+      width: 289px;
+      height: 65px;
+      border: solid 0.4px #08a1ba;
+      border-radius: 9px;
+      margin-right: 20px;
+      padding-left: 25px;
+      padding-right: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 1.125rem;
 
-      .call__country {
-        color: #08a1ba;
-        font-weight: 700;
-        padding-right: 15px;
+      &[type="text"] {
+        font-size: 1.125rem;
       }
-    }
-    .call__arrowdown {
-      cursor: pointer;
+      .input__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        color: #08a1ba;
+        background-color: transparent;
+      }
     }
   }
 }

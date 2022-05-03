@@ -42,12 +42,12 @@ export interface ContactProps {
   dataDropdownList: {
     id: string;
     defaultValues: string;
-    options: { id: string; listOptions: string }[];
+    options: { id: string; listOptions: string, country?: string }[];
   }[];
 }
 
 export interface OptionsProps {
-  options: { id: string; listOptions: string }[]
+  options: { id: string; listOptions: string, country?: string }[]
   dropIsActive: boolean;
 }
 
