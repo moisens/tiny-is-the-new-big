@@ -48,7 +48,7 @@ const Contact = () => {
             <input type="text" placeholder="Last name" id="lastName" className="input__input"/>
           </div>
           <div className="input__container">
-            <SelectServices countries={countries} /> {/*rename into dataDropdownList => dataDropdownList={countries}*/}
+            <SelectServices dataDropdownList={countries} /> {/*rename into dataDropdownList => dataDropdownList={countries}*/}
             <label htmlFor="service" />
             <select id="service" className="input__input">
               <option value="">Choose a service</option>

@@ -39,7 +39,7 @@ export interface ServiceProps {
 }
 
 export interface ContactProps {
-  countries: {
+  dataDropdownList: {
     id: string;
     defaultValues: string;
     options: { id: string; country: string }[];
