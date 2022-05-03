@@ -48,6 +48,7 @@ export interface ContactProps {
 
 export interface OptionsProps {
   options: { id: string; country: string }[]
+  dropIsActive: boolean;
 }
 
 

@@ -1,10 +1,18 @@
+import React, {useState} from "react";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { ContactProps } from "../../../types/Interface";
 import Button from "../../button/Button";
 import DropdownList from "./DropdownList";
-import React from "react";
+
 
 const SelectServices = ({ countries }: ContactProps) => {
+  const [dropIsActive, setDropIsActive] = useState<boolean>(false);
+
+  const handleActiveDropdown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    setDropIsActive(!dropIsActive)
+  }
+
   return (
     <div className="dropdown__container">
       {countries.map((country) => {
@@ -16,12 +24,12 @@ const SelectServices = ({ countries }: ContactProps) => {
               <Button
                 className="input__button"
                 as="button"
-                handleClick={() => console.log("selected")}
+                handleClick={handleActiveDropdown}
               >
                 <RiArrowDownSFill size="1.3rem" />
               </Button>
             </div>
-            <DropdownList options={options} />
+            <DropdownList options={options} dropIsActive={dropIsActive} />
           </React.Fragment>
         );
       })}

@@ -1,8 +1,8 @@
 import { OptionsProps } from "../../../types/Interface";
 
-const DropdownList = ({ options }: OptionsProps) => {
+const DropdownList = ({ options, dropIsActive }: OptionsProps) => {
   return (
-    <div className="dropdown__select isSelected">
+    <div className={dropIsActive ? "dropdown__select isSelected" : "dropdown__select"}>
       {options.map((location) => {
         const { id, country } = location;
         return (
