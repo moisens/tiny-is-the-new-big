@@ -4,6 +4,7 @@ import { MdOutlineCall } from "react-icons/md";
 import { RiArrowDownSFill } from "react-icons/ri";
 
 import { countries } from "../../../utils/form-utils";
+import { services } from "../../../utils/form-utils";
 import SelectServices from "./Dropdown"
 
 const Contact = () => {
@@ -48,15 +49,8 @@ const Contact = () => {
             <input type="text" placeholder="Last name" id="lastName" className="input__input"/>
           </div>
           <div className="input__container">
-            <SelectServices dataDropdownList={countries} /> {/*rename into dataDropdownList => dataDropdownList={countries}*/}
-            <label htmlFor="service" />
-            <select id="service" className="input__input">
-              <option value="">Choose a service</option>
-              <option value="buy">Buy</option>
-              <option value="build">Build</option>
-              <option value="rent">Rent</option>
-              <option value="location">Location</option>
-            </select>
+            <SelectServices dataDropdownList={countries} />
+            <SelectServices dataDropdownList={services} />
           </div>
           <label htmlFor="email" />
           <input type="text" id="email" placeholder="Your email" className="input__email" />
