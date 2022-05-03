@@ -51,3 +51,37 @@ export const services = [
     ]
   }
 ];
+
+export const pohoneNumbers = [
+  {
+    id: "33879ea8-cb03",
+    defaultValues: "Choose a phone number",
+    options: [
+      {
+        id: "4a3f1382-cb27",
+        listOptions: "+32 02 444 44 44 44",
+        country: "Be"
+      },
+      {
+        id: "4a3f1530-cb27",
+        listOptions: "+01 514 444 4444",
+        country: "Ca"
+      },
+      {
+        id: "4a3f162a-cb27",
+        listOptions: "+61 2 4444 4444",
+        country: "Au"
+      },
+      {
+        id: "4a3f171a-cb27",
+        listOptions: "+41 022 444 44 44",
+        country: "Sw"
+      },
+      {
+        id: "4a3f17f6-cb27",
+        listOptions: "+44 4444 44 44 44",
+        country: "Uk"
+      }
+    ]
+  }
+];

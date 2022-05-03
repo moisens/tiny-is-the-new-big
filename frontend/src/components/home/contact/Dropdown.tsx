@@ -3,6 +3,7 @@ import { RiArrowDownSFill } from "react-icons/ri";
 import { ContactProps } from "../../../types/Interface";
 import Button from "../../button/Button";
 import DropdownList from "./DropdownList";
+import "./dropdown.scss";
 
 const SelectServices = ({ dataDropdownList }: ContactProps) => {
   const [dropIsActive, setDropIsActive] = useState<boolean>(false);

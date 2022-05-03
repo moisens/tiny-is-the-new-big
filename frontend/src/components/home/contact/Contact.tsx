@@ -1,10 +1,10 @@
 import "./contact.scss";
 import { MdOutlineContactPage } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
-import { RiArrowDownSFill } from "react-icons/ri";
 
 import { countries } from "../../../utils/form-utils";
 import { services } from "../../../utils/form-utils";
+import { pohoneNumbers } from "../../../utils/form-utils";
 import SelectServices from "./Dropdown"
 
 const Contact = () => {
@@ -63,12 +63,10 @@ const Contact = () => {
             <MdOutlineCall color="#08A1BA" size="1.8rem" />
             Call now
           </button>
-          <div className="call__dropdown">
-            <p className="call__P"><span className="call__country">Be</span> 02 473 23 23</p>
-            <div className="call__arrowdown">
-              <RiArrowDownSFill size="1.8rem" color="#08A1BA" />
-            </div>
+          <div className="input__container">
+            <SelectServices dataDropdownList={pohoneNumbers} />
           </div>
+          
         </div>
       </div>
       <div className="contact__triangle2"></div>
