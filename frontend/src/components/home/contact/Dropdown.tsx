@@ -1,22 +1,23 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { ContactProps } from "../../../types/Interface";
 import Button from "../../button/Button";
 import DropdownList from "./DropdownList";
 
-
-const SelectServices = ({ countries }: ContactProps) => {
+const SelectServices = ({ dataDropdownList }: ContactProps) => {
   const [dropIsActive, setDropIsActive] = useState<boolean>(false);
 
-  const handleActiveDropdown = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleActiveDropdown = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
-    setDropIsActive(!dropIsActive)
-  }
+    setDropIsActive(!dropIsActive);
+  };
 
   return (
     <div className="dropdown__container">
-      {countries.map((country) => {
-        const { id, defaultValues, options } = country;
+      {dataDropdownList.map((datalist) => {
+        const { id, defaultValues, options } = datalist;
         return (
           <React.Fragment key={id}>
             <div className="input__input">
