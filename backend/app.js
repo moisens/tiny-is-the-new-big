@@ -4,6 +4,15 @@ import express from "express";
 
 const app = express();
 
+import fileUploads from "express-fileupload";
+import cloudinary from "cloudinary";
+const cloud = cloudinary.v2;
+cloud.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
+
 //cors
 import morgan from "morgan";
 
@@ -20,13 +29,14 @@ import notFoundMiddleware from "./middleware/not-found.js";
 //middleware
 app.use(morgan("tiny"));
 app.use(express.json());
+app.use(fileUploads({ useTempFiles: true }));
 
 app.get("/", (req, res) => {
   res.send("App tiny housing");
 });
 
 app.get("/api/v1", (req, res) => {
-  res.send("tinynest, petit nid");
+  res.send("tinyhousing");
 });
 
 app.use("/api/v1/products", productRouters);

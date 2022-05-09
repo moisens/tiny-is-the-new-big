@@ -7,9 +7,11 @@ import {
   getSingleProduct,
   updateProduct,
   deleteProduct,
+  uploadProductImage
 } from "../controllers/productControllers.js";
 
 router.route("/").post(createProduct).get(getAllProduct);
+router.route("/uploads").post(uploadProductImage);
 router
   .route("/:id")
   .get(getSingleProduct)

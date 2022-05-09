@@ -1,6 +1,12 @@
 import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/index.js";
+import cloudinary from "cloudinary";
+import fs from "fs";
+
+
+
+const cloud = cloudinary.v2
 
 const createProduct = async (req, res) => {
   const product = await Product.create(req.body);
@@ -45,10 +51,22 @@ const deleteProduct = async (req, res) => {
   res.status(StatusCodes.OK).json({ product });
 };
 
+const uploadProductImage = async (req, res) => {
+  //console.log(req.files.image);
+  const result = await cloud.uploader.upload(req.files.image.tempFilePath, {
+    use_filename: true,
+    folder: "tiny-housing"
+  });
+  //console.log("result: ", result);
+  fs.unlinkSync(req.files.image.tempFilePath)
+  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } })
+}
+
 export {
   createProduct,
   getAllProduct,
   getSingleProduct,
   updateProduct,
   deleteProduct,
+  uploadProductImage
 };
