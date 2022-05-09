@@ -1,4 +1,4 @@
-import Prduct from "../models/Product.js";
+import Product from "../models/Product.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/index.js";
 
@@ -20,17 +20,10 @@ const getSingleProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   const { id: productId } = req.params;
-  if (
-    name === "" ||
-    country === "" ||
-    price === "" ||
-    ref === "" ||
-    size === "" ||
-    bedroom === "" ||
-    bathroom === ""
-  )
+  const { name, country, price, ref, size, bedroom, bathroom } = req.body;
+  if (!name || !country || !price || !ref || !size || !bedroom || !bathroom)
     throw new BadRequestError("You must provide all the values");
-  const products = await Product.findOneAndUpdate(
+  const product = await Product.findOneAndUpdate(
     { _id: productId },
     req.body,
     {
