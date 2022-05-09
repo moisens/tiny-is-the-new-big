@@ -13,6 +13,10 @@ import connectDb from "./db/connect.js";
 //Routes
 import productRouters from "./routes/productRoutes.js";
 
+//Errors middlewares
+import errorHandlerMiddleware from "./middleware/error-handler.js";
+import notFoundMiddleware from "./middleware/not-found.js";
+
 //middleware
 app.use(morgan("tiny"));
 app.use(express.json());
@@ -26,6 +30,9 @@ app.get("/api/v1", (req, res) => {
 });
 
 app.use("/api/v1/products", productRouters);
+
+app.use(notFoundMiddleware);
+app.use(errorHandlerMiddleware);
 
 const port = process.env.PORT || 5000;
 const start = async () => {
