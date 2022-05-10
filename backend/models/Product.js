@@ -35,7 +35,7 @@ const ProductSchema = new mongoose.Schema(
       required: [true, "Provide the number of bathroom"],
     },
     image: {
-      type: String,
+      type: [String],
       require: [true, "Provide an image for the product"],
     },
     category: {
