@@ -1,9 +1,11 @@
 import "../components/home/home.scss";
+import Headers from "../components/header/Headers";
+import { HeaderBuy } from "../utils/headers-utils";
 
 const Buy = () => {
   return (
     <div className="home-container">
-      <section>Buy</section>
+      <Headers dataHeaders={HeaderBuy} />
     </div>
   )
 }
