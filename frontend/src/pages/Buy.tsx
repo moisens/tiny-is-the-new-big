@@ -1,8 +1,10 @@
-
+import "../components/home/home.scss";
 
 const Buy = () => {
   return (
-    <section>Buy</section>
+    <div className="home-container">
+      <section>Buy</section>
+    </div>
   )
 }
 
