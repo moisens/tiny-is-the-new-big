@@ -1,0 +1,147 @@
+.page__container {
+  max-width: 100vw;
+  height: auto;
+  background-color: hsl(161, 80%, 96%);
+
+  .page__triangle1 {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 400px 100vw 0 0;
+    border-color: rgb(255, 255, 255) transparent transparent transparent;
+  }
+
+  .page__filter {
+    width: 60vw;
+    height: 80px;
+    background-color: rgb(241, 151, 106);
+    margin-top: -400px;
+  }
+  .page__content {
+    max-width: 100vw;
+    margin: 0 auto;
+    height: auto;
+    //background-color: lightgreen;
+    margin-top: 80px;
+    //padding: 0 100px;
+
+    .page__triangle2 {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 280px 100vw;
+      border-color: transparent transparent #ffffff transparent;
+      margin-top: -200px;
+    }
+
+    .page__gridcontainer {
+      //background-color: lightblue;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 0 100px;
+
+      .page__card {
+        //background-color: red;
+        position: relative;
+        aspect-ratio: 1 / 1.28;
+
+        .card__like {
+          background-color: #fff;
+          width: 47px;
+          height: 47px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          border: solid 0.4px #08a1ba;
+          border-radius: 9px;
+          color: #08a1ba;
+          cursor: pointer;
+        }
+
+        img {
+          background-color: lightblue;
+          width: 100%;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          border-radius: 22px;
+        }
+
+        &.stacked {
+          display: grid;
+        }
+        &.stacked > * {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+        }
+        .card__content {
+          background: hsl(0, 0%, 100%);
+          align-self: end;
+          margin: 8px 8px 16px;
+          padding: 20px;
+          border: solid 0.4px #08a1ba;
+          border-radius: 22px;
+          //box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
+
+          .card__title {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 15px;
+            .green__span {
+              color: #08a1ba;
+            }
+
+            .card__H4 {
+              font-size: 1.25rem;
+              font-weight: bold;
+              color: #181b52;
+            }
+
+            .card__item {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 8px;
+              color: #08a1ba;
+
+              .card__P {
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .lodmore__container {
+    width: 100vw;
+    height: 400px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .lodmore__btn {
+      border: none;
+      border-radius: 40px;
+      padding: 25px 60px;
+      font-size: 1.375rem;
+      font-weight: 700;
+      background: linear-gradient(
+        90deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(45, 193, 223, 1) 100%
+      );
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        background: #181b52;
+
+      }
+    }
+  }
+}
