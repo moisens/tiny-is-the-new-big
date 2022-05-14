@@ -12,7 +12,7 @@
   }
 
   .page__filter {
-    width: 60vw;
+    //width: 60vw;
     height: 80px;
     background-color: rgb(241, 151, 106);
     margin-top: -400px;
@@ -38,7 +38,7 @@
       //background-color: lightblue;
       display: grid;
       gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       padding: 0 100px;
 
       .page__card {
