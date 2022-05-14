@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (url) => {
+const useFetch = (url: string) => {
   const [data, setData] = useState([]);
   const [status, setStatus] = useState("idle");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("null");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,10 +12,11 @@ const useFetch = (url) => {
         setStatus("pending");
         const response = await axios.get(url);
         setData(response.data);
-      } catch (error) {
-        setError(error);
-        setStatus("rejected");
-        console.log(error);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          setError(error.message);
+          setStatus("rejected");
+        }
       }
     };
     fetchData();
