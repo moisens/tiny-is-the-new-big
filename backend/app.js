@@ -29,7 +29,7 @@ import notFoundMiddleware from "./middleware/not-found.js";
 import cors from "cors";
 
 //middleware
-app.use(cors())
+//app.use(cors())
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(fileUploads({ useTempFiles: true }));
