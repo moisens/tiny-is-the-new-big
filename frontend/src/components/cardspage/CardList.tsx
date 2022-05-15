@@ -6,14 +6,13 @@ import { MdOutlineBed, MdOutlineShower } from "react-icons/md";
 import { CardProps } from "../../types/interface-Dataproducts";
 
 const CardList = ({ data, status, error }: CardProps) => {
-  if (status === "pending")
-    return <h2>Loading...</h2>;
+  if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
 
   return (
     <React.Fragment>
       {status === "resolved" &&
-        data.slice(0,9).map((product) => {
+        data.slice(0, 9).map((product) => {
           const {
             _id,
             name,
@@ -24,6 +23,7 @@ const CardList = ({ data, status, error }: CardProps) => {
             bedroom,
             bathroom,
             image,
+            category,
           } = product;
           return (
             <div className="page__card stacked" key={_id}>
@@ -43,7 +43,9 @@ const CardList = ({ data, status, error }: CardProps) => {
                 </div>
                 <div className="card__title">
                   <h4 className="card__H4">
-                    <span className="green__span">{price}€</span>
+                    <span className="green__span">
+                      {category === "rent" ? `€${price}/month` : `€${price}`}
+                    </span>
                   </h4>
                   <span className="green__span">|</span>
                   <h4 className="card__H4">Ref: {ref}</h4>

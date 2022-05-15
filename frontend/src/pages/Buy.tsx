@@ -5,8 +5,9 @@ import { HeaderBuy } from "../utils/headers-utils";
 import useFetch from "../hooks/useFetch";
 
 const Buy = () => {
+  const categories = "buy"
   const { data, status, error } = useFetch(
-    `http://localhost:5000/api/v1/products`
+    `http://localhost:5000/api/v1/products?category=${categories}`
   );
   console.log(data);
 
