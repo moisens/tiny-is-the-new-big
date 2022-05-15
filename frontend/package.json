@@ -1,8 +1,8 @@
 {
   "name": "tiny-housing",
   "private": true,
-  "version": "0.0.0",
   "proxy": "http://localhost:5000",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
