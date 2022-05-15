@@ -14,7 +14,7 @@ const useFetch = (url: string) => {
     const fetchData = async () => {
       try {
         setStatus("pending");
-        const response = await axios.get<AxiosResponse>(url);
+        const response = await axios.get<DataProps>(url);
         setStatus("resolved")
         setData(response.data.products);
         console.log(response.data);
