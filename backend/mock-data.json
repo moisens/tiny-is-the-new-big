@@ -23,7 +23,7 @@
   },
   {
     "name": "tiny house 3",
-    "country": "United Kingdom",
+    "country": "UK",
     "price": 98890,
     "ref": 2109,
     "size": 269.098,
@@ -97,5 +97,104 @@
     "bedroom": 1,
     "bathroom": 1,
     "category": "buy"
+  },
+  {
+    "name": "tiny house 1",
+    "country": "Belgium",
+    "price": 1288,
+    "ref": 7261,
+    "size": 403.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 1,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 2",
+    "country": "Canada AB",
+    "price": 1567,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 1,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 3",
+    "country": "Switzerland",
+    "price": 1799,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 2,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 4",
+    "country": "Australia",
+    "price": 1232,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 2,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 5",
+    "country": "Australia",
+    "price": 1398,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 2,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 6",
+    "country": "Uk",
+    "price": 1189,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 1,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 7",
+    "country": "Canada QC",
+    "price": 1150,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 1,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 8",
+    "country": "Switzerland",
+    "price": 1677,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 1,
+    "bathroom": 1,
+    "category": "rent"
+  },
+  {
+    "name": "tiny house 9",
+    "country": "Belgium",
+    "price": 900,
+    "ref": 1161,
+    "size": 333.681,
+    "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198375/tiny-housing/tmp-1-1652198374251_nz4wtf.jpg"],
+    "bedroom": 1,
+    "bathroom": 1,
+    "category": "rent"
   }
 ]
