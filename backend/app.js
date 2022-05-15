@@ -26,7 +26,10 @@ import productRouters from "./routes/productRoutes.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 
+import cors from "cors";
+
 //middleware
+app.use(cors())
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(fileUploads({ useTempFiles: true }));
