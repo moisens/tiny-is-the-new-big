@@ -44,7 +44,7 @@ const CardList = ({ data, status, error }: CardProps) => {
                 <div className="card__title">
                   <h4 className="card__H4">
                     <span className="green__span">
-                      {category === "rent" ? `€${price}/month` : `€${price}`}
+                      {category === "rent" ? `€ ${price} / month` : `€ ${price}`}
                     </span>
                   </h4>
                   <span className="green__span">|</span>

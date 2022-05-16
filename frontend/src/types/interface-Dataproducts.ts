@@ -16,3 +16,15 @@ export interface CardProps {
   status: string;
   error: unknown;
 }
+
+export interface DataContextProviderProps {
+  children: React.ReactNode
+}
+
+export interface PagecontextProps {
+  state: DataProps | null,
+  setState: React.Dispatch<React.SetStateAction<DataProps | null>>
+}
+
+
+
