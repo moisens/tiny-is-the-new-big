@@ -9,6 +9,29 @@ const CardList = ({ data, status, error }: CardProps) => {
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
 
+  const houseConfiguration = (
+    size: number,
+    bedroom: number,
+    bathroom: number
+  ) => {
+    return (
+      <React.Fragment>
+        <div className="card__item">
+          <IoIosQrScanner size="1.4rem" />
+          <p className="card__P">{size} sqft</p>
+        </div>
+        <div className="card__item">
+          <MdOutlineBed size="1.4rem" />
+          <p className="card__P">{bedroom}</p>
+        </div>
+        <div className="card__item">
+          <MdOutlineShower size="1.4rem" />
+          <p className="card__P">{bathroom}</p>
+        </div>
+      </React.Fragment>
+    );
+  };
+
   return (
     <React.Fragment>
       {status === "resolved" &&
@@ -44,25 +67,20 @@ const CardList = ({ data, status, error }: CardProps) => {
                 <div className="card__title">
                   <h4 className="card__H4">
                     <span className="green__span">
-                      {category === "rent" ? `€ ${price} / month` : `€ ${price}`}
+                      {category === "rent"
+                        ? `€ ${price} / month`
+                        : `€ ${price}`}
                     </span>
                   </h4>
                   <span className="green__span">|</span>
                   <h4 className="card__H4">Ref: {ref}</h4>
                 </div>
                 <div className="card__title">
-                  <div className="card__item">
-                    <IoIosQrScanner size="1.4rem" />
-                    <p className="card__P">{size} sqft</p>
-                  </div>
-                  <div className="card__item">
-                    <MdOutlineBed size="1.4rem" />
-                    <p className="card__P">{bedroom}</p>
-                  </div>
-                  <div className="card__item">
-                    <MdOutlineShower size="1.4rem" />
-                    <p className="card__P">{bathroom}</p>
-                  </div>
+                  {category === "rent" || category === "buy" ? (
+                    houseConfiguration(size, bedroom, bathroom)
+                  ) : (
+                    <>hello</>
+                  )}
                 </div>
               </div>
             </div>
