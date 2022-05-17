@@ -32,6 +32,8 @@ const CardList = ({ data, status, error }: CardProps) => {
     );
   };
 
+  
+
   return (
     <React.Fragment>
       {status === "resolved" &&
