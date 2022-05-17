@@ -4,9 +4,7 @@ import { BadRequestError, NotFoundError } from "../errors/index.js";
 import cloudinary from "cloudinary";
 import fs from "fs";
 
-
-
-const cloud = cloudinary.v2
+const cloud = cloudinary.v2;
 
 const createProduct = async (req, res) => {
   const product = await Product.create(req.body);
@@ -19,7 +17,7 @@ const getAllProduct = async (req, res) => {
   if (category) {
     queryObject.category = category;
   }
-  const products = await Product.find(queryObject);//const products = await Product.find({});
+  const products = await Product.find(queryObject); //const products = await Product.find({});
   res.status(StatusCodes.OK).json({ products });
 };
 
@@ -32,16 +30,20 @@ const getSingleProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   const { id: productId } = req.params;
   const { name, country, price, ref, size, bedroom, bathroom } = req.body;
-  if (!name || !country || !price || !ref || !size || !bedroom || !bathroom)
+  if (
+    name === "" ||
+    country === "" ||
+    price === "" ||
+    ref === "" ||
+    size === "" ||
+    bedroom === "" ||
+    bathroom === ""
+  )
     throw new BadRequestError("You must provide all the values");
-  const product = await Product.findOneAndUpdate(
-    { _id: productId },
-    req.body,
-    {
-      new: true,
-      runValidators: true,
-    }
-  );
+  const product = await Product.findOneAndUpdate({ _id: productId }, req.body, {
+    new: true,
+    runValidators: true,
+  });
   if (!product)
     throw new NotFoundError(`There is no product with id: ${productId}`);
   res.status(StatusCodes.OK).json({ product });
@@ -60,12 +62,12 @@ const uploadProductImage = async (req, res) => {
   //console.log(req.files.image);
   const result = await cloud.uploader.upload(req.files.image.tempFilePath, {
     use_filename: true,
-    folder: "tiny-housing"
+    folder: "tiny-housing",
   });
   //console.log("result: ", result);
-  fs.unlinkSync(req.files.image.tempFilePath)
-  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } })
-}
+  fs.unlinkSync(req.files.image.tempFilePath);
+  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
+};
 
 export {
   createProduct,
@@ -73,5 +75,5 @@ export {
   getSingleProduct,
   updateProduct,
   deleteProduct,
-  uploadProductImage
+  uploadProductImage,
 };

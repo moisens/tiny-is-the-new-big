@@ -21,6 +21,7 @@ import connectDb from "./db/connect.js";
 
 //Routes
 import productRouters from "./routes/productRoutes.js";
+import locationRouters from "./routes/locationRoutes.js";
 
 //Errors middlewares
 import errorHandlerMiddleware from "./middleware/error-handler.js";
@@ -29,7 +30,7 @@ import notFoundMiddleware from "./middleware/not-found.js";
 import cors from "cors";
 
 //middleware
-app.use(cors())
+app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(fileUploads({ useTempFiles: true }));
@@ -43,6 +44,7 @@ app.get("/api/v1", (req, res) => {
 });
 
 app.use("/api/v1/products", productRouters);
+app.use("/api/v1/locations", locationRouters);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

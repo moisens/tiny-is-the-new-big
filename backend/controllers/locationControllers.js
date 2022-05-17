@@ -24,9 +24,9 @@ const getSingleLocation = async (req, res) => {
 
 const updateLocation = async (req, res) => {
   const { id: locationId } = req.params;
-  const { country, description, numOfReviews } = req.body;
+  const { country, description } = req.body;
 
-  if (!country || !description || !numOfReviews)
+  if (country === "" || description === "")
     throw new BadRequestError("Make sure you provide all the values!");
 
   const location = await Location.findOneAndUpdate(
