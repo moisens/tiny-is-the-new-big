@@ -16,6 +16,10 @@ const LocationSchema = new mongoose.Schema(
       type: [String],
       required: [true, "Please provide at least an image"],
     },
+    reviewers: {
+      type: [String],
+      required: false,
+    },
     averageRating: {
       type: Number,
       default: 0,
