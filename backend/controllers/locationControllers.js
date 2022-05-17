@@ -58,7 +58,7 @@ const uploadLocationImage = async (req, res) => {
     use_filename: true,
     folder: "tiny-housing",
   });
-  fs.unlinkSync(files.image.tempFilePath);
+  fs.unlinkSync(req.files.image.tempFilePath);
   return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } });
 };
 
