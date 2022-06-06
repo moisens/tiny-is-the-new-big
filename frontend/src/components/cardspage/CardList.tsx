@@ -10,9 +10,9 @@ const CardList = ({ data, status, error }: CardProps) => {
   if (status === "rejected") throw error;
 
   const houseConfiguration = (
-    size: number,
-    bedroom: number,
-    bathroom: number
+    size: number | undefined,
+    bedroom: number | undefined,
+    bathroom: number | undefined
   ) => {
     return (
       <React.Fragment>
