@@ -1,6 +1,8 @@
 .home-container {
-  //background-color: lightgray;
+  background-color: lightgray;
   max-width: 1440px;
   height: auto;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
 }
