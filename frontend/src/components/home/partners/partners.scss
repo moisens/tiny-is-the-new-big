@@ -22,7 +22,7 @@
   .partners__logo {
     //width: 120px;
     height: 100px;
-    background-color: #d2d2d2;
+    //background-color: #d2d2d2;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -56,5 +56,17 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform: skew(0deg, -5deg);
 }
+
+
+/*================================================
+  Media Queries
+  ================================================
+*/
+@media screen and (max-width: 1060px) {
+  .partners__logo  {
+    grid-column: span 2;
+  }
+}
+
 
 
