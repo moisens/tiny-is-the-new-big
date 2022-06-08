@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./scss/App.scss";
 import Nav from "./components/nav/Navigation";
 import Home from "./pages/Home";
 import Buy from "./pages/Buy";
