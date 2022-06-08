@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import "./headers.scss";
 import { DataHeaderProps } from "../../types/interface-Headers";
 //import Dots from "../../assets/dots.png";
@@ -12,7 +12,7 @@ const Headers = ({ dataHeaders }: DataHeaderProps) => {
         const catLastLetters = category.slice(1);
 
         return (
-          <React.Fragment key={id}>
+          <Fragment key={id}>
             <div className="header__imgContainer">
               <img src={image} alt={category} />
               <div className="header__notification">1</div>
@@ -28,7 +28,7 @@ const Headers = ({ dataHeaders }: DataHeaderProps) => {
               <h2 className="header__H2">{title}</h2>
               <p className="header__description">{description}</p>
             </div>
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </header>
