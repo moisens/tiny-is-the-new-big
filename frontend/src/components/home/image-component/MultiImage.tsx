@@ -1,4 +1,4 @@
-
+import "./multiImg.scss"
 
 const MultiImage = () => {
   return (
