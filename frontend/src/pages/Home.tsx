@@ -2,6 +2,7 @@ import "../components/home/home.scss";
 import Header from "../components/home/header/Header";
 import Partner from "../components/home/partners/Partner";
 import About from "../components/home/about/About";
+import MultiImage from "../components/home/image-component/MultiImage";
 import Service from "../components/home/services/Service";
 import Location from "../components/home/location/Location";
 import PeopleSays from "../components/home/peoplesays/PeopleSays"
@@ -13,6 +14,7 @@ const Home = () => {
       <Header />
       <Partner />
       <About />
+      <MultiImage />
       {/* <Service />
       <Location />
       <PeopleSays />
