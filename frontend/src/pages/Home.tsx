@@ -19,8 +19,8 @@ const Home = () => {
       <Partner />
       <About />
       <MultiImage datas={datas} />
-      {/* <Service />
-      <Location />
+       <Service />
+      {/*<Location />
       <PeopleSays />
       <Contact /> */}
     </div>
