@@ -3,7 +3,7 @@
 .about__container {
   max-width: 100%;
   height: auto;
-  background-color: lightgreen;
+  //background-color: lightgreen;
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   grid-column: span 12;
@@ -205,6 +205,7 @@
     .about__description__P {
       font-size: $font_size_text;
       line-height: $line_height1_6;
+      width: 95%;
     }
   }
 }
@@ -228,6 +229,12 @@
 
   .about__text__content {
     width: 100%;
+  }
+
+  .about__desc {
+    .about__description__P {
+      width: 100%;
+    }
   }
 }
 
