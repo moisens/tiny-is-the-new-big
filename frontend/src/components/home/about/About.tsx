@@ -12,18 +12,19 @@ const About = () => {
           alt="about-company"
           title="About us"
         />
-      </div>
-      <div className="about__exp">
-        <p className="about__exp__P">
-          We have 5 years of experience, you can find us in Belgium, Canada,
-          Australia, Switzerland and Uk.
-        </p>
-      </div>
-      <div className="about__slider">
-        <div className="slider__container">
-          <Founders foundersItems={founders} />
+        <div className="about__exp">
+          <p className="about__exp__P">
+            We have 5 years of experience, you can find us in Belgium, Canada,
+            Australia, Switzerland and Uk.
+          </p>
+        </div>
+        <div className="about__slider">
+          <div className="slider__container">
+            <Founders foundersItems={founders} />
+          </div>
         </div>
       </div>
+
       <div className="about__text__content">
         <div className="about__company">
           <div className="company__illu">

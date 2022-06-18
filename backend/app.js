@@ -49,7 +49,7 @@ app.use("/api/v1/locations", locationRouters);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 const start = async () => {
   try {
     await connectDb(process.env.MONGO_URI);
