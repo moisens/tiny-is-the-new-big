@@ -3,7 +3,7 @@ import CardsPage from "../components/cardspage/Cardspage";
 
 const Location = () => {
   const categories = "buy";
-  const { data, status, error } = useFetch(`http://localhost:5000/api/v1/products`);
+  const { data, status, error } = useFetch(`http://localhost:6000/api/v1/products`);
 
   return (
     <div className="home-container">

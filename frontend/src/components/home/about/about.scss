@@ -3,7 +3,7 @@
 .about__container {
   max-width: 100%;
   height: auto;
-  //background-color: red;
+  background-color: lightgreen;
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   grid-column: span 12;
@@ -26,32 +26,32 @@
     object-fit: cover;
     border-radius: 22px;
   }
-}
+  .about__exp {
+    background-color: #fff;
+    width: 280px;
+    height: auto;
+    padding: 15px;
+    border: solid 0.4px #2dc1df;
+    border-radius: 8px;
+    position: absolute;
+    top: -25px;
+    left: 207px;
 
-.about__exp {
-  background-color: #fff;
-  width: 280px;
-  height: auto;
-  padding: 15px;
-  border: solid 0.4px #2dc1df;
-  border-radius: 8px;
-  position: absolute;
-  top: 1396px;
-  left: 250px;
-
-  .about__exp__P {
-    font-size: 1.0625rem;
-    line-height: 1.2;
+    .about__exp__P {
+      font-size: 1.0625rem;
+      line-height: 1.2;
+    }
   }
 }
+
 .about__slider {
   background-color: #fff;
   max-width: 255px;
   height: auto;
   border-radius: 8px;
   position: absolute;
-  bottom: -881px;
-  left: 59px;
+  bottom: -80px;
+  left: 40px;
 }
 .slider__container {
   margin: 0 auto;
@@ -154,7 +154,6 @@
 }
 
 .about__text__content {
-  //width: 85%;
   height: auto;
   //background-color: rgb(210, 239, 150);
   z-index: 100;
@@ -222,33 +221,16 @@
   }
   .about__image {
     aspect-ratio: 1;
+    .about__exp {
+      left: 130px;
+    }
   }
-  .about__exp {
-    left: 150px;
-  }
+
   .about__text__content {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 1152px) {
-  .about__exp {
-    top: 1396px;
-    left: 150px;
-  }
-  .about__slider {
-    bottom: -881px;
-    left: 59px;
-  }
-}
-@media screen and (max-width: 1076px) {
-  .about__exp {
-    top: 1600px;
-  }
-  .about__slider {
-    bottom: -1081px;
-  }
-}
 
 @media screen and (max-width: 900px) {
   .about__container {
@@ -257,8 +239,32 @@
   }
   .about__image {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 2;
     order: 2;
+
+    .about__exp {
+      left: 50%;
+    }
+
+  }
+  .about__text__content {
+    .about__desc {
+      .about__title__H2 {
+        padding-bottom: 40px;
+      }
+      .about__description__P {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+}
+@media screen and (max-width: 700px) {
+  .about__image {
+    .about__exp {
+      left: 20px;
+    }
+
   }
 }
 
