@@ -1,0 +1,52 @@
+/*================================================
+  icon illustration on home page
+  ================================================
+*/
+@mixin illu-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  width: 100%;
+}
+
+@mixin illu-icon {
+  width: 47px;
+  height: 47px;
+  background-color: #fff;
+  border: solid 0.4px #2dc1df;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin illu-con-img {
+  width: 70%;
+  background-size: contain;
+  object-fit: contain;
+}
+
+/*================================================
+  title h4
+  ================================================
+*/
+@mixin title-h4 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin span-title-h4 {
+  font-weight: 600;
+  color: #2dc1df;
+}
+
+/*================================================
+  title h2
+  ================================================
+*/
+@mixin title-h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
