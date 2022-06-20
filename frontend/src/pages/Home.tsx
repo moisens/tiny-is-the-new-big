@@ -20,8 +20,8 @@ const Home = () => {
       <About />
       <MultiImage datas={datas} />
        <Service />
-      {/*<Location />
-      <PeopleSays />
+      <Location />
+      {/*<PeopleSays />
       <Contact /> */}
     </div>
   )

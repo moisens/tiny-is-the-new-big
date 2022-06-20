@@ -50,3 +50,12 @@
   font-weight: bold;
   padding-bottom: 40px;
 }
+
+/*================================================
+  text body
+  ================================================
+*/
+@mixin paragraph-body {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
