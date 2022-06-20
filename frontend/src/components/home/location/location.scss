@@ -1,14 +1,17 @@
+@use "../../../scss/variables.scss";
+@use "../../../scss/mixins"; 
+
 .location__container {
   max-width: 100%;
-  //background-color: #f5f5f5;
+  background-color: #fff;
+  grid-column: span 12;
 }
 
 .location__content {
   //background-color: rgb(255, 153, 153);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  //grid-template-columns: 9fr 10fr 1fr;
-  gap: 76px;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 30px;
 
   .location__text {
     //background-color: rgb(226, 24, 24);
@@ -24,43 +27,30 @@
       padding: 0 0 19px 0;
 
       .location__illu {
-        width: 47px;
-        height: 47px;
-        background-color: #fff;
-        border: solid 0.4px #2dc1df;
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mixins.illu-icon;
 
         img {
           width: 70%;
         }
       }
       .title__H4 {
-        font-size: 1.125rem;
-        font-weight: 400;
+        @include mixins.title-h4;
 
         .span__title {
-          font-weight: 600;
-          color: #2dc1df;
+          @include mixins.span-title-h4;
         }
       }
     }
     .title__H2 {
-      font-size: 1.875rem;
-      font-weight: bold;
-      padding-bottom: 20px;
+      @include mixins.title-h2;
       width: 75%;
     }
     .location__P {
-      font-size: 1.375rem;
-      line-height: 1.5;
-      padding: 0 0 60px 0;
-      //width: 75%;
+      @include mixins.paragraph-body;
+      padding: 0 0 60px;
     }
+
     .location__btn {
-      
       font-size: 1.75rem;
       width: 280px;
       font-weight: 400;
@@ -101,9 +91,10 @@
       gap: 40px;
       overflow: scroll;
       padding-right: 5px;
+      border: none;
+      background-color: transparent;
 
       &::-webkit-scrollbar {
-        //width: 0;
         display: none;
       }
 
@@ -124,7 +115,7 @@
           .slider__img {
             width: 100%;
             height: 378px;
-            background-color: #f5f5f5;
+            //background-color: #f5f5f5;
             border-radius: 22px;
 
             img {
@@ -151,8 +142,7 @@
               padding-bottom: 15px;
             }
             .slider__description {
-              font-size: 1.375rem;
-              line-height: 1.5;
+              @include mixins.paragraph-body;
               padding: 0 0 20px 0;
             }
             .review__container {
@@ -226,4 +216,38 @@
     width: 100%;
   }
   
+}
+
+
+/*================================================
+  Media queries
+  ================================================
+*/
+@media screen and (max-width: 989px) {
+  .location__container {
+    padding: 0 25px 0;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .location__container {
+    background-color: rgb(181, 181, 241);
+  }
+
+  .location__slider {
+    background-color: #181b52;
+    .slider__container {
+      max-width: 80%;
+      .slider__content {
+        
+
+        .slider__imgText {
+          .slider__text {
+            
+          }
+        }
+      }
+    }
+    
+  }
 }

@@ -7,7 +7,6 @@ const Service = () => {
   return (
     <section className="services__container" id="services">
       <div className="services__triangle1"></div>
-      <div className="services__triangle2"></div>
       <div className="services__content">
         <div className="services__illu__title">
           <div className="services__illu">
@@ -29,7 +28,6 @@ const Service = () => {
       <div className="services__tab__container">
         <Tab services={servicesData} />
       </div>
-      <div className="services__triangle2"></div>
     </section>
   );
 };
