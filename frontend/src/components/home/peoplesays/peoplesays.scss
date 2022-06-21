@@ -1,30 +1,19 @@
 .people__container {
   max-width: 100%;
   background-color: #edfdf8;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: span 12;
 
   .people__titleH2 {
     font-size: 1.875rem;
     font-weight: bold;
-    padding-bottom: 76px;
+    padding: 90px 0 76px ;
     text-align: center;
   }
 }
 
-.people__triangle1 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 400px 100vw 0 0;
-  border-color: #fff transparent transparent transparent;
-}
-.people__triangle2 {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 200px 100vw;
-  border-color: transparent transparent #ffffff transparent;
-  padding-top: 160px;
-}
+
 
 .people__slider {
   background-color: #fff;
@@ -32,6 +21,7 @@
   height: auto;
   border-radius: 22px;
   margin: 0 auto;
+  margin-bottom: 200px;
   box-shadow: 0px 10px 15px -6px rgb(0 0 0 / 10%);
 }
 .peoplesSlider__container {
@@ -145,3 +135,18 @@
     }
   }
 }
+
+
+/*================================================
+  Media queries
+  ================================================
+*/
+@media screen and (max-width: 670px) {
+  .people__slider {
+    margin-left: 25px;
+    margin-right: 25px;
+    
+  }
+}
+
+

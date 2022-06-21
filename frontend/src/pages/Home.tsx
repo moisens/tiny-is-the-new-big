@@ -21,8 +21,8 @@ const Home = () => {
       <MultiImage datas={datas} />
        <Service />
       <Location />
-      {/*<PeopleSays />
-      <Contact /> */}
+      <PeopleSays />
+      {/*<Contact /> */}
     </div>
   )
 }
