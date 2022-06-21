@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Web site that allows people to buy, rent tiny houses",
+  "description": "tinyhousing is a Web site that allows people to buy, rent tiny houses",
   "main": "app.js",
   "type": "module",
   "scripts": {
