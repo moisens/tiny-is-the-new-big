@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
-  padding: 200px 0;
+  padding: 200px 0 300px;
   position: relative;
 }
 
@@ -20,8 +20,6 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform: skew(0deg, -9deg);
 }
-
-//.services__triangle2 {}
 
 .services__content {
   //background-color: lightblue;

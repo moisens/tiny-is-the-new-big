@@ -7,6 +7,7 @@ import Button from "../../../components/button/Button"
 const Location = () => {
   return (
     <section className="location__container" id="location">
+      <div className="location__triangle1"></div>
       <div className="location__content">
         <div className="location__text">
           <div className="illu__container">
