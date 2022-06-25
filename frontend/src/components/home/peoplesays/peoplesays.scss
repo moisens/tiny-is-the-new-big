@@ -1,152 +1,161 @@
+@use "../../../scss/mixins.scss";
+
 .people__container {
   max-width: 100%;
+  height: auto;
   background-color: #edfdf8;
   display: grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
 
   .people__titleH2 {
-    font-size: 1.875rem;
-    font-weight: bold;
-    padding: 90px 0 76px ;
+    @include mixins.title-h2;
+    padding: 90px 0 76px;
     text-align: center;
   }
-}
 
+  .peopleSlider__container {
+    max-width: 100%;
+    height: auto;
+    background-color: red;
 
-
-.people__slider {
-  background-color: #fff;
-  max-width: 655px;
-  height: auto;
-  border-radius: 22px;
-  margin: 0 auto;
-  margin-bottom: 200px;
-  box-shadow: 0px 10px 15px -6px rgb(0 0 0 / 10%);
-}
-.peoplesSlider__container {
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  background-color: hsl(43, 100%, 99%);
-  border: solid 0.4px #2dc1df;
-  border-radius: 22px;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-
-  .slider__previous {
-    position: absolute;
-    top: 50%;
-    left: 48px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    img {
-      width: 100%;
-    }
-  }
-  .slider__next {
-    position: absolute;
-    top: 50%;
-    right: 48px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .peopleSlide__content {
-    background-color: rgb(240, 158, 158);
-    padding: 70px 0 0 0;
-    margin: 0 auto;
-    width: 100%;
-    height: 460px;
-
-    .peopleSlider__img {
-      width: 655px;
-
-      .people__avatar {
-        width: 150px;
-        height: 150px;
-        background-color: lightgray;
-        border-radius: 75px;
-        margin: 0 auto;
-        margin-bottom: 20px;
-
-        img {
-          width: 100%;
-          height: 100%;
-          background-size: cover;
-          object-fit: cover;
-          border: solid 3px #2dc1df;
-          border-radius: 75px;
-        }
-      }
-      .people__person {
-        font-size: 1.375rem;
-        font-weight: 700;
-        text-align: center;
-        padding-bottom: 5px;
-      }
-    }
-    .people__stars {
-      padding-bottom: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .star {
-        width: 24px;
-        height: 24px;
-
-        img {
-          height: 100%;
-        }
-      }
-    }
-    .people__saying {
-      text-align: center;
-      width: 90%;
-      font-size: 1.125rem;
-      line-height: 1.5;
-      padding-bottom: 0px;
+    .peopleSlider__content {
       margin: 0 auto;
-    }
-    &.activeSlide {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    &.lastSlide {
-      transform: translateX(-100%);
-    }
-    &.nextSlide {
-      transform: translateX(100%);
+      width: 60%;
+      height: 560px;
+      background-color: hsl(48, 87%, 66%);
+      display: flex;
+      overflow: hidden;
+      position: relative;
+
+      .sliderImages__container {
+        background-color: lightgreen;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        //opacity: 0;
+        transition: all 0.3s linear;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .slider__image {
+          background-color: red;
+          width: 170px;
+          height: 170px;
+          align-self: center;
+          margin: auto;
+          border-radius: 85px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            object-fit: cover;
+            //aspect-ratio: 1;
+            border: solid 3px blue;
+            border-radius: 85px;
+          }
+        }
+        .slider__stars {
+          //background-color: lightcoral;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: -50px;
+          width: 100%;
+          height: 60px;
+
+          .slider__title {
+            @include mixins.title-h4;
+            font-weight: bold;
+            padding-bottom: 10px;
+          }
+        }
+        .slider__text {
+          @include mixins.paragraph-body;
+          //background-color: blue;
+          margin-top: -100px;
+          text-align: center;
+          padding: 0 60px;
+        }
+      }
     }
   }
 }
 
+/*
+title-h4
+.people__titleH2 {
+    @include mixins.title-h2;
+    padding: 90px 0 76px;
+    text-align: center;
+  }
 
-/*================================================
-  Media queries
-  ================================================
-*/
-@media screen and (max-width: 670px) {
   .people__slider {
-    margin-left: 25px;
-    margin-right: 25px;
-    
+    background-color: thistle;
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    .peopleSlide__content {
+      width: 100vw;
+      display: grid;
+      grid-template-columns: 1fr;
+      background-color: teal;
+      width: 100%;
+      height: 580px;
+      position: absolute;
+      
+
+      .peopleSlider__img {
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+
+        .people__avatar {
+          width: 160px;
+          height: 160px;
+          border-radius: 80px;
+          margin-bottom: 20px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            object-fit: cover;
+            border-radius: 80px;
+            border: solid 3px #2dc1df;
+          }
+        }
+        .people__person {
+          @include mixins.title-h4;
+          font-weight: bold;
+        }
+      }
+      .people__stars {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        font-size: 22px;
+        color: gold;
+        padding: 8px 0 20px;
+        background-color: lightcoral;
+      }
+      .people__saying {
+        @include mixins.paragraph-body;
+        text-align: center;
+        padding: 0 20px 80px;
+      }
+    }
   }
-}
 
 
+*/
