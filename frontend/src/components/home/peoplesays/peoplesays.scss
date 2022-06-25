@@ -17,31 +17,34 @@
   .peopleSlider__container {
     max-width: 100%;
     height: auto;
-    background-color: red;
+    padding-bottom: 180px;
+    //background-color: red;
 
     .peopleSlider__content {
       margin: 0 auto;
       width: 60%;
       height: 560px;
-      background-color: hsl(48, 87%, 66%);
+      background-color: hsl(0, 0%, 100%);
       display: flex;
       overflow: hidden;
       position: relative;
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-radius: 22px;
 
       .sliderImages__container {
-        background-color: lightgreen;
+        //background-color: #fff;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        //opacity: 0;
+        opacity: 0;
         transition: all 0.3s linear;
         display: grid;
         grid-template-columns: 1fr;
 
         .slider__image {
-          background-color: red;
+          //background-color: red;
           width: 170px;
           height: 170px;
           align-self: center;
@@ -53,8 +56,7 @@
             height: 100%;
             background-size: cover;
             object-fit: cover;
-            //aspect-ratio: 1;
-            border: solid 3px blue;
+            border: solid 3px #2dc1df;
             border-radius: 85px;
           }
         }
@@ -73,89 +75,63 @@
             font-weight: bold;
             padding-bottom: 10px;
           }
+
+          .slider__icons {
+            display: flex;
+            gap: 2px;
+            color: gold;
+            font-size: 22px;
+          }
         }
         .slider__text {
           @include mixins.paragraph-body;
           //background-color: blue;
           margin-top: -100px;
           text-align: center;
-          padding: 0 60px;
+          padding: 0 100px;
         }
+
+        &.activeSlide {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        &.lastSlide {
+          transform: translateX(-100%);
+        }
+        &.nextSlide {
+          transform: translateX(100%);
+        }
+      }
+      .slider__previous {
+        background-color: #181b5238;
+        color: #2dc1df;
+        z-index: 100;
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        font-size: 28px;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .slider__next {
+        background-color: #181b5238;
+        color: #2dc1df;
+        z-index: 100;
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        font-size: 28px;
+        font-weight: 900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
       }
     }
   }
 }
-
-/*
-title-h4
-.people__titleH2 {
-    @include mixins.title-h2;
-    padding: 90px 0 76px;
-    text-align: center;
-  }
-
-  .people__slider {
-    background-color: thistle;
-    max-width: 60%;
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-
-    .peopleSlide__content {
-      width: 100vw;
-      display: grid;
-      grid-template-columns: 1fr;
-      background-color: teal;
-      width: 100%;
-      height: 580px;
-      position: absolute;
-      
-
-      .peopleSlider__img {
-        background-color: lightblue;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 80px;
-
-        .people__avatar {
-          width: 160px;
-          height: 160px;
-          border-radius: 80px;
-          margin-bottom: 20px;
-
-          img {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            object-fit: cover;
-            border-radius: 80px;
-            border: solid 3px #2dc1df;
-          }
-        }
-        .people__person {
-          @include mixins.title-h4;
-          font-weight: bold;
-        }
-      }
-      .people__stars {
-        display: flex;
-        justify-content: center;
-        gap: 4px;
-        font-size: 22px;
-        color: gold;
-        padding: 8px 0 20px;
-        background-color: lightcoral;
-      }
-      .people__saying {
-        @include mixins.paragraph-body;
-        text-align: center;
-        padding: 0 20px 80px;
-      }
-    }
-  }
-
-
-*/
