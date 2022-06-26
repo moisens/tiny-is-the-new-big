@@ -22,7 +22,7 @@ const Home = () => {
        <Service />
       <Location />
       <PeopleSays />
-      {/*<Contact /> */}
+      <Contact />
     </div>
   )
 }

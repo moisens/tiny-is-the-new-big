@@ -7,6 +7,17 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
+  position: relative;
+
+  //.people__triangle1 {
+  //  background-color: #edfdf8;
+  //  width: 100%;
+  //  height: 220px;
+  //  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  //  transform: skew(0deg, -8deg);
+  //  position: absolute;
+  //  top: -108px;
+  //}
 
   .people__titleH2 {
     @include mixins.title-h2;
