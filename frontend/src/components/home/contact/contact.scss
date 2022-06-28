@@ -1,6 +1,5 @@
 @use "../../../scss/mixins";
 
-
 .contact__container {
   background-color: lightcoral;
   width: 100%;
@@ -13,15 +12,13 @@
 .contact__content {
   background-color: lightgreen;
   display: grid;
-  grid-template-columns: 1fr 1.8fr;
+  grid-template-columns: 1fr 1.2fr;
   max-width: 100vw;
   height: auto;
   padding-bottom: 120px;
 
   .contact__text {
     background-color: lightsteelblue;
-    display: grid;
-    grid-template-columns: 1fr;
     padding: 50px 0 100px 25px;
 
     .contact__illuContainer {
@@ -50,10 +47,37 @@
       @include mixins.paragraph-body;
     }
   }
+  .contact__images {
+    background-color: lightseagreen;
+    display: flex;
+    gap: 40px;
+
+    img {
+      background-size: cover;
+      object-fit: cover;
+      border: solid 3px #2DC1DF;
+    }
+    img:nth-child(1) {
+      width: 280px;
+      height: 280px;
+      border-radius: 140px;
+      align-self: flex-end;
+      
+    }
+    img:nth-child(2) {
+      width: 180px;
+      height: 180px;
+      border-radius: 90px;
+    }
+    img:nth-child(3) {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      align-self: center;
+    }
+  }
+  
 }
-
-
-
 
 // .contact__content {
 //   //background-color: lightblue;
