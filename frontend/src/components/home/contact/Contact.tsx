@@ -1,12 +1,14 @@
 import "./contact.scss";
-import { MdOutlineContactPage } from "react-icons/md";
 import { MdOutlineCall } from "react-icons/md";
 import ContactIcon from "../../../assets/contact-icon.svg";
 
 import { countries } from "../../../utils/form-utils";
 import { services } from "../../../utils/form-utils";
 import { pohoneNumbers } from "../../../utils/form-utils";
+import { contactData } from "../../../utils/multi-img-utils";
 import SelectServices from "./Dropdown";
+import ContactImgList from "./ContactImgList";
+
 
 const Contact = () => {
   return (
@@ -29,18 +31,7 @@ const Contact = () => {
           </p>
         </div>
         <div className="contact__images">
-          <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1650301425/tiny%20is%20the%20new%20big/tierra-mallorca-NpTbVOkkom8-unsplash_fcohsm.jpg"
-            alt=""
-          />
-          <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1650300934/tiny%20is%20the%20new%20big/aysegul-yahsi-9QRqI6RbHWU-unsplash_m3dhn6.jpg"
-            alt=""
-          />
-          <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1650301404/tiny%20is%20the%20new%20big/jet-dela-cruz-Gf6puSx3h6Y-unsplash_nfndgh.jpg"
-            alt=""
-          />
+          <ContactImgList contactData={contactData} />
         </div>
       </div>
       <div className="form__container">
