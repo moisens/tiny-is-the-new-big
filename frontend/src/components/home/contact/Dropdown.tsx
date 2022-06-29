@@ -21,7 +21,7 @@ const SelectServices = ({ dataDropdownList }: ContactProps) => {
         const { id, defaultValues, options } = datalist;
         return (
           <React.Fragment key={id}>
-            <div className="input__input">
+            <div className={dropIsActive ? "input__input isSelected" : "input__input"}>
               <p>{defaultValues}</p>
               <Button
                 className="input__button"
