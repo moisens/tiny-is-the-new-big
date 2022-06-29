@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, Fragment } from "react";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { ContactProps } from "../../../types/Interface";
 import Button from "../../button/Button";
@@ -20,7 +20,7 @@ const SelectServices = ({ dataDropdownList }: ContactProps) => {
       {dataDropdownList.map((datalist) => {
         const { id, defaultValues, options } = datalist;
         return (
-          <React.Fragment key={id}>
+          <Fragment key={id}>
             <div className={dropIsActive ? "input__input isSelected" : "input__input"}>
               <p>{defaultValues}</p>
               <Button
@@ -32,7 +32,7 @@ const SelectServices = ({ dataDropdownList }: ContactProps) => {
               </Button>
             </div>
             <DropdownList options={options} dropIsActive={dropIsActive} />
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </div>

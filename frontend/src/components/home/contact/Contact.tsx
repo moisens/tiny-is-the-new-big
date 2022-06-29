@@ -1,6 +1,10 @@
 import "./contact.scss";
 import { MdOutlineCall } from "react-icons/md";
+import { SiLinkedin } from "react-icons/si";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { FiTwitter } from "react-icons/fi";
 import ContactIcon from "../../../assets/contact-icon.svg";
+import { Link } from "react-router-dom";
 
 import { countries } from "../../../utils/form-utils";
 import { services } from "../../../utils/form-utils";
@@ -8,7 +12,6 @@ import { pohoneNumbers } from "../../../utils/form-utils";
 import { contactData } from "../../../utils/multi-img-utils";
 import SelectServices from "./Dropdown";
 import ContactImgList from "./ContactImgList";
-
 
 const Contact = () => {
   return (
@@ -37,20 +40,23 @@ const Contact = () => {
       <div className="form__container">
         <form className="form__content">
           <div className="input__container">
-            <label htmlFor="firstName" />
-            <input
-              type="text"
-              placeholder="First name"
-              id="firstName"
-              className="input__input"
-            />
-            <label htmlFor="lastName" />
-            <input
-              type="text"
-              placeholder="Last name"
-              id="lastName"
-              className="input__input"
-            />
+            <label htmlFor="firstName">
+              <input
+                type="text"
+                placeholder="First name"
+                id="firstName"
+                className="input__input"
+              />
+            </label>
+
+            <label htmlFor="lastName">
+              <input
+                type="text"
+                placeholder="Last name"
+                id="lastName"
+                className="input__input"
+              />
+            </label>
           </div>
           <div className="input__container">
             <SelectServices dataDropdownList={countries} />
@@ -70,12 +76,31 @@ const Contact = () => {
           </button>
         </form>
         <div className="form__call">
-          <button className="call__btn">
-            <MdOutlineCall color="#08A1BA" size="1.8rem" />
-            Call now
-          </button>
-          <div className="input__container">
-            <SelectServices dataDropdownList={pohoneNumbers} />
+          <div className="form__callContent">
+            <button className="call__btn">
+              <MdOutlineCall color="#08A1BA" size="1.8rem" />
+              Call now
+            </button>
+            <div className="input__container">
+              <SelectServices dataDropdownList={pohoneNumbers} />
+            </div>
+          </div>
+          <div className="social__container">
+            <div className="social__content">
+              <Link to="#">
+                <SiLinkedin />
+              </Link>
+            </div>
+            <div className="social__content">
+              <Link to="#">
+                <AiOutlineInstagram />
+              </Link>
+            </div>
+            <div className="social__content">
+              <Link to="#">
+                <FiTwitter />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
