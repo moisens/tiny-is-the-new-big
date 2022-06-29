@@ -1,6 +1,6 @@
 .dropdown__select {
-  background-color: #fff;
-  width: 289px;
+  background-color: hsl(0, 0%, 100%);
+  width: 93.4%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -42,5 +42,6 @@
   }
   &.isSelected {
     display: block;
+    border-top: none;
   }
 }
