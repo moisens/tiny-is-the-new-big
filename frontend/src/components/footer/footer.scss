@@ -5,11 +5,10 @@
 }
 
 .footer__content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 180px;
-  padding-left: 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 100px;
+  //background-color: lightgreen;
 }
 
 .footer__nav {
@@ -32,19 +31,18 @@
 }
 .footer__newsletterSocial {
   //background-color: red;
-  display: flex;
-  flex-direction: column;
 
   .newsletter {
     .newsletter__H4 {
       font-size: 1.375rem;
       font-weight: 700;
-      padding-bottom: 30px;
+      padding: 0 0 30px;
     }
     .newsletter__form {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+
       .newsletter__input {
         width: 380px;
         height: 65px;
@@ -67,28 +65,9 @@
         cursor: pointer;
 
         &:hover {
-          background: #181B52;
+          background: #181b52;
         }
-
       }
-    }
-  }
-  .social__container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 12px;
-    padding-top: 30px;
-
-    .social__content {
-      width: 47px;
-      height: 47px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      border: solid 0.4px #08a1ba;
-      border-radius: 9px;
     }
   }
 }
@@ -103,5 +82,4 @@
   .date__now {
     font-size: 1rem;
   }
-
 }
