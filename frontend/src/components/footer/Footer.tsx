@@ -56,17 +56,6 @@ const Footer = () => {
               </button>
             </form>
           </div>
-          <div className="social__container">
-            <div className="social__content">
-              <SiLinkedin size="1.4rem" color="#08A1BA" />
-            </div>
-            <div className="social__content">
-              <AiOutlineInstagram size="1.4rem" color="#08A1BA" />
-            </div>
-            <div className="social__content">
-              <FiTwitter size="1.4rem" color="#08A1BA" />
-            </div>
-          </div>
         </div>
       </div>
       <div className="footer__date">
