@@ -6,7 +6,7 @@ import { CardProps } from "../../types/interface-Dataproducts";
 const CardsPage = ({data, status, error}: CardProps) => {
   return (
     <section className="page__container">
-      <div className="page__triangle1"></div>
+      {/* <div className="page__triangle1"></div> */}
       <div className="page__filter">Filter goes here!</div>
       <div className="page__content">
         <div className="page__gridcontainer">
@@ -14,7 +14,7 @@ const CardsPage = ({data, status, error}: CardProps) => {
           <CardList data={data} status={status} error={error} />
           {/*End First Card*/}
         </div>
-        <div className="page__triangle2"></div>
+        {/* <div className="page__triangle2"></div> */}
       </div>
       <div className="lodmore__container">
         <Button
