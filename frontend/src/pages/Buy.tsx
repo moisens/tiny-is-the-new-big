@@ -13,7 +13,7 @@ const Buy = () => {
   return (
     <div className="home-container">
       <Headers dataHeaders={HeaderBuy} />
-      <CardsPage data={data} status={status} error={error} />
+      {/* <CardsPage data={data} status={status} error={error} /> */}
     </div>
   );
 };

@@ -1,11 +1,9 @@
 .header__header {
+  background-color: lightslategray;
   max-width: 100vw;
-  height: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 55px;
-  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: span 12;
   padding: 40px 10px 200px 40px;
 
   .header__imgContainer {
@@ -49,9 +47,9 @@
   }
 
   .header__content {
-    width: 50%;
+    width: 100%;
     flex-grow: 1;
-    padding: 240px 0 0 0;
+    padding: 240px 25px 0 0;
 
     .header__icon {
       display: flex;
@@ -86,7 +84,7 @@
     .header__description {
       font-size: 1.125rem;
       line-height: 1.6;
-      width: 90%;
+      width: 100%;
     }
   }
 }
