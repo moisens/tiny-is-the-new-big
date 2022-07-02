@@ -1,3 +1,6 @@
+@use "../../scss/mixins";
+
+
 .header__header {
   background-color: lightslategray;
   max-width: 100vw;
@@ -8,11 +11,13 @@
 
   .header__imgContainer {
     //background-color: lightblue;
-    width: 560px;
+    //width: 560px;
     height: 620px;
+    aspect-ratio: 1;
     border-radius: 22px;
     position: relative;
     z-index: 1000;
+    margin-right: 60px;
 
     img {
       width: 100%;
@@ -32,7 +37,7 @@
     .header__notification:nth-child(2) {
       position: absolute;
       top: 70px;
-      left: 500px;
+      left: 550px;
     }
     .header__notification:nth-child(3) {
       position: absolute;
@@ -52,38 +57,22 @@
     padding: 240px 25px 0 0;
 
     .header__icon {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 12px;
-      padding-bottom: 18px;
+      @include mixins.illu-icon-container;
 
       .icon__icon {
-        width: 47px;
-        height: 47px;
-        background-color: hsl(0, 0%, 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: solid 0.4px hsl(188, 92%, 38%);
-        border-radius: 9px;
+        @include mixins.illu-icon;
         color: hsl(188, 92%, 38%);
       }
       .category__H4 {
-        font-size: 1.125rem;
-        font-weight: 400;
+        @include mixins.title-h4;
         font-weight: bold;
       }
     }
     .header__H2 {
-      font-size: 1.875rem;
-      font-weight: bold;
-      line-height: 1.4;
-      padding-bottom: 20px;
+      @include mixins.title-h2;
     }
     .header__description {
-      font-size: 1.125rem;
-      line-height: 1.6;
+      @include mixins.paragraph-body;
       width: 100%;
     }
   }
