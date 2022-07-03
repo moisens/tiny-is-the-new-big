@@ -1,8 +1,7 @@
 @use "../../scss/mixins";
 
-
 .header__header {
-  background-color: lightslategray;
+  //background-color: lightslategray;
   max-width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,7 +52,6 @@
 
   .header__content {
     width: 100%;
-    flex-grow: 1;
     padding: 240px 25px 0 0;
 
     .header__icon {
@@ -74,6 +72,68 @@
     .header__description {
       @include mixins.paragraph-body;
       width: 100%;
+    }
+  }
+}
+
+/*================================================
+  Media queries
+  ================================================
+*/
+@media screen and (max-width: 1130px) {
+  .header__header {
+    .header__imgContainer {
+      aspect-ratio: 0.8;
+
+      .header__notification:nth-child(2) {
+        left: 430px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1060px) {
+  .header__header {
+    .header__imgContainer {
+      aspect-ratio: 0.7;
+
+      .header__notification:nth-child(2) {
+        left: 370px;
+      }
+      .header__notification:nth-child(4) {
+        left: 200px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .header__header {
+    grid-template-columns: 1fr;
+    padding-right: 30px;
+    .header__imgContainer {
+      width: 100%;
+      aspect-ratio: 12%;
+
+      .header__notification:nth-child(2) {
+        top: -15px;
+        left: 300px;
+      }
+    }
+    .header__content {
+      padding-top: 140px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .header__header {
+    .header__imgContainer {
+      aspect-ratio: .3;
+
+      .header__notification:nth-child(2) {
+        left: 40px;
+      }
+      .header__notification:nth-child(4) {
+        left: 80px;
+      }
     }
   }
 }
