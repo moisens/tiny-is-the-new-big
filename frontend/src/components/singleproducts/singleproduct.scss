@@ -1,8 +1,10 @@
+@use "../../scss/mixins";
+
 .header__container {
   //background-color: lightblue;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: 5px;
   padding: 81px 25px 162px;
 
   .img__container {
@@ -19,7 +21,7 @@
   .img__container:nth-child(1) {
     grid-column: span 2;
     grid-row: span 2;
-    height: 640px;
+    height: 645px;
     border-top-left-radius: 22px;
     border-bottom-left-radius: 22px;
 
@@ -28,7 +30,7 @@
       border-bottom-left-radius: 22px;
     }
   }
-  
+
   .img__container:nth-child(3) {
     border-top-right-radius: 22px;
 
@@ -45,6 +47,59 @@
     img {
       border-bottom-right-radius: 22px;
     }
+  }
+}
 
+.info__container {
+  //background-color: lightslategrey;
+  grid-column: span 12;
+  padding: 0 25px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+
+  .info__content {
+    background-color: hsl(0, 0%, 100%);
+    border: solid 0.4px #2dc1df;
+    border-radius: 22px;
+    height: 400px;
+    padding: 20px;
+
+    .info__info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      //background-color: lightgreen;
+      padding-bottom: 45px;
+
+      .info__element {
+        border: solid 0.4px #2dc1df;
+        padding: 15px 40px;
+        border-radius: 12px;
+
+        .info__boldtext {
+          font-weight: 900;
+        }
+        &.info__icon {
+          color: #2dc1df;
+          padding: 8px 40px;
+          font-size: 32px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .info__description {
+      //background-color: lightpink;
+      .info__titleH5 {
+        font-size: 20px;
+        padding-bottom: 30px;
+      }
+      p {
+        @include mixins.paragraph-body;
+      }
+    }
   }
 }
