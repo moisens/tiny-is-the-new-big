@@ -54,18 +54,18 @@ const InfoHouse = () => {
           </div>
         </div>
       </div>
-      <div className="info__content">
+      <div className="info__content info__energydata">
         <h5 className="info__titleH5">Energy data</h5>
         <p>
-          Energy class: <span className="energy__class">A</span>
+          Energy class: <span className="energy__classA">A</span>
         </p>
         <p>PEB unique code: 20711406000897260-22-6</p>
         <p>E-spec: 686 Kwh/m2/year</p>
         <p>Type of heating: fuel oil</p>
       </div>
-      <div className="info__content">
+      <div className="info__content info__contact">
         <h5 className="info__titleH5">Are you interested in this tiny house?</h5>
-        <button>Contact</button>
+        <button className="info__button">Contact</button>
       </div>
     </section>
   );
