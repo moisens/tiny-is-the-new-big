@@ -2,7 +2,7 @@ import "./singleproduct.scss";
 
 const Header = () => {
   return (
-    <header className="header__container">
+    <header className="head__container">
       <div className="img__container">
       <img src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1652197821/tiny-housing/tmp-1-1652197818014_rakj8t.jpg" alt="" title=""/>
       </div>

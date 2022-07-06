@@ -1,9 +1,10 @@
 @use "../../scss/mixins";
 
-.header__container {
+.head__container {
   //background-color: lightblue;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-column: span 12;
   gap: 5px;
   padding: 81px 25px 162px;
 
@@ -66,9 +67,10 @@
     border-radius: 22px;
     height: 400px;
     padding: 20px;
+    transition: all 0.5s;
 
     &:hover {
-      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     .info__info {
@@ -85,6 +87,7 @@
 
         .info__boldtext {
           font-weight: 900;
+          color: #181b52;
         }
         &.info__icon {
           color: #2dc1df;
@@ -100,6 +103,7 @@
       .info__titleH5 {
         font-size: 20px;
         padding-bottom: 30px;
+        color: #181b52;
       }
       p {
         @include mixins.paragraph-body;
@@ -113,9 +117,92 @@
       .info__titleH5 {
         font-size: 20px;
         padding-bottom: 30px;
+        color: #181b52;
       }
       p {
         @include mixins.paragraph-body;
+      }
+    }
+    &.info__energydata {
+      .info__titleH5 {
+        font-size: 20px;
+        padding-bottom: 30px;
+        color: #181b52;
+      }
+      p {
+        @include mixins.paragraph-body;
+
+        .energy__classA {
+          background-color: #329531;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+        .energy__classB {
+          background-color: #31c632;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+        .energy__classC {
+          background-color: #c6f732;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+        .energy__classD {
+          background-color: #f7f700;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+        .energy__classE {
+          background-color: #f7c600;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+        .energy__classF {
+          background-color: #f79431;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+        .energy__classG {
+          background-color: #f70001;
+          color: hsl(0, 0%, 100%);
+          padding: 2px 12px;
+          border-radius: 6px;
+        }
+      }
+    }
+    &.info__contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .info__titleH5 {
+        font-size: 20px;
+        padding-bottom: 100px;
+        color: #181b52;
+      }
+      .info__button {
+        padding: 18px 46px;
+        font-size: 1.75rem;
+        font-weight: 400;
+        cursor: pointer;
+        border: solid 0.4px #08a1ba;
+        border-radius: 40px;
+        background-color: #fff;
+        transition: all 0.5s;
+        text-decoration: none;
+        color: #181b52;
+
+        &:hover {
+          background-color: #181b52;
+          color: hsl(0, 0%, 100%);
+          border: none;
+        }
       }
     }
   }
