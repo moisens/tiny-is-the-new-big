@@ -67,6 +67,10 @@
     height: 400px;
     padding: 20px;
 
+    &:hover {
+      box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    }
+
     .info__info {
       display: flex;
       align-items: center;
@@ -93,6 +97,19 @@
     }
     .info__description {
       //background-color: lightpink;
+      .info__titleH5 {
+        font-size: 20px;
+        padding-bottom: 30px;
+      }
+      p {
+        @include mixins.paragraph-body;
+      }
+    }
+    .info__textcontent {
+      //background-color: lightpink;
+      display: flex;
+      gap: 75px;
+
       .info__titleH5 {
         font-size: 20px;
         padding-bottom: 30px;
