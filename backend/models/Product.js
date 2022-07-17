@@ -34,6 +34,45 @@ const ProductSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Provide the number of bathroom"],
     },
+    kitchen: {
+      type: Number,
+      required: [true, "Provide the number of kitchen"],
+    },
+    livingroom: {
+      type: Number,
+      required: [true, "provide the number of living room"],
+    },
+    description: {
+      type: String,
+      required: [true, "Provide a description"],
+    },
+    typeofhouse: {
+      type: String;
+      required: [true, "Provide the type of the house"],
+    },
+    statusofhouse: {
+      type: String,
+      required: [true, "Provide the status of the house"]
+    },
+    yearofconstruction: {
+      type: String,
+    },
+    energyclass: {
+      type: String,
+      required: [true, "Provide the energy class of the house"],
+    },
+    pebuniquecode: {
+      type: Number,
+      required: [true, "Provide the P.E.B unique code"],
+    },
+    espec: {
+      type: String,
+      required: [true, "Provide the E-spec of the house"],
+    },
+    typeofheating: {
+      type: String,
+      required: [true, "Provide the type of heating of the house"],
+    },
     image: {
       type: [String],
       require: [true, "Provide an image for the product"],
