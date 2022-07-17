@@ -46,13 +46,9 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: [true, "Provide a description"],
     },
-    typeofhouse: {
-      type: String;
-      required: [true, "Provide the type of the house"],
-    },
     statusofhouse: {
       type: String,
-      required: [true, "Provide the status of the house"]
+      required: [true, "Provide the status of the house"],
     },
     yearofconstruction: {
       type: String,
@@ -62,7 +58,7 @@ const ProductSchema = new mongoose.Schema(
       required: [true, "Provide the energy class of the house"],
     },
     pebuniquecode: {
-      type: Number,
+      type: String,
       required: [true, "Provide the P.E.B unique code"],
     },
     espec: {
