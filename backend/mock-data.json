@@ -1,8 +1,7 @@
 [
   {
-    "name": "Tiny Canadian",
     "country": "Canada, AB",
-    "price": 180298,
+    "price": 188000,
     "ref": 1099,
     "size": 505.904,
     "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652195541/tiny-housing/tmp-1-1652195541257_wc0bsm.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1652198104/tiny-housing/tmp-1-1652198097680_jygmdb.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1652197821/tiny-housing/tmp-1-1652197818014_rakj8t.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1652821241/tiny-housing/tmp-2-1652821240236_u4riso.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1658093438/tiny-housing/tmp-2-1658093438109_hajaqp.jpg"],
@@ -20,9 +19,8 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Australian",
     "country": "Australia, Melbourne",
-    "price": 150876,
+    "price": 155000,
     "ref": 3088,
     "size": 430.556,
     "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652196947/tiny-housing/tmp-1-1652196946332_rxhntc.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1652196719/tiny-housing/tmp-1-1652196718673_nmsmwy.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1652133266/tiny-housing/tmp-3-1652133265737_cutsmr.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1658150972/tiny-housing/tmp-1-1658150971781_w1sjk2.jpg","https://res.cloudinary.com/dr7qigh2d/image/upload/v1658152350/tiny-housing/tmp-1-1658152349719_si2xvy.jpg"],
@@ -40,9 +38,8 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Swiss",
     "country": "Switzerland, Lausanne",
-    "price": 82841,
+    "price": 82000,
     "ref": 5599,
     "size": 322.917,
     "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652197499/tiny-housing/tmp-2-1652197498559_xsgnyo.jpg"],
@@ -60,9 +57,8 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Belgian",
     "country": "Belgium, Namur",
-    "price": 78377,
+    "price": 78000,
     "ref": 9812,
     "size": 344.445,
     "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652196281/tiny-housing/tmp-1-1652196280701_pka1kq.jpg"],
@@ -80,7 +76,6 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Scot",
     "country": "UK, Scotland",
     "price": 89000,
     "ref": 1177,
@@ -100,9 +95,8 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Montreal",
     "country": "Canada, Montreal",
-    "price": 78377,
+    "price": 78000,
     "ref": 2376,
     "size": 376.737,
     "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652196134/tiny-housing/tmp-1-1652196133513_dluhmg.jpg"],
@@ -120,9 +114,8 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Aussie",
     "country": "Australia, Perth",
-    "price": 128859,
+    "price": 128000,
     "ref": 2744,
     "size": 441.32,
     "image": ["https://res.cloudinary.com/dr7qigh2d/image/upload/v1652196134/tiny-housing/tmp-1-1652196133513_dluhmg.jpg"],
@@ -140,7 +133,6 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Swiss knife",
     "country": "Switzerland, Geneva",
     "price": 109000,
     "ref": 1221,
@@ -160,7 +152,6 @@
     "category": "buy"
   },
   {
-    "name": "Tiny mussel",
     "country": "Belgium, Brussels",
     "price": 90000,
     "ref": 1682,
@@ -180,7 +171,6 @@
     "category": "buy"
   },
   {
-    "name": "Tiny Canadian",
     "country": "Canada, AB",
     "price": 1678.87,
     "ref": 1999,
@@ -200,7 +190,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Australian",
     "country": "Australia, Melbourne",
     "price": 1278.46,
     "ref": 1111,
@@ -220,7 +209,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Swiss",
     "country": "Switzerland, Lausanne",
     "price": 890.77,
     "ref": 1673,
@@ -240,7 +228,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Belgian",
     "country": "Belgium, Namur",
     "price": 749.98,
     "ref": 2288,
@@ -260,7 +247,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Scot",
     "country": "UK, Scotland",
     "price": 690.88,
     "ref": 8903,
@@ -280,7 +266,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Montreal",
     "country": "Canada, Montreal",
     "price": 830.62,
     "ref": 5590,
@@ -300,7 +285,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Aussie",
     "country": "Australia, Perth",
     "price": 980.55,
     "ref": 1090,
@@ -320,7 +304,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny Swiss knife",
     "country": "Switzerland, Geneva",
     "price": 980.77,
     "ref": 3311,
@@ -340,7 +323,6 @@
     "category": "rent"
   },
   {
-    "name": "Tiny mussel",
     "country": "Belgium, Brussels",
     "price": 799.66,
     "ref": 9837,

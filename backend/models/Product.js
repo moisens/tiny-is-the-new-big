@@ -2,12 +2,12 @@ import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      trim: true,
-      required: [true, "Provide a product name"],
-      maxLength: [100, "Name can't be more than 100"],
-    },
+    //name: {
+    //  type: String,
+    //  trim: true,
+    //  required: [true, "Provide a product name"],
+    //  maxLength: [100, "Name can't be more than 100"],
+    //},
     country: {
       type: String,
       trim: true,
