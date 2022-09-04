@@ -1,6 +1,5 @@
 export interface DataProps {
-  products: {
-    _id: string;
+  _id: string;
     country: string;
     price: number;
     ref: number;
@@ -18,7 +17,6 @@ export interface DataProps {
     espec: string;
     typeofheating: string;
     category: string;
-  }[];
 }
 
 export interface LocationProps {

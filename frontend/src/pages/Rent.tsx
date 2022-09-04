@@ -7,7 +7,7 @@ import useFetch from "../hooks/useFetch";
 const Rent = () => {
   const categories = "rent";
   const { data, status, error } = useFetch(
-    `http://localhost:5000/api/v1/products?category=${categories}`
+    `/api/v1/products?category=${categories}`
   );
 
   return (

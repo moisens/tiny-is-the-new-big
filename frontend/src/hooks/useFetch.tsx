@@ -17,7 +17,7 @@ const useFetch = (url: string) => {
         setStatus("pending");
         const { data } = await axios.get<DataProps[]>(url);
         setStatus("resolved")
-        setData(data);
+        setData(data.products);
         console.log(data);
         
       } catch (error) {
