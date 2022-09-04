@@ -7,7 +7,7 @@ import { DataProps, LocationProps } from "../types/interface-Dataproducts";
 
 const useFetch = (url: string) => {
   const [data, setData] = useState<DataProps[]>([]);
-  //add an other data state for the location datas
+  //add an other data state for the location data
   const [status, setStatus] = useState<string>("idle");
   const [error, setError] = useState<unknown>(null);
 
@@ -15,10 +15,10 @@ const useFetch = (url: string) => {
     const fetchData = async () => {
       try {
         setStatus("pending");
-        const response = await axios.get<DataProps[]>(url);
+        const { data } = await axios.get<DataProps[]>(url);
         setStatus("resolved")
-        setData(response.data.products);
-        console.log(response.data);
+        setData(data);
+        console.log(data);
         
       } catch (error) {
         if (error instanceof Error) {
