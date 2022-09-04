@@ -6,8 +6,7 @@ import { MdOutlineBed, MdOutlineShower } from "react-icons/md";
 import { CardProps } from "../../types/interface-Dataproducts";
 
 const CardList = ({ data, status, error }: CardProps) => {
-  const { products } = data;
-  console.log("DATA", products);
+ 
   
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
@@ -43,7 +42,6 @@ const CardList = ({ data, status, error }: CardProps) => {
         data.slice(0, 9).map((product) => {
           const {
             _id,
-            name,
             country,
             price,
             ref,
@@ -57,8 +55,8 @@ const CardList = ({ data, status, error }: CardProps) => {
             <div className="page__card stacked" key={_id}>
               <img
                 src={image[0]}
-                alt={name}
-                title={name}
+                alt={country}
+                title={country}
                 className="card__img"
               />
               <div className="card__like">

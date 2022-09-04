@@ -8,7 +8,7 @@ import Location from "../components/home/location/Location";
 import PeopleSays from "../components/home/peoplesays/PeopleSays"
 import Contact from "../components/home/contact/Contact";
 
-//endpoint
+
 import { datas } from "../utils/multi-img-utils";
 
 
