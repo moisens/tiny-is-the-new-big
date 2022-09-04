@@ -6,6 +6,9 @@ import { MdOutlineBed, MdOutlineShower } from "react-icons/md";
 import { CardProps } from "../../types/interface-Dataproducts";
 
 const CardList = ({ data, status, error }: CardProps) => {
+  const { products } = data;
+  console.log("DATA", products);
+  
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
 
