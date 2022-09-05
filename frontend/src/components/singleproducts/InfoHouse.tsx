@@ -1,4 +1,5 @@
 import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { useParams } from "react-router-dom";
 
 const InfoHouse = () => {
   return (
