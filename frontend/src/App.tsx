@@ -19,7 +19,7 @@ function App() {
         <Route path="buy" element={<Buy />} />
         <Route path="rent" element={<Rent />} />
         <Route path="location" element={<Location />} />
-        <Route path="/:id" element={<Singleproduct />} />
+        <Route path="/details/:id" element={<Singleproduct />} />
         <Route path="*"  element={<NotFound />}/>
       </Routes>
       <Footer />

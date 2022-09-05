@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios, {AxiosResponse} from "axios";
+import axios from "axios";
 import { DataProps, LocationProps } from "../types/interface-Dataproducts";
 
 
@@ -18,7 +18,7 @@ const useFetch = (url: string) => {
         const { data } = await axios.get<DataProps[]>(url);
         setStatus("resolved")
         setData(data.products);
-        console.log(data);
+        console.log(data.products);
         
       } catch (error) {
         if (error instanceof Error) {
