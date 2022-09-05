@@ -1,5 +1,5 @@
 import { BsHeart, BsHeartFill } from "react-icons/bs";
-import { useParams } from "react-router-dom";
+import { CardProps } from "../../types/interface-Dataproducts";
 
 const InfoHouse = () => {
   return (
