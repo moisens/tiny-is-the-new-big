@@ -36,7 +36,7 @@ const CardList = ({ data, status, error }: CardProps) => {
   return (
     <React.Fragment>
       {status === "resolved" &&
-        data.slice(0, 9).map((product) => {
+        data.map((house) => {
           const {
             _id,
             country,
@@ -47,10 +47,11 @@ const CardList = ({ data, status, error }: CardProps) => {
             bathroom,
             image,
             category,
-          } = product;
+          } = house;
+
           return (
             <Link to={`/details-tiny-house/${_id}`} key={_id}>
-              <div className="page__card stacked" >
+              <div className="page__card stacked">
                 <img
                   src={image[0]}
                   alt={country}
@@ -79,7 +80,7 @@ const CardList = ({ data, status, error }: CardProps) => {
                     {category === "rent" || category === "buy" ? (
                       houseConfiguration(size, bedroom, bathroom)
                     ) : (
-                      <>{/*Location component goes here*/}</>
+                      <>Location component goes here</>
                     )}
                   </div>
                 </div>

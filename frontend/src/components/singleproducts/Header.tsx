@@ -11,8 +11,8 @@ const Header = ({ data, status, error }: CardProps) => {
       {status === "resolved" &&
         data.map((house) => {
           const { image, country, ref } = house;
-          return image.map((img) => {
-            return <Images img={img} country={country} key={ref} />;
+          return image.map((img, index) => {
+            return <Images img={img} country={country} key={index} />;
           });
         })}
     </header>
