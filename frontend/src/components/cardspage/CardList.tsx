@@ -49,8 +49,8 @@ const CardList = ({ data, status, error }: CardProps) => {
             category,
           } = product;
           return (
-            <Link to={`/details/${_id}`}>
-              <div className="page__card stacked" key={_id}>
+            <Link to={`/details-tiny-house/${_id}`} key={_id}>
+              <div className="page__card stacked" >
                 <img
                   src={image[0]}
                   alt={country}
@@ -79,7 +79,7 @@ const CardList = ({ data, status, error }: CardProps) => {
                     {category === "rent" || category === "buy" ? (
                       houseConfiguration(size, bedroom, bathroom)
                     ) : (
-                      <>hello</>
+                      <>{/*Location component goes here*/}</>
                     )}
                   </div>
                 </div>
