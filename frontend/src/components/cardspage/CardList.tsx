@@ -64,7 +64,6 @@ const CardList = ({ data, status, error }: CardProps) => {
               </div>
               <div className="card__content">
                 <div className="card__title">
-                  <h4 className="card__H4">{name}</h4>
                   <h4 className="card__H4">{country}</h4>
                 </div>
                 <div className="card__title">
