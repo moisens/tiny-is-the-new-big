@@ -6,8 +6,8 @@ import { DataProps, LocationProps } from "../types/interface-Dataproducts";
 
 
 const useFetch = (url: string) => {
-  const [datas, setDatas] = useState<DataProps[]>([]);
-  //add an other data state for the location data
+  const [dataHouse, setDataHouse] = useState<DataProps[]>([]);
+  const [dataLocation, setDataLocation] = useState<DataProps[]>([]);
   const [status, setStatus] = useState<string>("idle");
   const [error, setError] = useState<unknown>(null);
 
@@ -15,10 +15,11 @@ const useFetch = (url: string) => {
     const fetchData = async () => {
       try {
         setStatus("pending");
-        const { data } = await axios.get<DataProps[]>(url);
+        const { data: datahouse } = await axios.get<DataProps[]>(url);
+        const { data: datalocation } = await axios.get<LocationProps[]>(url);
         setStatus("resolved")
-        setDatas(data.products);
-        console.log(data.products);
+        setDataHouse(datahouse.products);
+        setDataLocation(datalocation.products);
         
       } catch (error) {
         if (error instanceof Error) {
@@ -33,7 +34,8 @@ const useFetch = (url: string) => {
   }, [url]);
 
   return {
-    datas,
+    dataHouse,
+    dataLocation,
     status,
     error,
   };
