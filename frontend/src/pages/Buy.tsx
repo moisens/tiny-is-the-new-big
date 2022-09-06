@@ -7,14 +7,14 @@ import useFetch from "../hooks/useFetch";
 
 const Buy = () => {
   const categories = "buy";
-  const { data, status, error } = useFetch(
+  const { datas, status, error } = useFetch(
     `/api/v1/products?category=${categories}`
   );
 
   return (
     <div className="home-container">
       <Headers dataHeaders={HeaderBuy} />
-      <CardsPage data={data} status={status} error={error} />
+      <CardsPage data={datas} status={status} error={error} />
     </div>
   );
 };
