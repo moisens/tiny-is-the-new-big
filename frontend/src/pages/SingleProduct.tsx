@@ -6,11 +6,11 @@ import useFetch from "../hooks/useFetch";
 
 const Singleproduct = () => {
   const { _id } = useParams();
-  const { data, error, status } = useFetch(`/api/v1/products?_id=${_id}`)
+  const { datas, error, status } = useFetch(`/api/v1/products?_id=${_id}`)
   
   return (
     <div className="home-container">
-      <Header data={data} error= {error} status={status} />
+      <Header data={datas} error= {error} status={status} />
       <InfoHouse />
     </div>
   )

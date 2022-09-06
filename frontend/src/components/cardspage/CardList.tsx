@@ -6,7 +6,7 @@ import { MdOutlineBed, MdOutlineShower } from "react-icons/md";
 import { CardProps } from "../../types/interface-Dataproducts";
 import { Link } from "react-router-dom";
 
-const CardList = ({ data, status, error }: CardProps) => {
+const CardList = ({ data: datas, status, error }: CardProps) => {
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
 
@@ -36,7 +36,7 @@ const CardList = ({ data, status, error }: CardProps) => {
   return (
     <React.Fragment>
       {status === "resolved" &&
-        data.map((house) => {
+        datas.map((house) => {
           const {
             _id,
             country,

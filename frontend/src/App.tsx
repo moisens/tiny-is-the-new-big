@@ -16,9 +16,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="buy" element={<Buy />} />
-        <Route path="rent" element={<Rent />} />
-        <Route path="location" element={<Location />} />
+        <Route path="/buy" element={<Buy />} />
+        <Route path="/rent" element={<Rent />} />
+        <Route path="/location" element={<Location />} />
         <Route path="/details-tiny-house/:_id" element={<Singleproduct />} />
         <Route path="*"  element={<NotFound />}/>
       </Routes>
