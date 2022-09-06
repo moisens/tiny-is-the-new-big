@@ -18,7 +18,8 @@ const getAllProduct = async (req, res) => {
     queryObject.category = category;
   }
   const products = await Product.find(queryObject); //const products = await Product.find({});
-  res.status(StatusCodes.OK).json({ products });
+  const totalHouses = await Product.countDocuments(queryObject);
+  res.status(StatusCodes.OK).json({ products, totalHouses });
 };
 
 const getSingleProduct = async (req, res) => {
