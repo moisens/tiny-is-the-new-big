@@ -1,10 +1,15 @@
 import "./cardspage.scss";
 import Button from "../button/Button";
-
+import { useCard } from "../../hooks/useCards";
 
 
 
 const Cardspage = () => {
+  const { status, getBuyHouse } = useCard();
+  console.log(status);
+  getBuyHouse()
+  
+  
   return (
     <section className="page__container">
       {/*Filter component*/}

@@ -29,7 +29,12 @@ export interface LocationProps {
   numOfReviews: number;
 }
 
+export interface CardData {
+  dataHouse: DataProps[]
+} 
 
-
+export type CardContextProvider = {
+  children: React.ReactNode,
+}
 
 
