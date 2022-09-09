@@ -3,13 +3,13 @@ import Headers from "../components/header/Headers";
 import { HeaderBuy } from "../utils/headers-utils";
 import Cardspage from "../components/cardspage/Cardspages";
 import { CardProvider } from "../context/CardsContext";
-import useFetch from "../hooks/useFetch";
-import { DataProps, LocationProps } from "../types/interface-Dataproducts";
+import { useCard } from "../hooks/useCards";
 
 
 
 
 const Buy = () => {
+
   return (
     <div className="home-container">
       <Headers dataHeaders={HeaderBuy} />

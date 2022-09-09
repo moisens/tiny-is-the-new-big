@@ -4,7 +4,7 @@
 
 export interface DataHeaderProps {
   dataHeaders: {
-    id: string;
+    readonly id: string;
     image: string;
     icon: JSX.Element;
     category: string;

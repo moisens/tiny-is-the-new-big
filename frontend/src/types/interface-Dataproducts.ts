@@ -30,7 +30,8 @@ export interface LocationProps {
 }
 
 export interface CardData {
-  dataHouse: DataProps[]
+  data: DataProps
+  setData: React.Dispatch<React.SetStateAction<never[]>>
 } 
 
 export type CardContextProvider = {
