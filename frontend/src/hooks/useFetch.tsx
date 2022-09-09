@@ -13,9 +13,9 @@ const useFetch = <T,>(url: string, initialState: T) => {
     const fetchData = async () => {
       try {
         setStatus("pending");
-        const { data } = await axios.get<T>(url);
+        const res = await axios.get<T>(url);
         setStatus("resolved")
-        setDataHouse(data);
+        setDataHouse(res.data);
         
       } catch (error) {
         if (error instanceof Error) {

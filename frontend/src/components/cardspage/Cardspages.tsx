@@ -3,13 +3,11 @@ import Button from "../button/Button";
 import { useCard } from "../../hooks/useCards";
 
 
-
 const Cardspage = () => {
-  const { status, getBuyHouse } = useCard();
-  console.log(status);
-  getBuyHouse()
+  const { dataHouse } = useCard()
+  console.log(dataHouse);
   
-  
+
   return (
     <section className="page__container">
       {/*Filter component*/}
