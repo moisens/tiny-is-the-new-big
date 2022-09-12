@@ -1,11 +1,8 @@
 import "./cardspage.scss";
 import Button from "../button/Button";
-import { useCard } from "../../hooks/useCards";
 
 
 const Cardspage = () => {
-  const { dataHouse } = useCard()
-  console.log(dataHouse);
   
 
   return (
