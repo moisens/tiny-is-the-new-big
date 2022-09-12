@@ -3,12 +3,9 @@ import React from "react";
 import { BsHeart } from "react-icons/bs";
 import { IoIosQrScanner } from "react-icons/io";
 import { MdOutlineBed, MdOutlineShower } from "react-icons/md";
-import { CardProps } from "../../types/interface-Dataproducts";
 import { Link } from "react-router-dom";
 
-const CardList = ({ data: datas, status, error }: CardProps) => {
-  if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "rejected") throw error;
+const CardList = () => {
 
   const houseConfiguration = (
     size: number | undefined,
@@ -35,7 +32,7 @@ const CardList = ({ data: datas, status, error }: CardProps) => {
 
   return (
     <React.Fragment>
-      {status === "resolved" &&
+      {/* {status === "resolved" &&
         datas.map((house) => {
           const {
             _id,
@@ -87,7 +84,7 @@ const CardList = ({ data: datas, status, error }: CardProps) => {
               </div>
             </Link>
           );
-        })}
+        })} */}
     </React.Fragment>
   );
 };
