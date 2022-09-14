@@ -4,8 +4,8 @@ import axios from "axios";
 
 
 
-const useFetch = <T,>(url: string, initialState: T) => {
-  const [dataHouse, setDataHouse] = useState<T>(initialState);
+const useFetch = <T,>(url: string) => {
+  const [dataHouse, setDataHouse] = useState<T | []>([]);
   const [status, setStatus] = useState<string>("idle");
   const [error, setError] = useState<unknown>(null);
 

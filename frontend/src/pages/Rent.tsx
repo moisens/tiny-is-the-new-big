@@ -1,6 +1,5 @@
 import "../components/home/home.scss";
 import Headers from "../components/header/Headers";
-import CardsPage from "../components/cardspage/Cardspage";
 import { HeaderRent } from "../utils/headers-utils";
 import useFetch from "../hooks/useFetch";
 
