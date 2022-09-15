@@ -3,14 +3,14 @@ import Headers from "../components/header/Headers";
 import { HeaderBuy } from "../utils/headers-utils";
 import Cardspage from "../components/cardspage/Cardspages";
 import { useState, useEffect } from "react";
-import { HousedataType } from "../types/interface-housedata";
+import { HousedataType, StatusType } from "../types/interface-housedata";
 
 
 
 
 const Buy = () => {
   const [datas, setDatas] = useState<HousedataType>({} as HousedataType);
-  const [status, setStatus] = useState<string>("iddle");
+  const [status, setStatus] = useState<StatusType>("iddle");
   const [error, setError] = useState<unknown>(null)
 
   const fetchHouses = async () => {
@@ -39,7 +39,7 @@ const Buy = () => {
   return (
     <div className="home-container">
       <Headers dataHeaders={HeaderBuy} />
-      <Cardspage productData={datas} />
+      <Cardspage productData={datas} statusType={status} />
     </div>
   );
 };

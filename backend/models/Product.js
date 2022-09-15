@@ -18,7 +18,7 @@ const ProductSchema = new mongoose.Schema(
       required: [true, "Provide a price of the product"],
       default: 0,
     },
-    ref: {
+    reference: {
       type: Number,
       required: [true, "Provide a ref for the product"],
     },

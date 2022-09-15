@@ -1,5 +1,6 @@
 export interface Housedata {
   productData: HousedataType;
+  statusType: StatusType
 }
 
 export type HousedataType = {
@@ -28,4 +29,5 @@ export type Productsdata = {
   category: string;
 };
 
+export type StatusType = "iddle" | "pending" | "resolved" | "rejected";
 

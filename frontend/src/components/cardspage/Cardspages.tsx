@@ -1,10 +1,13 @@
 import "./cardspage.scss";
 import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
+import CardList from "./CardList"
 
-const Cardspage = (props: Housedata) => {
-  const { products } = props.productData;
+const Cardspage = ({ productData, statusType }: Housedata) => {
+  const { products } = productData;
+  console.log(statusType);
   console.log(products);
+  
 
   return (
     <section className="page__container">
@@ -13,7 +16,9 @@ const Cardspage = (props: Housedata) => {
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*First Card*/}
-          {/* <CardList data={data} status={status} error={error} /> */}
+          {products?.map(product  => {
+            return <CardList key={product._id} {...product} />
+          })}
           {/*End First Card*/}
         </div>
       </div>
