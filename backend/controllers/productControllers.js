@@ -30,12 +30,12 @@ const getSingleProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   const { id: productId } = req.params;
-  const { name, country, price, ref, size, bedroom, bathroom } = req.body;
+  const { name, country, price, reference, size, bedroom, bathroom } = req.body;
   if (
     name === "" ||
     country === "" ||
     price === "" ||
-    ref === "" ||
+    reference === "" ||
     size === "" ||
     bedroom === "" ||
     bathroom === ""
