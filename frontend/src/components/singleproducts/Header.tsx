@@ -1,5 +1,5 @@
 import "./singleproduct.scss";
-import { CardProps } from "../../types/interface-Dataproducts";
+import { CardProps } from "../../types/interface-housedata";
 import Images from "./Images";
 
 const Header = ({ data:  datas, status, error }: CardProps) => {
