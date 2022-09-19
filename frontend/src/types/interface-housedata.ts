@@ -30,4 +30,7 @@ export type Productsdata = {
 };
 
 export type StatusType = "iddle" | "pending" | "resolved" | "rejected";
-
+export type TinyError = "unknown";
+export interface IsFetchingError {
+  message: string;
+}
