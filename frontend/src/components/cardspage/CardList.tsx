@@ -1,4 +1,3 @@
-//import "./cardspage.scss";
 import React from "react";
 import { BsHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -7,7 +6,6 @@ import houseConfiguration from "../../utils/configHouse";
 
 const CardList = ({ productData, statusType }: Housedata) => {
   const { products } = productData;
-  console.log(products);
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
 

@@ -4,10 +4,6 @@ import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList"
 
 const Cardspage = ({ productData, statusType }: Housedata) => {
-  const { products } = productData;
-  console.log(statusType);
-  console.log(products);
-  
 
   return (
     <section className="page__container">
