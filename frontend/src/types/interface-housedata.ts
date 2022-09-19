@@ -12,7 +12,7 @@ export type Productsdata = {
   readonly _id: string;
   country: string;
   price: number;
-  ref: number;
+  reference: number;
   size: number;
   image: string[];
   bedroom: number;

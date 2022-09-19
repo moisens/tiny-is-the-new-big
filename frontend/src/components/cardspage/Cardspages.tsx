@@ -16,9 +16,10 @@ const Cardspage = ({ productData, statusType }: Housedata) => {
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*First Card*/}
-          {products?.map(product  => {
-            return <CardList key={product._id} {...product} />
-          })}
+          <CardList 
+            productData={productData} 
+            statusType={statusType} 
+          />
           {/*End First Card*/}
         </div>
       </div>
