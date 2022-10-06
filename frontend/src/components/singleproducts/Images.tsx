@@ -1,6 +1,6 @@
 interface Img {
   img: string;
-  country: string;
+  country?: string;
 }
 
 
