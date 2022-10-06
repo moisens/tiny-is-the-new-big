@@ -1,20 +1,24 @@
 import "./singleproduct.scss";
-import { CardProps } from "../../types/interface-housedata";
 import Images from "./Images";
+import { Housedata } from "../../types/interface-housedata";
+import { useParams } from "react-router-dom";
 
-const Header = ({ data:  datas, status, error }: CardProps) => {
-  if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "reject") throw error;
+const Header = ({ productData, statusType }: Housedata) => {
+  const { products } = productData;
+  const { _id } = useParams();
+  const singleTinyHouse = products?.find(product => product._id === _id)
+  console.log("Single", singleTinyHouse?.image);
+  
+  
+  
+  if (statusType === "pending") return <h2>Loading...</h2>;
+  if (statusType === "rejected") throw new Error(statusType);
 
   return (
     <header className="head__container">
-      {status === "resolved" &&
-        datas.map((house) => {
-          const { image, country, ref } = house;
-          return image.map((img, index) => {
-            return <Images img={img} country={country} key={index} />;
-          });
-        })}
+      {singleTinyHouse?.image.map(image => (
+        <Images img={image} key={image} />
+      ))}
     </header>
   );
 };
