@@ -13,7 +13,8 @@ const createLocation = async (req, res) => {
 
 const getAllLocations = async (req, res) => {
   const locations = await Location.find({});
-  res.status(StatusCodes.OK).json({ locations });
+  const totalLocations = await Location.countDocuments({});
+  res.status(StatusCodes.OK).json({ locations, totalLocations });
 };
 
 const getSingleLocation = async (req, res) => {
