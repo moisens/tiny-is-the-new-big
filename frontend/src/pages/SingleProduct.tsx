@@ -49,7 +49,7 @@ const Singleproduct = () => {
   return (
     <div className="home-container">
       <Header productData={datas} statusType={status} />
-      <InfoHouse />
+      <InfoHouse productData={datas} statusType={status} />
     </div>
   )
 }

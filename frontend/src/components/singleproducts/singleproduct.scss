@@ -100,6 +100,7 @@
     }
     .info__description {
       //background-color: lightpink;
+
       .info__titleH5 {
         font-size: 20px;
         padding-bottom: 30px;
@@ -114,6 +115,10 @@
       display: flex;
       gap: 75px;
 
+      .info__weight {
+        font-weight: 600;
+      }
+
       .info__titleH5 {
         font-size: 20px;
         padding-bottom: 30px;
@@ -124,6 +129,9 @@
       }
     }
     &.info__energydata {
+      .info__weight {
+        font-weight: 600;
+      }
       .info__titleH5 {
         font-size: 20px;
         padding-bottom: 30px;
