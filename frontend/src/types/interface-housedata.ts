@@ -6,7 +6,9 @@ export interface Housedata {
 export type HousedataType = {
   products: Productsdata[];
   totalHouses: string;
+  product: Productsdata//Single product _id
 };
+
 
 export type Productsdata = {
   readonly _id: string;
