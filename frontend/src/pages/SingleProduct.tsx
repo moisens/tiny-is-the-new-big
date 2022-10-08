@@ -25,16 +25,14 @@ const Singleproduct = () => {
 
   const fetchHouses = async () => {
     try {
-      const categories = "buy"
       setStatus("pending");
-      const response = await fetch(`/api/v1/products/?category=${categories}`);
+      const response = await fetch(`/api/v1/products/${_id}`);
       if (!response.ok) {
         throw new Error(`unable to fetch data!`);
       }
       const jsonhouse = await response.json();
       setStatus("resolved");
       setDatas(jsonhouse);
-      
     } catch (error) {
       if (isError(error)) {
         setError(error.message);
