@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { HousedataType, StatusType } from "../types/interface-housedata";
+import { LocationDataType } from "../types/interface-Locationsdata";
+import { StatusType } from "../types/interface-housedata";
+import LocationPage from "../components/cardspage/LocationPage";
+
 
 interface IsFetchingError {
   message: string;
@@ -13,7 +16,7 @@ const isError = (error: unknown): error is IsFetchingError => {
 };
 
 const Location = () => {
-  const [datas, setDatas] = useState<HousedataType>({} as HousedataType);
+  const [datas, setDatas] = useState<LocationDataType>({} as LocationDataType);
   const [status, setStatus] = useState<StatusType>("iddle");
   const [error, setError] = useState<unknown>(null);
 
@@ -42,7 +45,7 @@ const Location = () => {
 
   return (
     <div className="home-container">
-      <div>filter goes here</div>
+      <LocationPage locationDatas={datas} statusType={status} />
     </div>
   );
 };
