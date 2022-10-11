@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { HousedataType, StatusType } from "../types/interface-housedata";
 import { useEffect, useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries";
 
 interface IsFetchingError {
   message: string;
@@ -45,13 +47,18 @@ const Singleproduct = () => {
   useEffect(() => {
     fetchHouses();
   }, []);
-  
+
   return (
     <div className="home-container">
-      <Header productData={datas} statusType={status} />
-      <InfoHouse productData={datas} statusType={status} />
+      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+        <Header productData={datas} statusType={status} />
+      </ErrorBoundary>
+
+      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+        <InfoHouse productData={datas} statusType={status} />
+      </ErrorBoundary>
     </div>
-  )
-}
+  );
+};
 
 export default Singleproduct;

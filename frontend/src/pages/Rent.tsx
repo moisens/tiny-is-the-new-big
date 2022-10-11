@@ -4,6 +4,8 @@ import { HeaderRent } from "../utils/headers-utils";
 import Cardspage from "../components/cardspage/Cardspages";
 import { useState, useEffect } from "react";
 import { HousedataType, StatusType } from "../types/interface-housedata";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries";
 
 interface IsFetchingError {
   message: string;
@@ -47,8 +49,13 @@ const Rent = () => {
 
   return (
     <div className="home-container">
-      <Headers dataHeaders={HeaderRent} />
-      <Cardspage productData={datas} statusType={status} />
+      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+        <Headers dataHeaders={HeaderRent} />
+      </ErrorBoundary>
+
+      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+        <Cardspage productData={datas} statusType={status} />
+      </ErrorBoundary>
     </div>
   );
 };
