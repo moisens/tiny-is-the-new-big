@@ -4,6 +4,12 @@ import { Housedata } from "../../types/interface-housedata";
 const InfoHouse = ({ productData, statusType }: Housedata) => {
   const { product } = productData;
 
+  const catUpper = product?.category.slice(0, 1).toUpperCase();
+  const restCat = product?.category.slice(1);
+  const category = `${catUpper}${restCat}`;
+  
+  
+
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType);
 
@@ -12,13 +18,13 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
       <div className="info__content">
         <div className="info__info">
           <div className="info__element">
-            <p className="info__boldtext">Rent</p>
+            <p className="info__boldtext">{category}</p>
           </div>
           <div className="info__element">
             <p className="info__boldtext">
               {product?.category === "rent"
-                ? `€${product?.price}/month`
-                : `€${product?.price}`}
+                ? `${product?.price} €/month`
+                : `${product?.price} €`}
             </p>
           </div>
           <div className="info__element info__icon">
@@ -65,8 +71,8 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
             <p>
               <span className="info__weight">Price:</span>{" "}
               {product?.category === "rent"
-                ? `${product?.price}/month`
-                : `${product?.price}€`}
+                ? `${product?.price} €/month`
+                : `${product?.price} €`}
             </p>
             <p>
               <span className="info__weight">Ref:</span> {product?.reference}
