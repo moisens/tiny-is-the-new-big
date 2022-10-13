@@ -7,6 +7,7 @@ import "./dropdown.scss";
 
 const SelectServices = ({ dataDropdownList }: ContactProps) => {
   const [dropIsActive, setDropIsActive] = useState<boolean>(false);
+  const [selected, setSelected] = useState<string>("")
 
   const handleActiveDropdown = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -22,7 +23,8 @@ const SelectServices = ({ dataDropdownList }: ContactProps) => {
         return (
           <Fragment key={id}>
             <div className={dropIsActive ? "input__input isSelected" : "input__input"}>
-              <p>{defaultValues}</p>
+              <p>{selected ? selected : defaultValues}</p>
+              
               <Button
                 className="input__button"
                 as="button"
@@ -31,7 +33,12 @@ const SelectServices = ({ dataDropdownList }: ContactProps) => {
                 <RiArrowDownSFill size="1.3rem" />
               </Button>
             </div>
-            <DropdownList options={options} dropIsActive={dropIsActive} />
+            <DropdownList 
+              options={options} 
+              dropIsActive={dropIsActive}
+              setDropIsActive={setDropIsActive}
+              setSelected={setSelected}
+            />
           </Fragment>
         );
       })}
