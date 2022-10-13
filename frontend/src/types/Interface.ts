@@ -53,4 +53,11 @@ export interface OptionsProps {
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 }
 
+export interface FormailProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  subject: string;
+}
+
 
