@@ -1,18 +1,21 @@
 import { countries } from "../../../utils/form-utils";
 import { services } from "../../../utils/form-utils";
+import { FormailProps } from "../../../types/Interface";
 import SelectServices from "./Dropdown";
 import { FormEvent, useState } from "react"
 
 
 const FormMail = () => {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormailProps>({
     firstName: "",
     lastName: "",
     email: "",
     subject: ""
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const { firstName, lastName, email, subject } = form; 
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(form);
     
@@ -40,7 +43,7 @@ const FormMail = () => {
                 placeholder="First name"
                 id="firstName"
                 className="input__input"
-                value={form.firstName}
+                value={firstName}
                 onChange={handleInputChange}
               />
             </label>
@@ -51,7 +54,7 @@ const FormMail = () => {
                 placeholder="Last name"
                 id="lastName"
                 className="input__input"
-                value={form.lastName}
+                value={lastName}
                 onChange={handleInputChange}
               />
             </label>
@@ -66,14 +69,14 @@ const FormMail = () => {
             id="email"
             placeholder="Your email"
             className="input__email"
-            value={form.email}
+            value={email}
             onChange={handleInputChange}
           />
           <label htmlFor="subject" />
           <textarea 
             id="subject" 
             className="input__textarea" 
-            value={form.subject}
+            value={subject}
             onChange={handleTextArea}
           />
           <button type="submit" className="form__button">
