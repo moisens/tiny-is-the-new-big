@@ -1,17 +1,13 @@
 import { countries } from "../../../utils/form-utils";
 import { services } from "../../../utils/form-utils";
 import { FormailProps } from "../../../types/Interface";
+import { defaultForm } from "../../../utils/defaultForm";
 import SelectServices from "./Dropdown";
 import { FormEvent, useState } from "react"
 
 
 const FormMail = () => {
-  const [form, setForm] = useState<FormailProps>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: ""
-  });
+  const [form, setForm] = useState<FormailProps>(defaultForm);
 
   const { firstName, lastName, email, subject } = form; 
 
