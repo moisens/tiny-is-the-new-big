@@ -9,8 +9,6 @@ const CardList = ({ productData, statusType }: Housedata) => {
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
 
- 
-
   return (
     <React.Fragment>
       {statusType === "resolved" &&
@@ -27,42 +25,40 @@ const CardList = ({ productData, statusType }: Housedata) => {
             reference,
           } = product;
           return (
-            <Link to={`/details-tiny-house/${_id}`} key={_id}>
-              <div className="page__card stacked">
+            <div className="page__card stacked" key={_id}>
+              <Link to={`/details-tiny-house/${_id}`}>
                 <img
                   src={image[0]}
                   alt={country}
                   title={country}
                   className="card__img"
                 />
-                <div className="card__like">
-                  <BsHeart size="1.4rem" />
+              </Link>
+              <div className="card__like">
+                <BsHeart size="1.4rem" />
+              </div>
+              <div className="card__content">
+                <div className="card__title">
+                  <h4 className="card__H4">{country}</h4>
                 </div>
-                <div className="card__content">
-                  <div className="card__title">
-                    <h4 className="card__H4">{country}</h4>
-                  </div>
-                  <div className="card__title">
-                    <h4 className="card__H4">
-                      <span className="green__span">
-                        {category === "rent"
-                          ? `€ ${price} / month`
-                          : `€ ${price}`}
-                      </span>
-                    </h4>
-                    <span className="green__span">|</span>
-                    <h4 className="card__H4">Ref: {reference}</h4>
-                  </div>
-                  <div className="card__title">
-                    {category === "rent" || category === "buy" ? (
-                      houseConfiguration(size, bedroom, bathroom)
-                    ) : (
-                      <>Location component goes here</>
-                    )}
-                  </div>
+                <div className="card__title">
+                  <h4 className="card__H4">
+                    <span className="green__span">
+                      {category === "rent"
+                        ? `€ ${price} / month`
+                        : `€ ${price}`}
+                    </span>
+                  </h4>
+                  <span className="green__span">|</span>
+                  <h4 className="card__H4">Ref: {reference}</h4>
+                </div>
+                <div className="card__title">
+                  {category === "rent" || category === "buy"
+                    ? houseConfiguration(size, bedroom, bathroom)
+                    : null}
                 </div>
               </div>
-            </Link>
+            </div>
           );
         })}
     </React.Fragment>
