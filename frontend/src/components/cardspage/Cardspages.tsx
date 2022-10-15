@@ -1,7 +1,8 @@
 import "./cardspage.scss";
 import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
-import CardList from "./CardList"
+import CardList from "./CardList";
+import { FavoritesProvider } from "../../context/favoriteContext";
 
 const Cardspage = ({ productData, statusType }: Housedata) => {
 
@@ -12,10 +13,13 @@ const Cardspage = ({ productData, statusType }: Housedata) => {
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*First Card*/}
-          <CardList 
+          <FavoritesProvider>
+            <CardList 
             productData={productData} 
             statusType={statusType} 
           />
+          </FavoritesProvider>
+          
           {/*End First Card*/}
         </div>
       </div>
