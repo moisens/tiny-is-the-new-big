@@ -44,7 +44,7 @@ export interface ContactProps {
     defaultValues: string;
     options: { id: string; listOptions: string, country?: string }[];
   }[];
-}[]
+}
 
 export interface OptionsProps {
   options: { id: string; listOptions: string, country?: string }[]

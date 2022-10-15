@@ -3,9 +3,11 @@ import { BsHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Housedata } from "../../types/interface-housedata";
 import houseConfiguration from "../../utils/configHouse";
+import useFavorite from "../../hooks/useFavorite";
 
 const CardList = ({ productData, statusType }: Housedata) => {
   const { products } = productData;
+
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
 
@@ -53,9 +55,7 @@ const CardList = ({ productData, statusType }: Housedata) => {
                   <h4 className="card__H4">Ref: {reference}</h4>
                 </div>
                 <div className="card__title">
-                  {category === "rent" || category === "buy"
-                    ? houseConfiguration(size, bedroom, bathroom)
-                    : null}
+                  {houseConfiguration(size, bedroom, bathroom)}
                 </div>
               </div>
             </div>

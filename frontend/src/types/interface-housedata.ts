@@ -7,6 +7,7 @@ export type HousedataType = {
   products: Productsdata[];
   totalHouses: string;
   product: Productsdata//Single product _id
+  favorites: string[];
 };
 
 
