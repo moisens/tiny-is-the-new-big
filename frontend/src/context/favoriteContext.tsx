@@ -1,20 +1,17 @@
 import { createContext, useState } from "react";
 import { FavoritesProviderProps } from "../types/interface-context"
-import { Housedata } from "../types/interface-housedata";
+import { FavoriteData, Productsdata } from "../types/interface-housedata";
 
-interface FavoriteProps  {
-  readonly _id: string;
-  favorites: string[];
-}
 
-const FavoritesContext = createContext({});
+
+const FavoritesContext = createContext<FavoriteData>({} as FavoriteData);
 
 export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
-  const [favorites, setFavorites] = useState<FavoriteProps[]>([]);
+  const [favorites, setFavorites] = useState<FavoriteData[]>([]);
 
   let test = "hello from favorites context"
 
-  const addToFavorites = (product) => {
+  const addToFavorites = (product: FavoriteData) => {
     const exist = favorites.find(favorite => favorite._id === product._id);
     if (exist) {
       setFavorites(
@@ -31,7 +28,6 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
   return <FavoritesContext.Provider value={{
     favorites,
     addToFavorites,
-    test
   }}>
     { children }
   </FavoritesContext.Provider>

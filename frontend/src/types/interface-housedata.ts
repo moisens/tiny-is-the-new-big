@@ -37,3 +37,11 @@ export type TinyError = "unknown";
 export interface IsFetchingError {
   message: string;
 }
+
+
+export interface FavoriteData {
+  _id: string;
+  favorites: Productsdata[]
+  product: Productsdata
+  addToFavorites: (product: FavoriteData) => void;
+}
