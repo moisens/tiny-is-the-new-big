@@ -7,6 +7,9 @@ import useFavorite from "../../hooks/useFavorite";
 
 const CardList = ({ productData, statusType }: Housedata) => {
   const { products } = productData;
+  const { addToFavorites, favorites } = useFavorite()
+  
+  
 
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
@@ -37,7 +40,11 @@ const CardList = ({ productData, statusType }: Housedata) => {
                 />
               </Link>
               <div className="card__like">
-                <BsHeart size="1.4rem" />
+                <BsHeart size="1.4rem" 
+                  onClick={() => {
+                    addToFavorites(product)
+                  }}
+                />
               </div>
               <div className="card__content">
                 <div className="card__title">

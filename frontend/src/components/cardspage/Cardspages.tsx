@@ -5,7 +5,6 @@ import CardList from "./CardList";
 import { FavoritesProvider } from "../../context/favoriteContext";
 
 const Cardspage = ({ productData, statusType }: Housedata) => {
-
   return (
     <section className="page__container">
       {/*Filter component*/}
@@ -14,12 +13,9 @@ const Cardspage = ({ productData, statusType }: Housedata) => {
         <div className="page__gridcontainer">
           {/*First Card*/}
           <FavoritesProvider>
-            <CardList 
-            productData={productData} 
-            statusType={statusType} 
-          />
+            <CardList productData={productData} statusType={statusType} />
           </FavoritesProvider>
-          
+
           {/*End First Card*/}
         </div>
       </div>
