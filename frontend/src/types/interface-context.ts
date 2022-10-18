@@ -8,5 +8,5 @@ export interface FavoritesProviderProps {
 export type FavoritesContextType = {
   favorites: Productsdata[];
   addToFavorites: (product: Productsdata) => void;
-
+  removeFromFavorites: (product: Productsdata) => void;
 };

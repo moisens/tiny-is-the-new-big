@@ -1,5 +1,5 @@
-import React from "react";
-import { BsHeart } from "react-icons/bs";
+import React, { useState } from "react";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Housedata } from "../../types/interface-housedata";
 import houseConfiguration from "../../utils/configHouse";
@@ -7,9 +7,12 @@ import useFavorite from "../../hooks/useFavorite";
 
 const CardList = ({ productData, statusType }: Housedata) => {
   const { products } = productData;
-  const { addToFavorites, favorites } = useFavorite()
-  
-  
+  const { addToFavorites, removeFromFavorites, favorites } = useFavorite();
+  const [liked, setLiked] = useState(false);
+
+  const handleActiveLike = () => {
+    setLiked(!liked);
+  };
 
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
@@ -40,14 +43,26 @@ const CardList = ({ productData, statusType }: Housedata) => {
                 />
               </Link>
               <div className="card__like">
-                <BsHeart size="1.4rem" 
-                  onClick={() => {
-                    addToFavorites(product)
-                    console.log(product);
-                    
-                    
-                  }}
-                />
+                {!liked && !favorites.length ? (
+                  <BsHeart
+                    size="1.4rem"
+                    color="#08a1ba"
+                    onClick={() => {
+                      addToFavorites(product);
+                      handleActiveLike();
+                    }}
+                  />
+                ) : (
+                  <BsHeartFill
+                    size="1.4rem"
+                    color="#08a1ba"
+                    onClick={() => {
+                      removeFromFavorites(product);
+                      handleActiveLike();
+                    }}
+                  />
+                )}
+                
               </div>
               <div className="card__content">
                 <div className="card__title">
