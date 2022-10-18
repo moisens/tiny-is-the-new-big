@@ -43,6 +43,9 @@ const CardList = ({ productData, statusType }: Housedata) => {
                 <BsHeart size="1.4rem" 
                   onClick={() => {
                     addToFavorites(product)
+                    console.log(product);
+                    
+                    
                   }}
                 />
               </div>
