@@ -7,7 +7,6 @@ export type HousedataType = {
   products: Productsdata[];
   totalHouses: string;
   product: Productsdata//Single product _id
-  favorites: string[];
 };
 
 
@@ -39,9 +38,3 @@ export interface IsFetchingError {
 }
 
 
-export interface FavoriteData {
-  _id: string;
-  favorites: Productsdata[]
-  product: Productsdata
-  addToFavorites: (product: FavoriteData) => void;
-}

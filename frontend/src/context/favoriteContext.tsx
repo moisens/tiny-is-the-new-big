@@ -1,21 +1,19 @@
 import { createContext, useState } from "react";
-import { FavoritesProviderProps } from "../types/interface-context"
-import { FavoriteData, Productsdata } from "../types/interface-housedata";
+import { FavoritesProviderProps, FavoritesContextType } from "../types/interface-context"
+import { Productsdata } from "../types/interface-housedata";
 
 
 
-const FavoritesContext = createContext<FavoriteData>({} as FavoriteData);
+const FavoritesContext = createContext<FavoritesContextType | null>(null);
 
 export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
-  const [favorites, setFavorites] = useState<FavoriteData[]>([]);
+  const [favorites, setFavorites] = useState<Productsdata[]>([]);
 
-  let test = "hello from favorites context"
-
-  const addToFavorites = (product: FavoriteData) => {
+  const addToFavorites = (product: Productsdata) => {
     const exist = favorites.find(favorite => favorite._id === product._id);
     if (exist) {
       setFavorites(
-        favorites.map(favorite => {
+        favorites?.map(favorite => {
           return favorite._id === product._id ? { ...exist, favorite } : favorite
         })
       )
