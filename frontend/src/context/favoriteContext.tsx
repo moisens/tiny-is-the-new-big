@@ -22,10 +22,16 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
     }
   }
 
+  const removeFromFavorites = (product: Productsdata) => {
+    const newFavorite = favorites.filter(favorite => favorite._id !== product._id)
+    setFavorites(newFavorite)
+  }
+
 
   return <FavoritesContext.Provider value={{
     favorites,
     addToFavorites,
+    removeFromFavorites
   }}>
     { children }
   </FavoritesContext.Provider>
