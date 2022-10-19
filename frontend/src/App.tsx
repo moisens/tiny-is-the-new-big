@@ -5,6 +5,7 @@ import Buy from "./pages/Buy";
 import Rent from "./pages/Rent";
 import Location from "./pages/Location";
 import Singleproduct from "./pages/SingleProduct";
+import Favorites from "./pages/Favorites";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/footer/Footer";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/buy" element={<Buy />} />
         <Route path="/rent" element={<Rent />} />
         <Route path="/location" element={<Location />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/details-tiny-house/:_id" element={<Singleproduct />} />
         <Route path="*"  element={<NotFound />}/>
       </Routes>
