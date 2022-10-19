@@ -23,7 +23,7 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
   }
 
   const removeFromFavorites = (product: Productsdata) => {
-    const newFavorite = favorites.filter(favorite => favorite._id !== product._id)
+    const newFavorite = favorites?.filter(favorite => favorite._id !== product._id)
     setFavorites(newFavorite)
   }
 

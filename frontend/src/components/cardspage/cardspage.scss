@@ -52,7 +52,7 @@
         aspect-ratio: 1 / 1.28;
 
         .card__like {
-          background-color: #fff;
+          background-color: rgb(255, 255, 255);
           width: 47px;
           height: 47px;
           display: flex;
@@ -61,9 +61,9 @@
           position: absolute;
           top: 15px;
           right: 15px;
-          border: solid 0.4px #08a1ba;
+          border: solid 1px #08a1ba;
           border-radius: 9px;
-          //color: #08a1ba;
+          color: #08a1ba;
           cursor: pointer;
         }
 
