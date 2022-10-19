@@ -2,17 +2,20 @@ import "./nav.scss";
 import { linkNav, dropdownLinks } from "../../utils/utils";
 import LinkList from "./LinkList";
 import DropdowList from "./DropdowList";
-import { NavLink, Link } from "react-router-dom";
+import Like from "./Like";
+import { NavLink } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { useState, useEffect, useRef } from "react";
+import { FavoritesProvider } from "../../context/favoriteContext";
 
 const Nav = () => {
   const [isDropdown, setIsDropdown] = useState(false);
   const [toggleBurger, setToggleBurger] = useState(false);
+
+  //const { addToFavorites, removeFromFavorites, favorites } = useFavorite();
 
   const handleDropDown = () => {
     setIsDropdown(!isDropdown);
@@ -89,9 +92,9 @@ const Nav = () => {
         </ul>
       </div>
       <div className="menu__like__connect">
-        <div className="nav__like">
-          <BsHeart size="2rem" />
-        </div>
+        <FavoritesProvider>
+          <Like />
+        </FavoritesProvider>
         <div className="nav__connect">
           <AiOutlineUser size="2rem" color="#181b52" />
         </div>

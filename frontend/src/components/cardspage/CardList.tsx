@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Housedata } from "../../types/interface-housedata";
 import houseConfiguration from "../../utils/configHouse";
 import useFavorite from "../../hooks/useFavorite";
+import Button from "../button/Button";
 
 const CardList = ({ productData, statusType }: Housedata) => {
   const { products } = productData;
@@ -43,27 +44,29 @@ const CardList = ({ productData, statusType }: Housedata) => {
                 />
               </Link>
               <div className="card__like">
-                {!liked && !favorites.length ? (
+              {!liked && favorites ? (
                   <BsHeart
-                    size="1.4rem"
+                    size="2rem"
                     color="#08a1ba"
                     onClick={() => {
-                      addToFavorites(product);
-                      handleActiveLike();
+                      addToFavorites(product)
+                      console.log(product);
+                      
                     }}
                   />
                 ) : (
-                  <BsHeartFill
-                    size="1.4rem"
-                    color="#08a1ba"
+                  <BsHeartFill 
+                    size="2rem"
+                    color="blue"
                     onClick={() => {
-                      removeFromFavorites(product);
-                      handleActiveLike();
+                      removeFromFavorites(product)
+                      console.log('Remove');
+                      
                     }}
                   />
                 )}
-                
               </div>
+              
               <div className="card__content">
                 <div className="card__title">
                   <h4 className="card__H4">{country}</h4>
