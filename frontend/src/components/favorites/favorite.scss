@@ -5,11 +5,11 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
-  padding: 41px 0px 100px 75px;
+  padding: 41px 75px 100px 75px;
 }
 
 .favorite__button {
-  width: 180px;
+  width: 230px;
   padding: 23.5px;
   border: solid 0.4px #e03e18;
   border-radius: 40px;
@@ -17,4 +17,35 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #fdf5ed;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn__container {
+  background-color: lightgreen;
+  padding: 80px 86px 30px;
+  display: flex;
+  justify-content: center;
+
+  & > * {
+    background-color: #fff;
+    border: solid 0.4px #e03e18;
+    width: 480px;
+    height: 110px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.0625rem;
+    font-weight: 900;
+  }
+  .btn__house {
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+  }
+  .btn__location {
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+  }
 }

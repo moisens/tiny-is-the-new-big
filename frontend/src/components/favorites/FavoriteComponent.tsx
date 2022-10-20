@@ -12,6 +12,16 @@ const FavoriteComponent = () => {
         <MdOutlineArrowLeft size="2rem" color="#A23B24" />
         Previous page
       </Button>
+      <section className="btn__container">
+        <Button as="button" className="btn__house" handleClick={() => console.log("clicked!")}>
+          <span className="btn__text">favorites tiny houses</span>
+          <span className="btn__count">(0)</span>
+        </Button>
+        <Button as="button" className="btn__location" handleClick={() => console.log("clicked!")}>
+          <span className="btn__text">favorites tiny houses</span>
+          <span className="btn__count">(0)</span>
+        </Button>
+      </section>
     </header>
   )
 }
