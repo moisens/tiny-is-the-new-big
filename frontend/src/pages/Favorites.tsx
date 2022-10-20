@@ -1,8 +1,11 @@
-
+import "../components/home/home.scss";
+import FavoriteComponent from "../components/favorites/FavoriteComponent";
 
 const Favorites = () => {
   return (
-    <div>Favorites</div>
+    <div className="home-container">
+      <FavoriteComponent />
+    </div>
   )
 }
 

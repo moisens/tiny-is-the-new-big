@@ -1,0 +1,20 @@
+.favorite__header {
+  //background-color: rgb(247, 69, 69);
+  max-width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: span 12;
+  padding: 41px 0px 100px 75px;
+}
+
+.favorite__button {
+  width: 180px;
+  padding: 23.5px;
+  border: solid 0.4px #e03e18;
+  border-radius: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fdf5ed;
+}
