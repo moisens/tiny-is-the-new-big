@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
-  padding: 41px 75px 100px 75px;
+  padding: 41px 75px 200px 75px;
 }
 
 .favorite__button {
@@ -16,14 +16,29 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #fdf5ed;
+  background-color: #fff;
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
+  transition: all 0.5s;
+
+  .btn__icon {
+    color: #A23B24;
+  }
+
+  &:hover {
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background-color: #E03E18;
+    color: #fff;
+
+    .btn__icon {
+      color: #fff;
+    }
+  }
 }
 
 .btn__container {
-  background-color: lightgreen;
+  //background-color: lightgreen;
   padding: 80px 86px 30px;
   display: flex;
   justify-content: center;
@@ -31,7 +46,7 @@
   & > * {
     background-color: #fff;
     border: solid 0.4px #e03e18;
-    width: 480px;
+    width: 45%;
     height: 110px;
     cursor: pointer;
     display: flex;
@@ -39,6 +54,9 @@
     align-items: center;
     font-size: 1.0625rem;
     font-weight: 900;
+    transition: all 0.5s;
+
+    
   }
   .btn__house {
     border-top-left-radius: 22px;
@@ -48,4 +66,25 @@
     border-top-right-radius: 22px;
     border-bottom-right-radius: 22px;
   }
+}
+
+.cards__container {
+  //background-color: lightcoral;
+  padding: 0 142px;
+  height: auto;
+  
+
+  .favorite__cards {
+    //background-color: lightblue;
+    height: 400px;
+    border: solid 0.4px #e03e18;
+    border-radius: 22px;
+    transition: all 0.5s;
+    
+    &:hover {
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1)
+    }
+
+  }
+
 }

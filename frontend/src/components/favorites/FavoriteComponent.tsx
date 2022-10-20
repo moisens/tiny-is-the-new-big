@@ -9,7 +9,7 @@ const FavoriteComponent = () => {
     <header className="favorite__header">
       <Button as="button" className="favorite__button" handleClick={() => console.log("clicked")
       } >
-        <MdOutlineArrowLeft size="2rem" color="#A23B24" />
+        <MdOutlineArrowLeft size="2rem" className="btn__icon" />
         Previous page
       </Button>
       <section className="btn__container">
@@ -21,6 +21,11 @@ const FavoriteComponent = () => {
           <span className="btn__text">favorites tiny houses</span>
           <span className="btn__count">(0)</span>
         </Button>
+      </section>
+      <section className="cards__container">
+        <div className="favorite__cards">
+          List card
+        </div>
       </section>
     </header>
   )
