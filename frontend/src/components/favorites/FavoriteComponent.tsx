@@ -24,7 +24,9 @@ const FavoriteComponent = () => {
       </section>
       <section className="cards__container">
         <div className="favorite__cards">
-          List card
+          <div className="card__favorite">1</div>
+          <div className="card__favorite">2</div>
+          <div className="card__favorite">3</div>
         </div>
       </section>
     </header>
