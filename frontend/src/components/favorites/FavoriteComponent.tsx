@@ -1,10 +1,20 @@
 import "./favorite.scss";
 import Button from "../button/Button";
-import { MdOutlineArrowLeft } from "react-icons/md"
+import { MdOutlineArrowLeft } from "react-icons/md";
+import { btnsFavorites } from "../../utils/favorites-utils";
+import { BtnsProps } from "../../types/Interface";
+import { useState } from "react";
+import useFavorite from "../../hooks/useFavorite";
 
 
 
 const FavoriteComponent = () => {
+  const { favorites } = useFavorite()
+  const [value, setValue] = useState<number>(0);
+
+  console.log(favorites);
+  
+
   return (
     <header className="favorite__header">
       <Button as="button" className="favorite__button" handleClick={() => console.log("clicked")
@@ -13,21 +23,33 @@ const FavoriteComponent = () => {
         Previous page
       </Button>
       <section className="btn__container">
-        <Button as="button" className="btn__house" handleClick={() => console.log("clicked!")}>
-          <span className="btn__text">favorites tiny houses</span>
-          <span className="btn__count">(0)</span>
-        </Button>
-        <Button as="button" className="btn__location" handleClick={() => console.log("clicked!")}>
-          <span className="btn__text">favorites tiny houses</span>
-          <span className="btn__count">(0)</span>
-        </Button>
+        {btnsFavorites.map((btn: BtnsProps, index: number) => {
+          const { id, text } = btn;
+          return (
+            <Button 
+              as="button" 
+              className={
+                index === value 
+                ? "btn__house active__btn" 
+                : "btn__house"
+              } 
+              handleClick={() => 
+                setValue(index)
+              }
+              key={id}
+              >
+            <span className="btn__text">{text}</span>
+            <span className="btn__count">(0)</span>
+          </Button>
+          )
+        })}
       </section>
       <section className="cards__container">
-        <div className="favorite__cards">
+        <article className="favorite__cards">
           <div className="card__favorite">1</div>
           <div className="card__favorite">2</div>
           <div className="card__favorite">3</div>
-        </div>
+        </article>
       </section>
     </header>
   )
