@@ -61,6 +61,12 @@
   .btn__house {
     border-top-left-radius: 22px;
     border-bottom-left-radius: 22px;
+
+    &.active__btn {
+      background-color: #FDF5ED;
+      color: #A23B24;
+    }
+
   }
   .btn__location {
     border-top-right-radius: 22px;
@@ -96,7 +102,7 @@
     }
 
     .card__favorite {
-      
+      background-color: rgb(255, 239, 218);
     }
 
   }

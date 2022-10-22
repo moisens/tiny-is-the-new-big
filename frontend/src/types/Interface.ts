@@ -61,3 +61,7 @@ export interface FormailProps {
 }
 
 
+export interface BtnsProps {
+  id: string;
+  text: string;
+}[]
