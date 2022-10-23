@@ -15,8 +15,6 @@ const Nav = () => {
   const [isDropdown, setIsDropdown] = useState(false);
   const [toggleBurger, setToggleBurger] = useState(false);
 
-  //const { addToFavorites, removeFromFavorites, favorites } = useFavorite();
-
   const handleDropDown = () => {
     setIsDropdown(!isDropdown);
   };

@@ -1,11 +1,12 @@
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import Button from "../button/Button";
 import useFavorite from "../../hooks/useFavorite";
+import { useNavigate } from "react-router-dom";
 
 const Like = () => {
   const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
-  
-  
+  const navigate = useNavigate();
+
   return (
     <div className="nav__favorites">
       <p
@@ -17,7 +18,11 @@ const Like = () => {
       >
         {favorites.length}
       </p>
-      <Button className="nav__like" as="button" handleClick={(e) => console.log("clic")}>
+      <Button
+        className="nav__like"
+        as="button"
+        handleClick={() => navigate("/favorites")}
+      >
         {/*handle click go on favorite page component*/}
         <BsHeart size="2rem" color="#87B222" />
       </Button>
