@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const FavoriteComponent = () => {
   const { favorites } = useFavorite()
+  console.log("From fav",favorites);
   const [value, setValue] = useState<number>(0);
   const navigate = useNavigate();
 
@@ -48,9 +49,12 @@ const FavoriteComponent = () => {
       </section>
       <section className="cards__container">
         <article className="favorite__cards">
-          <div className="card__favorite">1</div>
-          <div className="card__favorite">2</div>
-          <div className="card__favorite">3</div>
+          {favorites.length >= 1 ? favorites?.map(favorite => {
+
+            return (
+              <div className="card__favorite">1</div>
+            )
+          }) : <div>hh</div>}
         </article>
       </section>
     </header>
