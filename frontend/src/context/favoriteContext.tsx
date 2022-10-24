@@ -19,6 +19,7 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
       )
     } else {
       setFavorites([...favorites, product]);
+      console.log("CONTEXT: ",favorites);
     }
   }
 

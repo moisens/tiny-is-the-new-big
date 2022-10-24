@@ -21,7 +21,7 @@ const CardList = ({ productData, statusType }: Housedata) => {
   return (
     <React.Fragment>
       {statusType === "resolved" &&
-        products?.map((product, index) => {
+        products?.map((product) => {
           const {
             _id,
             image,
@@ -44,7 +44,30 @@ const CardList = ({ productData, statusType }: Housedata) => {
                 />
               </Link>
               <div className="card__like">
-              {}
+              {!liked && favorites ? (
+            <Button
+              as="button"
+              className=""
+              handleClick={() => {
+                handleActiveLike();
+                addToFavorites(product);
+                console.log(favorites);
+              }}
+            >
+              <BsHeart />
+            </Button>
+          ) : (
+            <Button
+              as="button"
+              className=""
+              handleClick={() => {
+                handleActiveLike();
+                //removeFromFavorites(product);
+              }}
+            >
+              <BsHeartFill />
+            </Button>
+          )}
               </div>
               
               <div className="card__content">
