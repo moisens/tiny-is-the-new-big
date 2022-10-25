@@ -1,22 +1,34 @@
 import "./cardspage.scss";
 import Button from "../button/Button";
-import { Housedata } from "../../types/interface-housedata";
+import { Housedata, Productsdata } from "../../types/interface-housedata";
 import CardList from "./CardList";
 import { FavoritesProvider } from "../../context/favoriteContext";
 
 const Cardspage = ({ productData, statusType }: Housedata) => {
+  const { products } = productData;
+  if (statusType === "pending") return <h2>Loading...</h2>;
+  if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
+
+
+
   return (
     <section className="page__container">
       {/*Filter component*/}
       <div className="page__filter">Filter goes here!</div>
       <div className="page__content">
         <div className="page__gridcontainer">
-          {/*First Card*/}
-          <FavoritesProvider>
-            <CardList productData={productData} statusType={statusType} />
-          </FavoritesProvider>
+          {/*Card*/}
+          {statusType === "resolved" && products?.map(product => {
+            const { _id, country, price, reference, size, image, bathroom, bedroom } = product;
+            return (
+              <CardList<Productsdata>
+                product={product}
+                key={_id} 
+              />
+            );
+          })}
 
-          {/*End First Card*/}
+          {/*Card*/}
         </div>
       </div>
       <div className="lodmore__container">
