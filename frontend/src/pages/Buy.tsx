@@ -6,6 +6,9 @@ import { useState, useEffect } from "react";
 import { HousedataType, StatusType } from "../types/interface-housedata";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries";
+import { FavoritesProvider } from "../context/favoriteContext";
+
+
 
 interface IsFetchingError {
   message: string;
@@ -53,7 +56,10 @@ const Buy = () => {
         <Headers dataHeaders={HeaderBuy} />
       </ErrorBoundary>
       <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-        <Cardspage productData={datas} statusType={status} />
+        <FavoritesProvider>
+          <Cardspage productData={datas} statusType={status} />
+        </FavoritesProvider>
+        
       </ErrorBoundary>
     </div>
   );

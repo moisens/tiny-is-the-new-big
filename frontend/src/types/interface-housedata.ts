@@ -1,6 +1,6 @@
 export interface Housedata {
   productData: HousedataType;
-  statusType: StatusType
+  statusType: StatusType;
 }
 
 export type HousedataType = {
@@ -8,6 +8,22 @@ export type HousedataType = {
   totalHouses: string;
   product: Productsdata//Single product _id
 };
+
+export type CardDataType = {
+  product: CardData
+}
+
+export type CardData = {
+  readonly _id: string;
+  country: string;
+  price: number;
+  reference: number;
+  size: number;
+  image: string[];
+  bedroom: number;
+  bathroom: number;
+  
+}
 
 
 export type Productsdata = {
