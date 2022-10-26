@@ -65,6 +65,13 @@
           border-radius: 9px;
           color: #08a1ba;
           cursor: pointer;
+
+          .like__icon {
+            color: #08a1ba;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+          }
         }
 
         img {
