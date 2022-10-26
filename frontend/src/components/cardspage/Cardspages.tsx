@@ -19,9 +19,9 @@ const Cardspage = ({ productData, statusType }: Housedata) => {
         <div className="page__gridcontainer">
           {/*Card*/}
           {statusType === "resolved" && products?.map(product => {
-            const { _id, country, price, reference, size, image, bathroom, bedroom } = product;
+            const { _id } = product;
             return (
-              <CardList<Productsdata>
+              <CardList
                 product={product}
                 key={_id} 
               />

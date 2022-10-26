@@ -15,8 +15,6 @@ const FavoriteComponent = () => {
   const [value, setValue] = useState<number>(0);
   const navigate = useNavigate();
 
-  console.log(favorites);
-  
 
   return (
     <header className="favorite__header">

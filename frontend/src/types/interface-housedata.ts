@@ -10,19 +10,7 @@ export type HousedataType = {
 };
 
 export type CardDataType = {
-  product: CardData
-}
-
-export type CardData = {
-  readonly _id: string;
-  country: string;
-  price: number;
-  reference: number;
-  size: number;
-  image: string[];
-  bedroom: number;
-  bathroom: number;
-  
+  product: Productsdata
 }
 
 
