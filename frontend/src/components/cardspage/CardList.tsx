@@ -37,20 +37,31 @@ const CardList = ({ product }: CardDataType) => {
         />
       </Link>
       <div className="card__like">
-        {
+        {!liked ? (
           <Button
-          as="button"
-          className="like__icon"
-          handleClick={() => {
-            handleActiveLike();
-            addToFavorites(product);
-            console.log("Add",favorites);
-          }}
-        >
-          <BsHeart size="1.9rem" />
-        </Button>
-        
-        }
+            as="button"
+            className="like__icon"
+            handleClick={() => {
+              handleActiveLike();
+              addToFavorites(product);
+              console.log("Add: ", favorites);
+            }}
+          >
+            <BsHeart size="1.9rem" />
+          </Button>
+        ) : (
+          <Button
+            as="button"
+            className="like__icon"
+            handleClick={() => {
+              handleActiveLike();
+              removeFromFavorites(product);
+              console.log("Remove: ", favorites);
+            }}
+          >
+            <BsHeartFill size="1.9rem" />
+          </Button>
+        )}
       </div>
 
       <div className="card__content">
@@ -60,7 +71,7 @@ const CardList = ({ product }: CardDataType) => {
         <div className="card__title">
           <h4 className="card__H4">
             <span className="green__span">
-              {category === "rent" ? `€ ${price} / month` : `€ ${price}`}
+              {category === "rent" ? `${price} €  / month` : ` ${price} €`}
             </span>
           </h4>
           <span className="green__span">|</span>
