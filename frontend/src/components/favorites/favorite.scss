@@ -23,12 +23,12 @@
   transition: all 0.5s;
 
   .btn__icon {
-    color: #A23B24;
+    color: #a23b24;
   }
 
   &:hover {
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    background-color: #E03E18;
+    background-color: #e03e18;
     color: #fff;
 
     .btn__icon {
@@ -55,18 +55,22 @@
     font-size: 1.0625rem;
     font-weight: 900;
     transition: all 0.5s;
-
-    
   }
   .btn__house {
-    border-top-left-radius: 22px;
-    border-bottom-left-radius: 22px;
-
-    &.active__btn {
-      background-color: #FDF5ED;
-      color: #A23B24;
+    &:nth-child(1) {
+      border-top-left-radius: 22px;
+      border-bottom-left-radius: 22px;
     }
 
+    &:nth-child(2) {
+      border-top-right-radius: 22px;
+      border-bottom-right-radius: 22px;
+    }
+
+    &.active__btn {
+      background-color: #fdf5ed;
+      color: #a23b24;
+    }
   }
   .btn__location {
     border-top-right-radius: 22px;
@@ -78,7 +82,6 @@
   //background-color: lightcoral;
   padding: 0 142px;
   height: auto;
-  
 
   .favorite__cards {
     //background-color: lightblue;
@@ -90,21 +93,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    
+
     &:hover {
-      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1)
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     & > * {
-      border: solid 0.4px #E03E18;
+      border: solid 0.4px #e03e18;
       border-radius: 22px;
-
     }
 
     .card__favorite {
       background-color: rgb(255, 239, 218);
     }
-
   }
-
 }
