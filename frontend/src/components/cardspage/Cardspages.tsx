@@ -1,8 +1,8 @@
 import "./cardspage.scss";
 import Button from "../button/Button";
-import { Housedata, Productsdata } from "../../types/interface-housedata";
+import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
-import { FavoritesProvider } from "../../context/favoriteContext";
+
 
 const Cardspage = ({ productData, statusType }: Housedata) => {
   const { products } = productData;
