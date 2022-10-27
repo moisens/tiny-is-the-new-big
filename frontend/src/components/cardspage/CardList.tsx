@@ -44,7 +44,7 @@ const CardList = ({ product }: CardDataType) => {
             handleClick={() => {
               handleActiveLike();
               addToFavorites(product);
-              console.log("Add: ", favorites);
+              //console.log("Add: ", favorites);
             }}
           >
             <BsHeart size="1.9rem" />
@@ -56,7 +56,7 @@ const CardList = ({ product }: CardDataType) => {
             handleClick={() => {
               handleActiveLike();
               removeFromFavorites(product);
-              console.log("Remove: ", favorites);
+              //console.log("Remove: ", favorites);
             }}
           >
             <BsHeartFill size="1.9rem" />
