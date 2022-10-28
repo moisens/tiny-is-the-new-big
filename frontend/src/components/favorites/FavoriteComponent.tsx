@@ -14,8 +14,6 @@ const FavoriteComponent = () => {
   console.log("From fav",favorites);
   const [value, setValue] = useState<number>(0);
   const navigate = useNavigate();
-
-  console.log(favorites);
   
 
   return (
@@ -50,9 +48,9 @@ const FavoriteComponent = () => {
       <section className="cards__container">
         <article className="favorite__cards">
           {favorites.length >= 1 ? favorites?.map(favorite => {
-
+            const { _id } = favorite;
             return (
-              <div className="card__favorite">1</div>
+              <div className="card__favorite" key={_id}>1</div>
             )
           }) : <div>hh</div>}
         </article>
