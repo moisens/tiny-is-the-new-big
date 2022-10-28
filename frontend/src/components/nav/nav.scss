@@ -1,4 +1,5 @@
 @use "../../scss/variables";
+@use "../../scss/mixins";
 
 /*********
   Nav
@@ -6,9 +7,7 @@
 .nav__container {
   background-color: variables.$light_brown;
   height: 62.8px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  @include mixins.display-evenly;
   position: relative;
 
   .logo {
@@ -16,24 +15,18 @@
   }
 
   .navlink__content {
-    //background-color: red;
     flex-grow: 0.6;
 
     .nav__ul {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      @include mixins.display-end;
       font-size: 20px;
       position: relative;
       height: 0;
-      //background-color: lightcoral;
 
       .nav__li {
-        list-style-type: none;
+        @include mixins.list-style-type;
         padding: auto 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mixins.display-center;
 
         .nav__arrowdown {
           margin-left: -5px;
@@ -45,7 +38,7 @@
         }
 
         .nav__a {
-          text-decoration: none;
+          @include mixins.text-decoration;
           color: variables.$text_blackish;
           padding: 20px 8px;
           position: relative;
@@ -53,7 +46,7 @@
           &.activeLink::after {
             content: " ";
             background-color: variables.$brown_normal;
-            display: flex;
+            @include mixins.display-flex;
             width: 100%;
             height: 5px;
             position: absolute;
@@ -73,13 +66,13 @@
         display: none;
 
         .dropdown__li {
-          list-style-type: none;
+          @include mixins.list-style-type;
           line-height: 1.5;
           padding: 15px 80px 15px 0;
           font-size: 1.125rem;
 
           a {
-            text-decoration: none;
+            @include mixins.text-decoration;
             color: variables.$text_blackish;
             padding: 15px 80px 15px 15px;
 
@@ -97,21 +90,15 @@
     }
   }
   .menu__like__connect {
-    //background-color: lightseagreen;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include mixins.display-center;
     gap: 20px;
 
     .nav__favorites {
-      display: flex;
-     // background-color: rgb(245, 186, 186);
+      @include mixins.display-flex;
       position: relative;
 
       .nav__like {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mixins.display-center;
         width: 35.72px;
         height: 35.72px;
         cursor: pointer;
@@ -132,16 +119,13 @@
         padding: 5px;
         border: none;
         border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: .75rem;
+        @include mixins.display-center;
+        font-size: 0.75rem;
 
         &.hide__favorite {
           display: none;
         }
       }
-
     }
 
     .nav__connect {
@@ -150,12 +134,10 @@
       border: solid 2px variables.$red_autumn;
       border-radius: 50%;
       background-color: variables.$red_autumn;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include mixins.display-center;
       padding-top: 1px;
       cursor: pointer;
-      transition:  all ease-in 0.5;
+      transition: all 0.8s ease;
 
       &:hover {
         background-color: variables.$light_green;
@@ -164,9 +146,7 @@
     }
 
     .nav__menu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include mixins.display-center;
       width: 35.72px;
       height: 35.72px;
       cursor: pointer;
@@ -185,7 +165,6 @@
   &.sticky__nav {
     position: sticky;
     top: 0;
-    //background-color: rgb(255, 255, 255);
     z-index: 100000;
   }
 }
@@ -196,9 +175,7 @@ Media queries
 @media screen and (max-width: 1022px) {
   .nav__container {
     height: 62.8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.display-between;
 
     .logo {
       padding: 0 0 0 25px;
@@ -229,14 +206,11 @@ Media queries
         height: 100vh; //auto;
         position: absolute;
         top: 63px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        @include mixins.display-start;
         flex-direction: column;
 
         .nav__li {
           .nav__a {
-            //background-color: lightcoral;
             width: 100vw;
             padding: 40px 0;
             padding-left: 25px;
