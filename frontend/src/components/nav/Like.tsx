@@ -4,7 +4,8 @@ import useFavorite from "../../hooks/useFavorite";
 import { useNavigate } from "react-router-dom";
 
 const Like = () => {
-  const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
+  const { favorites } = useFavorite();
+  
   const navigate = useNavigate();
 
   return (
