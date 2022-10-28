@@ -1,8 +1,10 @@
+@use "../../scss/variables";
+
 /*********
   Nav
  *********/
 .nav__container {
-  background-color: #edfdf8;
+  background-color: variables.$light_brown;
   height: 62.8px;
   display: flex;
   justify-content: space-evenly;
@@ -10,7 +12,7 @@
   position: relative;
 
   .logo {
-    background-color: lightcoral;
+    background-color: variables.$normal_green;
   }
 
   .navlink__content {
@@ -38,21 +40,19 @@
           cursor: pointer;
 
           &:hover {
-            background-color: #181b52;
-            color: #fff;
+            background-color: variables.$light_green;
           }
         }
 
         .nav__a {
           text-decoration: none;
-          color: #000;
-          //background-color: lightgray;
+          color: variables.$text_blackish;
           padding: 20px 8px;
           position: relative;
 
           &.activeLink::after {
             content: " ";
-            background-color: #08a1ba;
+            background-color: variables.$brown_normal;
             display: flex;
             width: 100%;
             height: 5px;
@@ -62,7 +62,7 @@
         }
       }
       .nav__dropdown {
-        background-color: #fff;
+        background-color: variables.$white_color;
         width: 120px;
         position: absolute;
         left: 63%;
@@ -80,14 +80,13 @@
 
           a {
             text-decoration: none;
-            color: #000;
-            //background-color: lightblue;
+            color: variables.$text_blackish;
             padding: 15px 80px 15px 15px;
 
             &:hover {
-              background-color: #181b52;
-              border-left: solid 3px #08a1ba;
-              color: #fff;
+              background-color: variables.$light_brown;
+              border-left: solid 3px variables.$light_green;
+              color: variables.$text_blackish;
             }
           }
         }
@@ -127,7 +126,7 @@
         position: absolute;
         top: -5px;
         right: -10px;
-        background-color: #ffc457;
+        background-color: variables.$canary_coalmine;
         width: 21px;
         height: 21px;
         padding: 5px;
@@ -148,13 +147,20 @@
     .nav__connect {
       width: 35.72px;
       height: 35.72px;
-      border: solid 2px #181b52;
+      border: solid 2px variables.$red_autumn;
       border-radius: 50%;
+      background-color: variables.$red_autumn;
       display: flex;
       justify-content: center;
       align-items: center;
       padding-top: 1px;
       cursor: pointer;
+      transition:  all ease-in 0.5;
+
+      &:hover {
+        background-color: variables.$light_green;
+        border: solid 2px variables.$light_green;
+      }
     }
 
     .nav__menu {
@@ -166,12 +172,12 @@
       cursor: pointer;
       display: none;
 
-      background-color: #181b52;
+      background-color: variables.$light_green;
       border: none;
       border-radius: 9px;
 
       .menu__burger {
-        color: #fff;
+        color: variables.$white_color;
         padding: 2px;
       }
     }
@@ -208,7 +214,7 @@ Media queries
   }
 
   .navlink__content {
-    background-color: #ecfdf8;
+    background-color: variables.$white_color;
     position: absolute;
     top: 63px;
     width: 100vw;
@@ -220,7 +226,7 @@ Media queries
       width: 100%;
 
       &.active {
-        height: 100vh; //auto !important;
+        height: 100vh; //auto;
         position: absolute;
         top: 63px;
         display: flex;
@@ -237,7 +243,7 @@ Media queries
 
             &.activeLink::after {
               content: " ";
-              background-color: #08a1ba;
+              background-color: variables.$brown_normal;
               display: flex;
               width: 100px;
               height: 5px;
@@ -245,9 +251,9 @@ Media queries
               top: 98px;
             }
             &:hover {
-              background-color: #6cefc5;
-              color: #fff;
-              border-left: solid 7px #181b52;
+              color: variables.$text_blackish;
+              background-color: variables.$light_brown;
+              border-left: solid 7px variables.$light_green;
             }
           }
           .nav__arrowdown {

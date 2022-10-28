@@ -66,7 +66,7 @@ const Nav = () => {
             </NavLink>
             <RiArrowDownSFill
               className="nav__arrowdown"
-              color="#08A1BA"
+              color="#E03E18"
               onClick={handleDropDown}
             />
           </li>
@@ -94,7 +94,7 @@ const Nav = () => {
           <Like />
         </FavoritesProvider>
         <div className="nav__connect">
-          <AiOutlineUser size="2rem" color="#181b52" />
+          <AiOutlineUser size="2rem" color="#FFF" />
         </div>
         {/*Toggle menu*/}
         <div className="nav__menu" onClick={handleTogglrBurger}>

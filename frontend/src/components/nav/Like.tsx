@@ -25,7 +25,7 @@ const Like = () => {
         handleClick={() => navigate("/favorites")}
       >
         {/*handle click go on favorite page component*/}
-        <BsHeart size="2rem" color="#87B222" />
+        <BsHeart size="1.79rem" color="#87B222" />
       </Button>
     </div>
   );
