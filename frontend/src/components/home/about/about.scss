@@ -1,10 +1,10 @@
-@import "../../../scss/variables.scss";
+@use "../../../scss/variables";
+@use "../../../scss/mixins";
 
 .about__container {
   max-width: 100%;
   height: auto;
-  //background-color: lightgreen;
-  display: grid;
+  @include mixins.display-grid;
   grid-template-columns: 1fr 1.4fr;
   grid-column: span 12;
   gap: 100px;
@@ -14,7 +14,7 @@
 .about__image {
   //width: 555px;
   height: 435px;
-  background-color: hsl(0, 0%, 96%);
+  background-color: variables.$white_color;
   border-radius: 22px;
   position: relative;
   aspect-ratio: 1.2;
@@ -25,13 +25,14 @@
     background-size: cover;
     object-fit: cover;
     border-radius: 22px;
+    pointer-events: none;
   }
   .about__exp {
-    background-color: #fff;
+    background-color: variables.$white_color;
     width: 280px;
     height: auto;
     padding: 15px;
-    border: solid 0.4px #2dc1df;
+    border: solid 0.4px variables.$light-red-autumn;
     border-radius: 8px;
     position: absolute;
     top: -25px;
@@ -45,7 +46,7 @@
 }
 
 .about__slider {
-  background-color: #fff;
+  background-color: variables.$white_color;
   max-width: 255px;
   height: auto;
   border-radius: 8px;
@@ -57,27 +58,26 @@
   margin: 0 auto;
   width: 100%;
   height: 135px;
-  background-color: hsl(43, 100%, 99%);
-  border: solid 0.4px #2dc1df;
+  background-color: variables.$white_color;
+  border: solid 0.4px variables.$light-red-autumn;
   border-radius: 8px;
-  //padding: 15px;
-  display: flex;
+  @include mixins.display-flex;
   overflow: hidden;
   position: relative;
 
   .about__slide {
-    background-color: #fff;
+    background-color: variables.$white_color;
     border-radius: 8px;
     padding: 15px 0 15px 10px;
-    display: flex;
+    @include mixins.display-flex;
 
     .slider__img {
       width: 127.5px;
-      //background-color: #2dc1df;
+
       .about__avatar {
         width: 56px;
         height: 56px;
-        background-color: lightgray;
+        background-color: variables.$white_color;
         border-radius: 30px;
 
         img {
@@ -85,30 +85,30 @@
           height: 100%;
           background-size: cover;
           object-fit: cover;
-          border: solid 0.4px #2dc1df;
+          border: solid 0.4px variables.$light-red-autumn;
           border-radius: 50px;
+          pointer-events: none;
         }
       }
       .about__person {
-        display: flex;
-        flex-direction: column;
+        @include mixins.flex-column;
         font-size: 1.0625rem;
+        color: variables.$dark_brown;
 
         .about__position {
-          color: #9e9e9e;
+          color: variables.$text_greyish;
         }
       }
     }
     .slider__btn {
       width: 125.5px;
-      //background-color: lightcoral;
 
       .about__stars {
         width: 20px;
         height: 20px;
-        display: flex;
-        justify-content: flex-start;
+        @include mixins.display-start-nocenter;
         margin: 10px 10px 5px 0;
+        color: variables.$canary_coalmine;
 
         img {
           width: 100%;
@@ -117,26 +117,22 @@
       .about__contact {
         width: 100px;
         height: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(
-          90deg,
-          rgba(34, 193, 195, 1) 0%,
-          rgba(45, 193, 223, 1) 100%
-        );
+        @include mixins.display-center;
+        background: variables.$red_autumn;
         border: none;
         border-radius: 30px;
         font-size: 18px;
         font-weight: bold;
         cursor: pointer;
+        transition: all 0.6s;
 
         &:hover {
-          background: #181b52;
+          background: variables.$light_green;
+          transition: all 0.6s;
         }
         .about__a {
           text-decoration: none;
-          color: #fff;
+          color: variables.$white_color;
         }
       }
     }
@@ -155,17 +151,11 @@
 
 .about__text__content {
   height: auto;
-  //background-color: rgb(210, 239, 150);
   z-index: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include mixins.flex-direction;
 
   .about__company {
-    //background-color: lightslategray;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    @include mixins.display-start-center;
     gap: 12px;
     padding-bottom: 18px;
     width: 100%;
@@ -173,17 +163,16 @@
     .company__illu {
       width: 47px;
       height: 47px;
-      background-color: #fff;
-      border: solid 0.4px #2dc1df;
+      background-color: variables.$white_color;
+      border: solid 0.4px variables.$light-red-autumn;
       border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include mixins.display-center;
 
       img {
         width: 70%;
         background-size: contain;
         object-fit: contain;
+        pointer-events: none;
       }
     }
     .about__title__H4 {
@@ -192,19 +181,19 @@
 
       .span__title {
         font-weight: 600;
-        color: #2dc1df;
+        color: variables.$dark_brown;
       }
     }
   }
   .about__desc {
     .about__title__H2 {
-      font-size: $font_size_h2;
-      font-weight: $font_weight_bold;
+      font-size: variables.$font_size_h2;
+      font-weight: variables.$font_weight_bold;
       padding-bottom: 20px;
     }
     .about__description__P {
-      font-size: $font_size_text;
-      line-height: $line_height1_6;
+      font-size: variables.$font_size_text;
+      line-height: variables.$line_height1_6;
       width: 95%;
     }
   }
@@ -238,7 +227,6 @@
   }
 }
 
-
 @media screen and (max-width: 900px) {
   .about__container {
     grid-template-columns: 1fr;
@@ -252,7 +240,6 @@
     .about__exp {
       left: 50%;
     }
-
   }
   .about__text__content {
     .about__desc {
@@ -264,14 +251,12 @@
       }
     }
   }
-
 }
 @media screen and (max-width: 700px) {
   .about__image {
     .about__exp {
       left: 20px;
     }
-
   }
 }
 

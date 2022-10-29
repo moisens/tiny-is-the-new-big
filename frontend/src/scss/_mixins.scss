@@ -107,6 +107,28 @@
   align-items: flex-start;
 }
 
+@mixin display-start-nocenter {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@mixin display-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flex-direction {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /*================================================
   list-styles
   ================================================
@@ -120,7 +142,6 @@
   text-decoration: none;
 }
 
-
 /*================================================
   grid
   ================================================
@@ -129,4 +150,3 @@
 @mixin display-grid {
   display: grid;
 }
-

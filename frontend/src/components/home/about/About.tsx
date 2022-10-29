@@ -1,7 +1,7 @@
 import "./about.scss";
-import Company from "../../../assets/company.svg";
 import { founders } from "../../../utils/utils";
 import Founders from "./Founders";
+import { FaBuilding } from "react-icons/fa"
 
 const About = () => {
   return (
@@ -28,7 +28,7 @@ const About = () => {
       <div className="about__text__content">
         <div className="about__company">
           <div className="company__illu">
-            <img src={Company} alt="company" />
+            <FaBuilding size= "1.5rem" color="#8db530" />
           </div>
           <h4 className="about__title__H4">
             About <span className="span__title">Our company</span>
