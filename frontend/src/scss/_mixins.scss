@@ -119,3 +119,14 @@
 @mixin text-decoration {
   text-decoration: none;
 }
+
+
+/*================================================
+  grid
+  ================================================
+*/
+
+@mixin display-grid {
+  display: grid;
+}
+
