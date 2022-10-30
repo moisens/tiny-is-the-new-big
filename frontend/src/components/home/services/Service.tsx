@@ -1,7 +1,7 @@
 import "./services.scss";
-import Services from "../../../assets/services.svg";
 import { servicesData } from "../../../utils/services-utils";
 import Tab from "./ServiceTab";
+import { MdHomeRepairService } from "react-icons/md"
 
 const Service = () => {
   return (
@@ -10,7 +10,7 @@ const Service = () => {
       <div className="services__content">
         <div className="services__illu__title">
           <div className="services__illu">
-            <img src={Services} alt="" />
+            <MdHomeRepairService size="1.8rem" color="#8db530" />
           </div>
           <h4 className="services__title__H4">
             Our <span className="span__title">Services</span>

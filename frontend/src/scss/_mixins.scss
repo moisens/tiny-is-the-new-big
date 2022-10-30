@@ -1,3 +1,5 @@
+@use "./variables.scss";
+
 /*================================================
   icon illustration on home page
   ================================================
@@ -13,15 +15,13 @@
 @mixin illu-icon {
   width: 47px;
   height: 47px;
-  background-color: #fff;
-  border: solid 0.4px #2dc1df;
+  background-color: variables.$white_color;
+  border: solid 0.4px variables.$light-red-autumn;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display-center;
 }
 
-@mixin illu-con-img {
+@mixin illu-con-img {//delete it later!!!
   width: 70%;
   background-size: contain;
   object-fit: contain;
@@ -38,7 +38,7 @@
 
 @mixin span-title-h4 {
   font-weight: 600;
-  color: #2dc1df;
+  color: variables.$dark_brown;
 }
 
 /*================================================

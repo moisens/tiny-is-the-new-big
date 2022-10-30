@@ -1,9 +1,9 @@
-@import "../../../scss/mixins";
-@import "../../../scss/variables.scss";
+@use "../../../scss/mixins";
+@use "../../../scss/variables.scss";
 
 .services__container {
-  background-color: #edfdf8;
-  display: grid;
+  background-color: variables.$light_brown;
+  @include mixins.display-grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
   padding: 200px 0 300px;
@@ -13,7 +13,7 @@
 .services__triangle1 {
   width: 100%;
   height: 540px;
-  background-color: #edfdf8;
+  background-color: variables.$light_brown;
   position: absolute;
   top: -343px;
   left: 0;
@@ -22,7 +22,6 @@
 }
 
 .services__content {
-  //background-color: lightblue;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -30,52 +29,52 @@
   z-index: 100;
 
   .services__illu__title {
-    //background-color: red;
     padding-left: 160px;
-    @include illu-icon-container;
+    @include mixins.illu-icon-container;
 
     .services__illu {
-      @include illu-icon;
-
-      img {
-        @include illu-con-img;
-      }
+      @include mixins.illu-icon;
     }
     .services__title__H4 {
-      @include title-h4;
+      @include mixins.title-h4;
 
       .span__title {
-        @include span-title-h4;
+        @include mixins.span-title-h4;
       }
     }
   }
   .services__title__H2 {
-    @include title-h2;
+    @include mixins.title-h2;
     width: 60%;
     text-align: center;
+    color: variables.$dark_brown;
   }
 }
 
 .services__description__P {
-  //background-color: lightpink;
   padding: 0 300px 80px;
   margin: 0 auto;
   text-align: center;
   font-size: 1.0625rem;
   line-height: 1.6;
+  color: variables.$dark_brown;
 }
 
 .services__tab__container {
-  //background-color: lightslategray;
   width: 60%;
   margin: 0 auto;
   border-radius: 22px;
-  box-shadow: 0px 6px 15px -4px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    box-shadow: 0px 6px 15px -4px rgba(0, 0, 0, 0.1);
+  }
 
   .services__btns__container {
-    background-color: #fff;
+    background-color: variables.$white_color;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    border: solid .4px variables.$light-red-autumn;
+    border-bottom: none;
     border-top-left-radius: 22px;
     border-top-right-radius: 22px;
 
@@ -86,7 +85,7 @@
       align-items: center;
       gap: 5px;
       padding: 28px 0 28px;
-      background-color: #181b5238;
+      background-color: transparent;
       cursor: pointer;
       font-size: 1.0625rem;
       font-weight: bolder;
@@ -96,31 +95,22 @@
         content: "";
         width: 100%;
         height: 8.5px;
-        background-color: #ffffff;
+        //background-color: #ffffff;
         position: absolute;
         bottom: -1px;
-      }
-
-      .btns__icons__container > * {
-        color: #2dc1df;
-        width: 25px;
-        height: 25px;
       }
     }
 
     .services__btns {
-      &.activeTab__btn {
-        background-color: #fff;
+      &.activeTab__btn::after {
+        content: "";
+        width: 50%;
+        height: 10px;
+        background-color: variables.$brown_normal;
+        position: absolute;
+        bottom: -6px;
+        border-radius: 22px;
       }
-      //&.activeTab__btn::after {
-      //  content: "";
-      //  width: 70%;
-      //  height: 5.5px;
-      //  background-color: #2dc1df;
-      //  position: absolute;
-      //  bottom: -2.5px;
-      //  border-radius: 22px;
-      //}
     }
     .services__btns:nth-child(1) {
       border-top-left-radius: 22px;
@@ -132,9 +122,11 @@
 
   .services__tab__content {
     padding: 40px 80px 90px;
-    background-color: #fff;
+    background-color: variables.$white_color;
+    border: solid .4px variables.$light-red-autumn;
     border-bottom-left-radius: 22px;
     border-bottom-right-radius: 22px;
+    text-align: center;
 
     .services__tab__P {
       display: none;
@@ -142,7 +134,7 @@
       &.activeTab__text {
         display: flex;
         font-size: 1.0625rem;
-        line-height: $line_height1_6;
+        line-height: variables.$line_height1_6;
       }
     }
   }
