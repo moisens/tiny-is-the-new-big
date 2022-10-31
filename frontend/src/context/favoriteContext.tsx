@@ -47,14 +47,11 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps) => {
   espec: "fff332",
   typeofheating: "oil heating",
   category: "buy",
-    }
+    },
   ]);
 
   const addToFavorites = (product: Productsdata) => {
-    setFavorites([...favorites, product])
-    console.log("Favorites contxt", favorites);
-    
-    
+    setFavorites([...favorites, product]);
   }
 
   const removeFromFavorites = (product: Productsdata) => {

@@ -37,7 +37,7 @@ const CardList = ({ product }: CardDataType) => {
         />
       </Link>
       <div className="card__like">
-        {!liked ? (
+        {!liked && favorites ? (
           <Button
             as="button"
             className="like__icon"
