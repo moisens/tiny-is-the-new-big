@@ -1,11 +1,11 @@
 import {
-  HiOutlineArrowNarrowLeft,
-  HiOutlineArrowNarrowRight,
-} from "react-icons/hi";
+  FaLongArrowAltLeft,
+  FaLongArrowAltRight,
+} from "react-icons/fa";
 import { SliderPeople } from "../../../types/Interface";
 import IconsComponent from "../iconsComponent/IconsComponent";
 
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 
 const Slider = ({ sliderPeople }: SliderPeople) => {
   const [index, setIndex] = useState<number>(0);
@@ -52,10 +52,10 @@ const Slider = ({ sliderPeople }: SliderPeople) => {
           );
         })}
         <div className="slider__previous">
-          <HiOutlineArrowNarrowLeft onClick={() => setIndex(index - 1)} />
+          <FaLongArrowAltLeft size="3.4rem" onClick={() => setIndex(index - 1)} />
         </div>
         <div className="slider__next">
-          <HiOutlineArrowNarrowRight onClick={() => setIndex(index + 1)} />
+          <FaLongArrowAltRight size="3.4rem" onClick={() => setIndex(index + 1)} />
         </div>
       </section>
     </header>
