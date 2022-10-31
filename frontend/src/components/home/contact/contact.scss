@@ -1,24 +1,23 @@
 @use "../../../scss/mixins";
+@use  "../../../scss/variables";
 
 .contact__container {
-  background-color: hsl(0, 0%, 100%);
+  background-color: variables.$white_color;
   width: 100%;
   height: auto;
-  display: grid;
+  @include mixins.display-grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
 }
 
 .contact__content {
-  //background-color: lightgreen;
-  display: grid;
+  @include mixins.display-grid;
   grid-template-columns: 1fr 1.2fr;
   max-width: 100vw;
   height: auto;
   padding-bottom: 120px;
 
   .contact__text {
-    //background-color: lightsteelblue;
     padding: 50px 0 100px 25px;
 
     .contact__illuContainer {
@@ -26,10 +25,6 @@
 
       .contact__illu {
         @include mixins.illu-icon;
-
-        img {
-          @include mixins.illu-con-img;
-        }
       }
 
       .contact__titleH4 {
@@ -49,14 +44,13 @@
   }
   .contact__images {
     //background-color: lightseagreen;
-    display: flex;
-    justify-content: flex-end;
+   @include mixins.flexend-nocenter;
     gap: 40px;
 
     img {
       background-size: cover;
       object-fit: cover;
-      border: solid 3px #2dc1df;
+      border: solid 3px variables.$normal_green;
     }
     img:nth-child(1) {
       width: 280px;
@@ -79,49 +73,38 @@
 }
 
 .form__container {
-  //background-color: lightsteelblue;
-  display: grid;
+  @include mixins.display-grid;
   grid-template-columns: 1fr 1fr;
   padding-bottom: 200px;
 
   .form__content {
-    display: flex;
+    @include mixins.display-start;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    //width: 680px;
     padding: 0 0 10px 25px;
-    //background-color: red;
 
     .input__container {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
+      @include mixins.display-start;
       margin-bottom: 20px;
 
       .input__input {
         width: 289px;
         height: 65px;
-        border: solid 0.4px #08a1ba;
+        border: solid 0.4px variables.$light-red-autumn;
         border-radius: 9px;
         margin-right: 20px;
         padding-left: 25px;
         padding-right: 18px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include mixins.display-between;
         font-size: 1.125rem;
 
         &[type="text"] {
           font-size: 1.125rem;
         }
         .input__button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          @include mixins.display-center;
           border: none;
           cursor: pointer;
-          color: #08a1ba;
+          color: variables.$red-autumn;
           background-color: transparent;
         }
       }
@@ -129,7 +112,7 @@
     .input__email {
       width: 598px;
       height: 65px;
-      border: solid 0.4px #08a1ba;
+      border: solid 0.4px variables.$light-red-autumn;
       border-radius: 9px;
       padding-left: 25px;
       margin-bottom: 20px;
@@ -141,7 +124,7 @@
     .input__textarea {
       width: 598px;
       height: 180px;
-      border: solid 0.4px #08a1ba;
+      border: solid 0.4px variables.$light-red-autumn;
       border-radius: 9px;
       padding: 25px;
       margin-bottom: 20px;
@@ -152,79 +135,72 @@
       height: 65px;
       border: none;
       border-radius: 30px;
-      background-color: #181b5238;
+      background-color: variables.$red-autumn;
       color: #fff;
       font-size: 1.125rem;
       font-weight: 700;
       cursor: pointer;
+      transition: all ease-in .7s;
 
       &:hover {
-        background: #181b52;
+        background: variables.$light_green;
+        transition: all ease-in .7s;
       }
     }
   }
   .form__call {
     width: 100%;
     height: auto;
-    //background-color: lightgreen;
 
     .form__callContent {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
+      @include mixins.display-start;
       gap: 15px;
 
       .call__btn {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include mixins.display-start-center;
         gap: 8px;
-        //padding: 18px 40px;
         width: 189px;
         height: 65px;
-        border: solid 0.4px #08a1ba;
+        border: solid 0.4px variables.$light-red-autumn;
         border-radius: 94.5px;
         padding: 0 25px;
-        background-color: #181b5238;
-        color: #fff;
+        background-color: variables.$red-autumn;
+        color: variables.$white_color;
         font-size: 1.125rem;
         cursor: pointer;
+        transition: all ease-in .7s;
 
         &:hover {
-          background: #181b52;
+          background: variables.$light-green;
+          border: solid 0.4px variables.$light-green;
+          transition: all ease-in .7s;
         }
       }
       .input__container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
+        @include mixins.display-start;
         margin-bottom: 20px;
 
         .input__input {
           width: 289px;
           height: 65px;
-          border: solid 0.4px #08a1ba;
+          border: solid 0.4px variables.$light-red-autumn;
           border-top-left-radius: 9px;
           border-top-right-radius: 9px;
           border-bottom-left-radius: 9px;
           border-bottom-right-radius: 9px;
           margin-right: 20px;
           padding: 0 25px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include mixins.display-between;
           font-size: 1.125rem;
 
           &[type="text"] {
             font-size: 1.125rem;
           }
           .input__button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include mixins.display-center;
             border: none;
             cursor: pointer;
-            color: #08a1ba;
+            color: variables.$red-autumn;
             background-color: transparent;
           }
           &.isSelected {
@@ -242,42 +218,52 @@
       padding: 40px 120px 0 0;
 
       .social__content {
-        background-color: hsl(0, 0%, 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background-color: variables.$white_color;
+        @include mixins.display-center;
         width: 80px;
         height: 80px;
         font-size: 28px;
-        border: solid 0.4px #08a1ba;
+        border: solid 0.4px variables.$light-red-autumn;
         border-radius: 9px;
-        color: #08a1ba;
+        color: variables.$light-red-autumn;
         cursor: pointer;
+        transition: all ease-in .7s;
 
         a {
-          color: #08a1ba;
+          color: variables.$light-red-autumn;
+          transition: all ease-in .7s;
         }
         
         &:hover {
-          box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 15px -3px hsla(0, 0%, 0%, 0.1);
+          transition: all ease-in .7s;
         }
       }
       .social__content:nth-child(1) {
         &:hover {
-          color: #0a66c2;
-          border: solid 0.4px #0a66c2;
+          color: variables.$social_linkedin;
+          border: solid 0.4px variables.$social_linkedin;
+          & a {
+            color: variables.$social_linkedin;
+          }
         }
       }
       .social__content:nth-child(2) {
         &:hover {
-          color: #ef8b8b;
-          border: solid 0.4px #ef8b8b;
+          color: variables.$social_instagram;
+          border: solid 0.4px variables.$social_instagram;
+          & a {
+            color: variables.$social_instagram;
+          }
         }
       }
       .social__content:nth-child(3) {
         &:hover {
-          color: #1d9bf0;
-          border: solid 0.4px #1d9bf0;
+          color: variables.$social_twitter;
+          border: solid 0.4px variables.$social_twitter;
+          & a {
+            color: variables.$social_twitter;
+          }
         }
       }
     }

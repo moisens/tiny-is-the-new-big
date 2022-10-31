@@ -1,9 +1,12 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
 .home-container {
-  background-color: hsl(0, 0%, 100%);
+  background-color: variables.$white_color;
   max-width: 1440px;
   height: auto;
   margin: 0 auto;
-  display: grid;
+  @include mixins.display-grid;
   grid-template-columns: repeat(12, 1fr);
 }
 
