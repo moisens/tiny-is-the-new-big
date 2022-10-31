@@ -21,28 +21,15 @@
   @include display-center;
 }
 
-@mixin illu-con-img {//delete it later!!!
+@mixin illu-con-img {
+  //delete it later!!!
   width: 70%;
   background-size: contain;
   object-fit: contain;
 }
 
 /*================================================
-  title h4
-  ================================================
-*/
-@mixin title-h4 {
-  font-size: 1.125rem;
-  font-weight: 400;
-}
-
-@mixin span-title-h4 {
-  font-weight: 600;
-  color: variables.$dark_brown;
-}
-
-/*================================================
-  title h2
+  title h1
   ================================================
 */
 @mixin title-h1 {
@@ -57,6 +44,29 @@
   font-size: 1.875rem;
   font-weight: bold;
   padding-bottom: 40px;
+}
+
+/*================================================
+  title h3
+  ================================================
+*/
+@mixin title_h3 {
+  font-size: 1.5625rem;
+  font-weight: bold;
+}
+
+/*================================================
+  title h4
+  ================================================
+*/
+@mixin title-h4 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+@mixin span-title-h4 {
+  font-weight: 600;
+  color: variables.$dark_brown;
 }
 
 /*================================================
