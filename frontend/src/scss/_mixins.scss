@@ -105,6 +105,11 @@
   align-items: center;
 }
 
+@mixin flexend-nocenter {
+  display: flex;
+  justify-content: flex-end
+}
+
 @mixin display-between {
   display: flex;
   justify-content: space-between;
