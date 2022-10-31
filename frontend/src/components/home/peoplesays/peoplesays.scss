@@ -1,10 +1,11 @@
-@use "../../../scss/mixins.scss";
+@use "../../../scss/mixins";
+@use "../../../scss/variables";
 
 .people__container {
   max-width: 100%;
   height: auto;
-  background-color: #edfdf8;
-  display: grid;
+  background-color: variables.$light_brown;
+  @include mixins.display-grid;
   grid-template-columns: 1fr;
   grid-column: span 12;
   position: relative;
@@ -23,27 +24,32 @@
     @include mixins.title-h2;
     padding: 90px 0 76px;
     text-align: center;
+    color: variables.$dark_brown;
   }
 
   .peopleSlider__container {
     max-width: 100%;
     height: auto;
     padding-bottom: 180px;
-    //background-color: red;
 
     .peopleSlider__content {
       margin: 0 auto;
       width: 60%;
       height: 560px;
-      background-color: hsl(0, 0%, 100%);
-      display: flex;
+      background-color: variables.$white_color;
+      @include mixins.display-flex;
       overflow: hidden;
       position: relative;
-      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border: solid 0.4px variables.$light_red_autumn;
       border-radius: 22px;
+      transition: all ease-in 0.7s;
+
+      &:hover {
+        box-shadow: 0px 10px 15px -3px hsla(0, 0%, 0%, 0.1);
+        transition: all ease-in 0.7s;
+      }
 
       .sliderImages__container {
-        //background-color: #fff;
         position: absolute;
         top: 0;
         left: 0;
@@ -55,7 +61,6 @@
         grid-template-columns: 1fr;
 
         .slider__image {
-          //background-color: red;
           width: 170px;
           height: 170px;
           align-self: center;
@@ -67,16 +72,13 @@
             height: 100%;
             background-size: cover;
             object-fit: cover;
-            border: solid 3px #2dc1df;
+            border: solid 3px variables.$normal_green;
             border-radius: 85px;
           }
         }
         .slider__stars {
-          //background-color: lightcoral;
-          display: flex;
+          @include mixins.display-start-center;
           flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
           margin-top: -50px;
           width: 100%;
           height: 60px;
@@ -88,18 +90,17 @@
           }
 
           .slider__icons {
-            display: flex;
+            @include mixins.display-flex;
             gap: 2px;
-            color: gold;
+            color: variables.$canary_coalmine;
             font-size: 22px;
           }
         }
         .slider__text {
           @include mixins.paragraph-body;
-          //background-color: blue;
           margin-top: -100px;
           text-align: center;
-          padding: 0 100px;
+          padding: 0 140px;
         }
 
         &.activeSlide {
@@ -114,32 +115,26 @@
         }
       }
       .slider__previous {
-        background-color: #181b5238;
-        color: #2dc1df;
+        color: variables.$normal_green;
         z-index: 100;
         position: absolute;
         top: 50%;
         left: 30px;
         font-size: 28px;
         font-weight: 900;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mixins.display-center;
         padding: 10px;
         cursor: pointer;
       }
       .slider__next {
-        background-color: #181b5238;
-        color: #2dc1df;
+        color: variables.$normal_green;
         z-index: 100;
         position: absolute;
         top: 50%;
         right: 30px;
         font-size: 28px;
         font-weight: 900;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include mixins.display-center;
         padding: 10px;
         cursor: pointer;
       }
