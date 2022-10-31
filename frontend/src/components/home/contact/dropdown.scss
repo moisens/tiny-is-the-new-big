@@ -1,16 +1,22 @@
+@use "../../../scss/mixins";
+@use "../../../scss/variables";
+
+
 .dropdown__select {
-  background-color: hsl(0, 0%, 100%);
-  width: 93.4%;
+  background-color: variables.$white_color;
+  width: 289px;
   height: auto;
-  display: flex;
+  @include mixins.display-flex;
   flex-direction: column;
   gap: 10px;
-  border: solid 0.4px #08a1ba;
+  border: solid 0.4px variables.$light-red-autumn;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
   display: none;
+  position: absolute;
+
 
   .dropdown__selectLi {
     display: flex;
@@ -20,16 +26,20 @@
     list-style-type: none;
     padding: 15px 0 15px 25px;
     cursor: pointer;
+    transition: all ease-in .7s;
 
     &:hover {
-      background-color: #181b52;
-      color: #fff;
+      background-color: variables.$light_brown;
+      color: variables.$text_blackish;
+      transition: all ease-in .7s;
       .dropdown__span {
-        color: #fff;
+        color: variables.$dark_green;
+        transition: all ease-in .7s;
       }
     }
     .dropdown__span {
-      color: #08a1ba;
+      color: variables.$light_green;
+      transition: all ease-in .7s;
       font-weight: 700;
     }
     
