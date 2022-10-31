@@ -7,6 +7,7 @@ import { HousedataType, StatusType } from "../types/interface-housedata";
 import { useEffect, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries";
+import { FavoritesProvider } from "../context/favoriteContext";
 
 interface IsFetchingError {
   message: string;
@@ -50,13 +51,15 @@ const Singleproduct = () => {
 
   return (
     <div className="home-container">
-      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-        <Header productData={datas} statusType={status} />
-      </ErrorBoundary>
+      <FavoritesProvider>
+        <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+          <Header productData={datas} statusType={status} />
+        </ErrorBoundary>
 
-      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-        <InfoHouse productData={datas} statusType={status} />
-      </ErrorBoundary>
+        <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+          <InfoHouse productData={datas} statusType={status} />
+        </ErrorBoundary>
+      </FavoritesProvider>
     </div>
   );
 };

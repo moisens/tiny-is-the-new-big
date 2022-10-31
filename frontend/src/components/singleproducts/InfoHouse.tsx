@@ -1,8 +1,12 @@
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Housedata } from "../../types/interface-housedata";
+import useFavorite from "../../hooks/useFavorite";
 
 const InfoHouse = ({ productData, statusType }: Housedata) => {
   const { product } = productData;
+  const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
+
+  
 
   const catUpper = product?.category.slice(0, 1).toUpperCase();
   const restCat = product?.category.slice(1);
@@ -28,7 +32,10 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
             </p>
           </div>
           <div className="info__element info__icon">
-            <BsHeart />
+            <BsHeart 
+              onClick={() => {addToFavorites(product), console.log("SINGLE PROD",favorites)
+              }}
+            />
           </div>
         </div>
         <div className="info__description">

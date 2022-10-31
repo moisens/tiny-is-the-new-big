@@ -52,7 +52,7 @@ const FavoriteComponent = () => {
             return (
               <div className="card__favorite" key={_id}>1</div>
             )
-          }) : <div>hh</div>}
+          }) : <div>No favorite tiny houses</div>}
         </article>
       </section>
     </header>
