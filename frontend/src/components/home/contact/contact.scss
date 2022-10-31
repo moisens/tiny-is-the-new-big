@@ -212,9 +212,8 @@
       }
     }
     .social__container {
-      display: flex;
+      @include mixins.display-flex;
       gap: 20px;
-      //background-color: lightblue;
       padding: 40px 120px 0 0;
 
       .social__content {
@@ -230,7 +229,7 @@
         transition: all ease-in .7s;
 
         a {
-          color: variables.$light-red-autumn;
+          color: variables.$normal-green;
           transition: all ease-in .7s;
         }
         
