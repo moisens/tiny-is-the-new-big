@@ -4,10 +4,10 @@ import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
 
 
-const Cardspage = ({ productData, statusType }: Housedata) => {
+const Cardspage = ({ productData, status }: Housedata) => {
   const { products } = productData;
-  if (statusType === "pending") return <h2>Loading...</h2>;
-  if (statusType === "rejected") throw new Error(statusType); // need to be refactored!
+  if (status === "pending") return <h2>Loading...</h2>;
+  if (status === "rejected") throw new Error(status); // need to be refactored!
 
 
 
@@ -18,7 +18,7 @@ const Cardspage = ({ productData, statusType }: Housedata) => {
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*Card*/}
-          {statusType === "resolved" && products?.map(product => {
+          {status === "resolved" && products?.map(product => {
             const { _id } = product;
             return (
               <CardList
