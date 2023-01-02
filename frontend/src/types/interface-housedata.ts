@@ -1,6 +1,6 @@
 export interface Housedata {
   productData: HousedataType;
-  statusType: StatusType;
+  status: string;
 }
 
 export type HousedataType = {
