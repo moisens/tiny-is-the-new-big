@@ -3,13 +3,10 @@ import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
 
-
 const Cardspage = ({ productData, status, error }: Housedata) => {
   const { products } = productData;
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
-
-
 
   return (
     <section className="page__container">
@@ -18,15 +15,11 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*Card*/}
-          {status === "resolved" && products?.map(product => {
-            const { _id } = product;
-            return (
-              <CardList
-                product={product}
-                key={_id} 
-              />
-            );
-          })}
+          {status === "resolved" &&
+            products?.map((product) => {
+              const { _id } = product;
+              return <CardList product={product} key={_id} />;
+            })}
 
           {/*Card*/}
         </div>

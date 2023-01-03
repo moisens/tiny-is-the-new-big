@@ -2,17 +2,16 @@ import "./singleproduct.scss";
 import Images from "./Images";
 import { Housedata } from "../../types/interface-housedata";
 
-const Header = ({ productData, statusType }: Housedata) => {
+const Header = ({ productData, status, error }: Housedata) => {
   const { product } = productData;
 
-  if (statusType === "pending") return <h2>Loading...</h2>;
-  if (statusType === "rejected") throw new Error(statusType);
+  if (status === "pending") return <h2>Loading...</h2>;
+  if (status === "rejected") throw error;
 
   return (
     <header className="head__container">
-      {statusType === "resolved" && product?.image.map(image => (
-        <Images img={image} key={image} />
-      ))}
+      {status === "resolved" &&
+        product?.image.map((image) => <Images img={image} key={image} />)}
     </header>
   );
 };

@@ -8,10 +8,7 @@ import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries
 import { FavoritesProvider } from "../context/favoriteContext";
 import useFetch from "../hooks/useFetch";
 
-
-
 const Rent = () => {
-
   const categories = "rent";
   const {
     dataHouse: datas,
