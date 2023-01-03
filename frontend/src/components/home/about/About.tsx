@@ -1,7 +1,7 @@
 import "./about.scss";
 import { founders } from "../../../utils/utils";
 import Founders from "./Founders";
-import { FaBuilding } from "react-icons/fa"
+import { FaBuilding } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -28,10 +28,10 @@ const About = () => {
       <div className="about__text__content">
         <div className="about__company">
           <div className="company__illu">
-            <FaBuilding size= "1.5rem" color="#8db530" />
+            <FaBuilding size="1.5rem" color="#8db530" />
           </div>
           <h4 className="about__title__H4">
-            About <span className="span__title">Our company</span>
+            What our  <span className="span__title">company propose?</span>
           </h4>
         </div>
         <div className="about__desc">
@@ -40,10 +40,12 @@ const About = () => {
             environment.
           </h2>
           <p className="about__description__P">
-            Modus stainless steel doctus ea vis, sed luxury democritum at, vidit
-            cozy partiendo mel cu. Vel an one-of-a-kind utroque antiopam, ius ad
-            falli location location location suavitate. No Carrara marble
-            persius mei, no historic dolor maiestatis adolescens.
+            Living in a tiny house has numerous benefits, both for the
+            individual and for the environment. Tiny houses use less energy and
+            resources to build and maintain, which means a smaller carbon
+            footprint and reduced costs for the homeowner. They also encourage a
+            simpler, more minimalist lifestyle, leading to less clutter and
+            waste.
           </p>
         </div>
       </div>

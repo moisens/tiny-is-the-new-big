@@ -1,12 +1,11 @@
 import "./location.scss";
 import { BsFillGeoAltFill } from "react-icons/bs";
 import World from "../../../assets/world.png";
-import Button from "../../../components/button/Button"
+import Button from "../../../components/button/Button";
 import { LocationDataType } from "../../../types/interface-Locationsdata";
 import { StatusType } from "../../../types/interface-housedata";
 import LocationSlider from "./LocationSlider";
 import { useEffect, useState } from "react";
-
 
 interface IsFetchingError {
   message: string;
@@ -19,38 +18,33 @@ const isError = (error: unknown): error is IsFetchingError => {
   return false;
 };
 
-
-
-
-
-
 const Location = () => {
   const [datas, setDatas] = useState<LocationDataType>({} as LocationDataType);
-const [status, setStatus] = useState<StatusType>("iddle");
-const [error, setError] = useState<unknown>(null);
+  const [status, setStatus] = useState<StatusType>("iddle");
+  const [error, setError] = useState<unknown>(null);
 
-const fetchHouses = async () => {
-  try {
-    setStatus("pending");
-    const response = await fetch(`/api/v1/locations`);
-    if (!response.ok) {
-      throw new Error(`unable to fetch data!`);
+  const fetchHouses = async () => {
+    try {
+      setStatus("pending");
+      const response = await fetch(`/api/v1/locations`);
+      if (!response.ok) {
+        throw new Error(`unable to fetch data!`);
+      }
+      const jsonhouse = await response.json();
+      setStatus("resolved");
+      setDatas(jsonhouse);
+    } catch (error) {
+      if (isError(error)) {
+        setError(error.message);
+        setStatus("rejected");
+        console.log(error);
+      }
     }
-    const jsonhouse = await response.json();
-    setStatus("resolved");
-    setDatas(jsonhouse);
-  } catch (error) {
-    if (isError(error)) {
-      setError(error.message);
-      setStatus("rejected");
-      console.log(error);
-    }
-  }
-};
+  };
 
-useEffect(() => {
-  fetchHouses();
-}, []);
+  useEffect(() => {
+    fetchHouses();
+  }, []);
 
   return (
     <section className="location__container" id="location">
@@ -69,12 +63,17 @@ useEffect(() => {
             We will help you find a good place where you will settle.
           </h2>
           <p className="location__P">
-            Easily move your Tiny House to a more profitable area with its
-            towing system. Living with less, means moving towards a future with
-            reduced environmental impact.
+            In addition to being environmentally friendly, tiny houses offer a
+            unique and cozy living experience. With their compact size, they can
+            be placed on any piece of land, including in urban areas where space
+            is limited. This allows for flexibility in where you choose to live,
+            whether it be in the heart of the city or in a peaceful countryside
+            setting.
           </p>
           <div className="location__btn">
-            <Button className="location__a" as="a" href="/location">All the locations</Button>
+            <Button className="location__a" as="a" href="/location">
+              All the locations
+            </Button>
           </div>
         </div>
         <div className="location__slider">

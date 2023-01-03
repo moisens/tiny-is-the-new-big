@@ -1,7 +1,7 @@
 import "./services.scss";
 import { servicesData } from "../../../utils/services-utils";
 import Tab from "./ServiceTab";
-import { MdHomeRepairService } from "react-icons/md"
+import { MdHomeRepairService } from "react-icons/md";
 
 const Service = () => {
   return (
@@ -21,9 +21,9 @@ const Service = () => {
         </h2>
       </div>
       <p className="services__description__P">
-        Broker ipsum dolor sit amet, consectetuer noted architect elit. Modern
-        interior commodo ligula eget dolor. Cum sociis panoramic views penatibus
-        et magnis dis downtown loft montes, nascetur soaring views mus.
+        We offer both purchase and rental options for our tiny houses. You can
+        make it build too. So whether you're looking for a permanent residence
+        or a vacation getaway, we have a solution for you.
       </p>
       <div className="services__tab__container">
         <Tab services={servicesData} />
