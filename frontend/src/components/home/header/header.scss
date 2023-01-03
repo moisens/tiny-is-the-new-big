@@ -1,8 +1,6 @@
 @use "../../../scss/variables";
 @use "../../../scss/mixins";
 
-
-
 .header__container {
   max-width: 100%;
   height: 100%;
@@ -12,7 +10,6 @@
   grid-column: span 12;
   gap: 30px;
   padding-right: 25px;
-
 
   .header__content__text {
     @include mixins.display-start;
@@ -51,7 +48,10 @@
         transition: all 0.5s;
         text-decoration: none;
         color: variables.$text_blackish;
-
+        &:first-child {
+          background-color: variables.$red_autumn;
+          color: variables.$white_color;
+        }
         &:hover {
           background-color: variables.$light_green;
           color: #fff;
