@@ -9,7 +9,7 @@ export const HeaderBuy = [
     icon: <MdRoofing size="1.5rem" />,
     category: "buy",
     title: "Quality, sustainable and ecological tiny houses.",
-    description: "Our tiny houses are built by a team composed by architects, electricians, plumbers and of course professionals workers.We build for you and your love ones a safe tiny house, that is eco friendly.",
+    description: "Our tiny houses are designed with sustainability in mind, featuring energy-efficient appliances, recycled materials, and renewable energy sources. These features not only save you money on utility bills, but also contribute to the health and well-being of the planet.",
   }
 ];
 export const HeaderRent = [
@@ -19,6 +19,6 @@ export const HeaderRent = [
     icon: <MdOutlineBedroomParent size="1.5rem" />,
     category: "rent",
     title: "Home is where you park. Especially when it is tiny and eco-friendly.",
-    description: "Rent a tiny house built by our team of professionals. As said earlier, our tiny houses are sustainable and eco-friendly. You’ll get the comfort of a house without the inconvenience.",
+    description: "Imagine waking up in a cozy and stylish tiny house, surrounded by nature and with all the amenities you need. Make the switch to a tiny house today and start living a more sustainable and fulfilling life.",
   }
 ];

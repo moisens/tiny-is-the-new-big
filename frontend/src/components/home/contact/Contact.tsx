@@ -28,8 +28,9 @@ const Contact = () => {
           </div>
           <h2 className="contact__titleH2">Our rendez-vous begins here!</h2>
           <p className="contact__description">
-            Broker ipsum dolor sit amet, consectetuer noted architect elit.
-            Modern interior commodo ligula eget dolor.
+            Take the first step towards a more sustainable and fulfilling
+            lifestyle by considering a tiny house from our selection. Contact us
+            today to learn more and schedule a tour.
           </p>
         </div>
         <div className="contact__images">
