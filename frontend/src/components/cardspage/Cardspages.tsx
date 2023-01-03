@@ -4,10 +4,10 @@ import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
 
 
-const Cardspage = ({ productData, status }: Housedata) => {
+const Cardspage = ({ productData, status, error }: Housedata) => {
   const { products } = productData;
   if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "rejected") throw new Error(status); // need to be refactored!
+  if (status === "rejected") throw error; // need to be refactored!
 
 
 

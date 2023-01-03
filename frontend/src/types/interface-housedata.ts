@@ -1,6 +1,7 @@
 export interface Housedata {
   productData: HousedataType;
   status: string;
+  error: unknown;
 }
 
 export type HousedataType = {

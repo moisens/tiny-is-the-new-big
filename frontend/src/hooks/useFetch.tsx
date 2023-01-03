@@ -3,6 +3,17 @@ import axios from "axios";
 
 
 
+interface IsFetchingError {
+  message: string;
+}
+
+const isError = (error: unknown): error is IsFetchingError => {
+  if (error && typeof error === "object" && "message" in error) {
+    return true;
+  }
+  return false;
+};
+
 
 const useFetch = <T,>(url: string) => {
   const [dataHouse, setDataHouse] = useState<T>({} as T);
@@ -18,7 +29,7 @@ const useFetch = <T,>(url: string) => {
         setDataHouse(res.data);
         
       } catch (error) {
-        if (error instanceof Error) {
+        if (isError(error)) {
           setError(error.message);
           setStatus("rejected");
           console.log(error.message);
