@@ -1,7 +1,9 @@
-import Button from "../button/Button";
+interface IErrorBoundary {
+  error: Error,
+  resetErrorBoundary: () => void
+}
 
-
-const ErrorBoundaryFallBack = ({ error, resetErrorBoundary }) => {
+const ErrorBoundaryFallBack = ({ error, resetErrorBoundary }: IErrorBoundary) => {
   return (
     <div role="alert">
       <p>Something went wrong</p>
