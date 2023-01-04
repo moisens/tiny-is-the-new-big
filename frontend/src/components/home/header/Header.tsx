@@ -7,9 +7,9 @@ const Header = () => {
       <section className="header__content__text">
         <h1 className="header__title">Your dream tiny house awaits.</h1>
         <p className="header__description">
-          Housing made easy. tinyhousing offers you the possibility to buy, rent
-          tiny houses. We also help you to find a location for your beautiful
-          eco-friendly tiny home.
+          Housing made easy - discover the benefits of tiny house living and
+          find your dream home with our wide selection of tiny houses for sale
+          or rent.
         </p>
         <div className="header__btn__container">
           <Button className="header__btns" as="a" href="/buy">
