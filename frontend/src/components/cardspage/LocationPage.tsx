@@ -17,7 +17,7 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
             return <LocationsList location={location} key={_id} />;
           })}
       </section>
-      <section className="loc__map">Map</section>
+      <section className="loc__map"></section>
     </section>
   );
 };

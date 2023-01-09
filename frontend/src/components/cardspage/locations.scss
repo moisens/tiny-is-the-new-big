@@ -24,7 +24,6 @@
 
     .card__Info {
       width: 100%;
-      //background-color: lightgreen;
       margin-bottom: 40px;
       padding-bottom: 78px;
       position: relative;
@@ -60,12 +59,10 @@
           line-height: 1.6;
         }
         .cardloc__reviews {
-          //background-color: lightblue;
           display: flex;
           justify-content: space-between;
 
           .cardloc__reviewers {
-            //background-color: yellow;
             display: flex;
             align-items: center;
             margin-top: 10px;
@@ -73,7 +70,7 @@
             & > * {
               width: 45px;
               height: 45px;
-              background-color: rgb(230, 230, 230);
+              background-color: hsl(0, 0%, 95%);
               border: solid 1px variables.$normal_green;
               border-radius: 50%;
               margin-right: -11px;
@@ -98,7 +95,8 @@
     }
   }
   .loc__map {
-    background-color: rgb(175, 221, 253);
+    background-color: hsl(0, 0%, 97%);
     height: 85vh;
+    border-radius: 22px;
   }
 }
