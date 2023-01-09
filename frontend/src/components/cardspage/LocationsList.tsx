@@ -1,26 +1,30 @@
-import { BsHeart } from "react-icons/bs";
 import { CardDataLocationType } from "../../types/interface-Locationsdata";
 
 const LocationsList = ({ location }: CardDataLocationType) => {
+  const { image, country, description, numOfReviews, reviewersImages } = location;
+  console.log(reviewersImages?.length);
+  
   return (
-    <div>
-      <img
-        src={location.image[0]}
-        alt={location.country}
-        title={location.country}
-        className="card__img"
-      />
-      <div className="card__like">
-        <BsHeart size="1.4rem" />
-      </div>
-      <div className="card__content">
-        <div className="card__title">
-          <h4 className="card__H4">{location.country}</h4>
+    <div className="card__Info">
+      <img src={image[0]} alt={country} title={country} className="cardloc__img" />
+      <div className="cardloc__content">
+        <div className="cardloc__title">
+          <h4 className="cardloc__H4">{country}</h4>
         </div>
-        <div className="card__title">{location.description.slice(0, 80)}</div>
-        <div className="card__title">
-          <p>imgs</p>
-          <p>{location.numOfReviews}</p>
+        <p className="cardloc__description">{description.slice(0, 80)}</p>
+        <div className="cardloc__reviews">
+          <div className="cardloc__reviewers">
+            {reviewersImages?.map((revImg, index) => (
+              <div key={index}>{/*NEED TO REFACTOR. BAD DON'T USE INDEX HERE*/}
+                <img src={revImg} />
+              </div>
+            ))}
+          </div>
+          <div className="cardloc__rating">
+            ★
+             <p className="cardloc__p">{numOfReviews}</p>
+          </div>
+         
         </div>
       </div>
     </div>
