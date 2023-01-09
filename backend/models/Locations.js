@@ -20,6 +20,10 @@ const LocationSchema = new mongoose.Schema(
       type: [String],
       required: false,
     },
+    reviewersImages: {
+      type: [String],
+      required: false,
+    },
     averageRating: {
       type: Number,
       default: 0,
