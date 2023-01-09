@@ -8,8 +8,9 @@ const LocationPage = ({ locationDatas, statusType }: Locations) => {
   
   
   return (
-    <section className="page__container">
-      Todo
+    <section className="location-container">
+      <section className="location-content">jj</section>
+      <section className="location-map">Map</section>
     </section>
   )
 }
