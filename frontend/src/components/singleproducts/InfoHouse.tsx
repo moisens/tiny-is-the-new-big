@@ -2,7 +2,7 @@ import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Housedata } from "../../types/interface-housedata";
 import useFavorite from "../../hooks/useFavorite";
 
-const InfoHouse = ({ productData, statusType }: Housedata) => {
+const InfoHouse = ({ productData, status }: Housedata) => {
   const { product } = productData;
   const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
 
@@ -10,8 +10,8 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
   const restCat = product?.category.slice(1);
   const category = `${catUpper}${restCat}`;
 
-  if (statusType === "pending") return <h2>Loading...</h2>;
-  if (statusType === "rejected") throw new Error(statusType);
+  if (status === "pending") return <h2>Loading...</h2>;
+  if (status === "rejected") throw new Error("something went wrong");//Refactor this!!!
 
   return (
     <section className="info__container">
