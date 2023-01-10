@@ -191,18 +191,52 @@
 
       .info__titleH5 {
         font-size: 20px;
-        padding-bottom: 100px;
+        padding-bottom: 30px;
         color: #181b52;
       }
+
+      .info__form {
+        width: 70%;
+        height: auto;
+        margin-bottom: 15px;
+
+        .info__input {
+          width: 100%;
+
+          input {
+            width: 48%;
+            height: 40px;
+            border: solid 0.4px #08a1ba;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            padding-left: 12px;
+            font-size: 1rem;
+
+            &:nth-child(4) {
+              margin-left: 4%;
+            }
+          }
+        }
+        .info__textarea {
+          width: 100%;
+          border: solid 0.4px #08a1ba;
+          border-radius: 6px;
+          resize: none;
+          padding: 12px 12px;
+          font-family: "Lato", sans-serif;
+          font-size: 1rem;
+        }
+      }
+
       .info__button {
-        padding: 18px 46px;
-        font-size: 1.75rem;
+        padding: 18px 76px;
+        font-size: 1.125rem;
         font-weight: 400;
         cursor: pointer;
         border: solid 0.4px #08a1ba;
         border-radius: 40px;
         background-color: #fff;
-        transition: all 0.5s;
+        transition: all ease 0.8s;
         text-decoration: none;
         color: #181b52;
 
