@@ -6,13 +6,9 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
   const { product } = productData;
   const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
 
-  
-
   const catUpper = product?.category.slice(0, 1).toUpperCase();
   const restCat = product?.category.slice(1);
   const category = `${catUpper}${restCat}`;
-  
-  
 
   if (statusType === "pending") return <h2>Loading...</h2>;
   if (statusType === "rejected") throw new Error(statusType);
@@ -32,8 +28,9 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
             </p>
           </div>
           <div className="info__element info__icon">
-            <BsHeart 
-              onClick={() => {addToFavorites(product), console.log("SINGLE PROD",favorites)
+            <BsHeart
+              onClick={() => {
+                addToFavorites(product), console.log("SINGLE PROD", favorites);
               }}
             />
           </div>
@@ -120,7 +117,36 @@ const InfoHouse = ({ productData, statusType }: Housedata) => {
         <h5 className="info__titleH5">
           Are you interested in this tiny house?
         </h5>
-        <button className="info__button">Contact</button>
+        <form className="info__form">
+          <div className="info__input">
+            <label htmlFor="firstname" />
+            <input type="text" name="firstname" placeholder="Enter your name" />
+            <label htmlFor="lastname" />
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Enter your lastname"
+            />
+          </div>
+          <div className="info__input">
+            <label htmlFor="email" />
+            <input type="email" name="email" placeholder="Enter your email" />
+            <label htmlFor="reference" />
+            <input
+              type="text"
+              name="reference"
+              placeholder="Enter the reference"
+            />
+          </div>
+          <textarea
+            name="subject"
+            cols={30}
+            rows={5}
+            placeholder="Subject..."
+            className="info__textarea"
+          ></textarea>
+        </form>
+        <button className="info__button">Schedule a rendez-vous</button>
       </div>
     </section>
   );
