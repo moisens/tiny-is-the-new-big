@@ -1,6 +1,7 @@
 import "./locations.scss";
 import { Locations } from "../../types/interface-Locationsdata";
 import LocationsList from "./LocationsList";
+import Map from "../map/Map";
 
 const LocationPage = ({ locationDatas, status, error }: Locations) => {
   const { locations } = locationDatas;
@@ -17,7 +18,9 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
             return <LocationsList location={location} key={_id} />;
           })}
       </section>
-      <section className="loc__map"></section>
+      <section className="loc__map">
+        <Map />
+      </section>
     </section>
   );
 };
