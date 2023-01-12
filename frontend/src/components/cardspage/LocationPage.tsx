@@ -1,7 +1,6 @@
 import "./locations.scss";
 import { Locations } from "../../types/interface-Locationsdata";
 import LocationsList from "./LocationsList";
-import Map from "../map/Map";
 
 const LocationPage = ({ locationDatas, status, error }: Locations) => {
   const { locations } = locationDatas;
@@ -19,7 +18,18 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
           })}
       </section>
       <section className="loc__map">
-        <Map />
+        <div className="mapouter">
+          <div className="gmap_canvas">
+            <iframe
+              className="iframe__container"
+              width="700"
+              height="650"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=1260%20Chem.%20Remembrance,%20Montr%C3%A9al,%20QC%20H3H%201A2,%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            ></iframe>
+            <style></style>
+          </div>
+        </div>
       </section>
     </section>
   );
