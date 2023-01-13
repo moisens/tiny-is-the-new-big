@@ -20,13 +20,19 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
       <section className="loc__map">
         <div className="mapouter">
           <div className="gmap_canvas">
-            <iframe
-              className="iframe__container"
-              width="700"
-              height="650"
-              id="gmap_canvas"
-              src="https://maps.google.com/maps?q=Mount%20Girouard,%20AB,%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            />
+            {locations?.map((location) => {
+              const { googolLink, country } = location;
+              return (
+                <iframe
+                  className="iframe__container"
+                  width="700"
+                  height="650"
+                  id="gmap_canvas"
+                  src={googolLink}
+                  key={country}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
