@@ -20,6 +20,7 @@ export type ProductLocationsdata = {
   country: string;
   description: string;
   image: string[];
+  googolLink: string;
   reviewersImages: string[];
   averageRating: number;
   numOfReviews: number;
