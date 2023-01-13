@@ -26,8 +26,7 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
               height="650"
               id="gmap_canvas"
               src="https://maps.google.com/maps?q=1260%20Chem.%20Remembrance,%20Montr%C3%A9al,%20QC%20H3H%201A2,%20Canada&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            ></iframe>
-            <style></style>
+            />
           </div>
         </div>
       </section>

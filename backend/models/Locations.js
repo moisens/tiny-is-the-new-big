@@ -16,6 +16,10 @@ const LocationSchema = new mongoose.Schema(
       type: [String],
       required: [true, "Please provide at least an image"],
     },
+    googolLink: {
+      type: String,
+      required: [true,"Please provide a googlemap address!"]
+    },
     reviewers: {
       type: [String],
       required: false,
