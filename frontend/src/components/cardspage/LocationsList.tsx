@@ -2,8 +2,7 @@ import { CardDataLocationType } from "../../types/interface-Locationsdata";
 
 const LocationsList = ({ location }: CardDataLocationType) => {
   const { image, country, description, numOfReviews, reviewersImages } = location;
-  console.log(reviewersImages?.length);
-  
+
   return (
     <div className="card__Info">
       <img src={image[0]} alt={country} title={country} className="cardloc__img" />
@@ -24,7 +23,6 @@ const LocationsList = ({ location }: CardDataLocationType) => {
             ★
              <p className="cardloc__p">{numOfReviews}</p>
           </div>
-         
         </div>
       </div>
     </div>
