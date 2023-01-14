@@ -102,15 +102,17 @@
     }
   }
   .loc__map {
-    background-color: hsl(0, 0%, 97%);
+    //background-color: hsl(0, 0%, 97%);
     height: 85vh;
     border-radius: 22px;
 
     .mapouter {
+      background-color: transparent;
       width: 100%;
       height: 100%;
 
       .gmap_canvas {
+        background-color: transparent;
         width: 100%;
         height: 100%;
 
