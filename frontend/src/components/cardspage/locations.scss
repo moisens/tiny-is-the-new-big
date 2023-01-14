@@ -24,9 +24,11 @@
 
     .card__Info {
       width: 100%;
-      margin-bottom: 40px;
-      padding-bottom: 78px;
+      margin-bottom: 30px;
+      padding-bottom: 94px;
       position: relative;
+      cursor: pointer;
+      //background-color: lightgreen;
 
       .cardloc__img {
         width: 100%;
@@ -35,6 +37,11 @@
         object-fit: cover;
         object-position: center;
         border-radius: 22px;
+
+        &.active {
+          border: solid 5px variables.$brown_normal;
+          border-radius: 26px;
+        }
       }
       .cardloc__content {
         background-color: white;
@@ -108,10 +115,15 @@
         height: 100%;
 
         .iframe__container {
-          width: 100%;
-          height: 100%;
-          border-radius: 22px;
-          border: none;
+          display: none;
+
+          &.activemap {
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            border: none;
+            display: flex;
+          }
         }
       }
     }
