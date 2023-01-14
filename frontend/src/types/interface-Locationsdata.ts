@@ -12,7 +12,10 @@ export type LocationDataType = {
 };
 
 export type CardDataLocationType = {
-  location: ProductLocationsdata
+  location: ProductLocationsdata;
+  index: number;
+  value: number; 
+  setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export type ProductLocationsdata = {
