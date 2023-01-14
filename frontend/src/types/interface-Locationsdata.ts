@@ -1,5 +1,3 @@
-import { StatusType } from "./interface-housedata";
-
 export interface Locations {
   locationDatas: LocationDataType;
   status: string;

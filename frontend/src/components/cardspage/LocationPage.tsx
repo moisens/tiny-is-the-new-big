@@ -31,7 +31,7 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
       <section className="loc__map">
         <div className="mapouter">
           <div className="gmap_canvas">
-            {locations?.map((location, index) => {
+            {status === "resolved" ? locations?.map((location, index) => {
               const { country } = location;
               return (
                 <LocationListFrame
@@ -41,7 +41,7 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
                   key={country}
                 />
               );
-            })}
+            }) : <h2>Loanding...</h2>}
           </div>
         </div>
       </section>
