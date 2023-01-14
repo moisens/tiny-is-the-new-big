@@ -10,7 +10,16 @@ const LocationsList = ({
     location;
 
   return (
-    <div className="card__Info" onClick={() => setValue(index)}>
+    <div
+      className="card__Info"
+      onClick={() => (setValue ? setValue(index) : undefined)}
+    >
+      {/*🤓In interface-Locationsdata types file, setValue is optional
+       *Which means that setValue is possibily undefined
+       *So I need to check if setValue is defined before updating it!
+       *Also, I need it to be optional in the types file, it is in CardDataLocationType type
+       *which I ise in an other component without passing setValue!
+       */}
       <img
         src={image[0]}
         alt={country}
