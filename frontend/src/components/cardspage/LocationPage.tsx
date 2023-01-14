@@ -1,6 +1,7 @@
 import "./locations.scss";
 import { Locations } from "../../types/interface-Locationsdata";
 import LocationsList from "./LocationsList";
+import LocationListFrame from "./LocationListFrame";
 import { useState } from "react";
 
 const LocationPage = ({ locationDatas, status, error }: Locations) => {
@@ -31,18 +32,12 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
         <div className="mapouter">
           <div className="gmap_canvas">
             {locations?.map((location, index) => {
-              const { googolLink, country } = location;
+              const { country } = location;
               return (
-                <iframe
-                  className={
-                    index === value
-                      ? "iframe__container activemap"
-                      : "iframe__container"
-                  }
-                  width="700"
-                  height="650"
-                  id="gmap_canvas"
-                  src={googolLink}
+                <LocationListFrame
+                  location={location}
+                  index={index}
+                  value={value}
                   key={country}
                 />
               );
