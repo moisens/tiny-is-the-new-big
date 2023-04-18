@@ -3,7 +3,6 @@ import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { CardDataType } from "../../types/interface-housedata";
 import houseConfiguration from "../../utils/configHouse";
-import useFavorite from "../../hooks/useFavorite";
 import Button from "../button/Button";
 
 const CardList = ({ product }: CardDataType) => {
@@ -19,7 +18,7 @@ const CardList = ({ product }: CardDataType) => {
     bathroom,
   } = product;
 
-  const { addToFavorites, removeFromFavorites, favorites } = useFavorite();
+  
   const [liked, setLiked] = useState(false);
 
   const handleActiveLike = () => {
@@ -37,31 +36,13 @@ const CardList = ({ product }: CardDataType) => {
         />
       </Link>
       <div className="card__like">
-        {!liked && favorites ? (
-          <Button
-            as="button"
-            className="like__icon"
-            handleClick={() => {
-              handleActiveLike();
-              addToFavorites(product);
-              console.log("Add: ", favorites);
-            }}
-          >
-            <BsHeart size="1.9rem" />
-          </Button>
-        ) : (
-          <Button
-            as="button"
-            className="like__icon"
-            handleClick={() => {
-              handleActiveLike();
-              removeFromFavorites(product);
-              console.log("Remove: ", favorites);
-            }}
-          >
-            <BsHeartFill size="1.9rem" />
-          </Button>
-        )}
+        <Button
+          as="button"
+          className="like__icon"
+          handleClick={() => console.log("do something!")}
+        >
+          <BsHeart size="1.9rem" />
+        </Button>
       </div>
 
       <div className="card__content">
