@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const Like = () => {
   const { favorites } = useFavorite();
+  //console.log("FAV FROM NAV",favorites.length);
+  
   
   const navigate = useNavigate();
 
