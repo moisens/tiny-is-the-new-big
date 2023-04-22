@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 const Like = () => {
   const { favorites } = useFavorite();
-  
-  
   const navigate = useNavigate();
 
   return (

@@ -90,7 +90,6 @@ const Nav = () => {
         </ul>
       </div>
       <div className="menu__like__connect">
-    
           <Like />
         <div className="nav__connect">
           <AiOutlineUser size="2rem" color="#FFF" />
