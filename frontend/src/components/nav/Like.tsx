@@ -1,11 +1,10 @@
-import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { BsHeart } from "react-icons/bs";
 import Button from "../button/Button";
 import useFavorite from "../../hooks/useFavorite";
 import { useNavigate } from "react-router-dom";
 
 const Like = () => {
   const { favorites } = useFavorite();
-  //console.log("FAV FROM NAV",favorites.length);
   
   
   const navigate = useNavigate();

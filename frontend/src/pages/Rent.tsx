@@ -23,9 +23,7 @@ const Rent = () => {
       </ErrorBoundary>
 
       <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-        <FavoritesProvider>
-          <Cardspage productData={datas} status={status} error={error} />
-        </FavoritesProvider>
+        <Cardspage productData={datas} status={status} error={error} />
       </ErrorBoundary>
     </div>
   );
