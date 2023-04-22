@@ -20,9 +20,6 @@ const CardList = ({ product }: CardDataType) => {
   } = product;
   const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
 
-  console.log("FAV FROM CARTLIST:", favorites);
-  
-  
   const [liked, setLiked] = useState(false);
 
   const handleActiveLike = () => {
@@ -40,13 +37,27 @@ const CardList = ({ product }: CardDataType) => {
         />
       </Link>
       <div className="card__like">
-        <Button
-          as="button"
-          className="like__icon"
-          handleClick={() => { addToFavorites(product), handleActiveLike() }}
-        >
-          {favorites && liked ? <BsHeart size="1.9rem" /> : <BsHeartFill size="1.9rem" />}
-        </Button>
+        {!liked && favorites ? (
+          <Button
+            as="button"
+            className="like__icon"
+            handleClick={() => {
+              addToFavorites(product), handleActiveLike();
+            }}
+          >
+            <BsHeart size="1.9rem" />
+          </Button>
+        ) : (
+          <Button
+            as="button"
+            className="like__icon"
+            handleClick={() => {
+              removeFromFavorites(product), handleActiveLike();
+            }}
+          >
+            <BsHeartFill size="1.9rem" />
+          </Button>
+        )}
       </div>
 
       <div className="card__content">

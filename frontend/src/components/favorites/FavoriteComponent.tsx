@@ -48,9 +48,21 @@ const FavoriteComponent = () => {
       <section className="cards__container">
         <article className="favorite__cards">
           {favorites.length >= 1 ? favorites?.map(favorite => {
-            const { _id } = favorite;
+            const { _id, country, price, reference, size, bedroom, bathroom, image } = favorite;
             return (
-              <div className="card__favorite" key={_id}>1</div>
+              <div className="card__favorite" key={_id}>
+                <div>
+                <img src={image[0]} alt={country} title={country} />
+                </div>
+                <div>
+                  <p>{country}</p>
+                  <p>{price}</p>
+                  <p>{reference}</p>
+                  <p>{size}</p>
+                  <p>{bedroom}</p>
+                  <p>{bathroom}</p>
+                </div>
+              </div>
             )
           }) : <div>No favorite tiny houses</div>}
         </article>

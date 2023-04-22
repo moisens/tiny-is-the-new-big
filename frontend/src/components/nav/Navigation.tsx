@@ -90,9 +90,8 @@ const Nav = () => {
         </ul>
       </div>
       <div className="menu__like__connect">
-        <FavoritesProvider>
+    
           <Like />
-        </FavoritesProvider>
         <div className="nav__connect">
           <AiOutlineUser size="2rem" color="#FFF" />
         </div>
