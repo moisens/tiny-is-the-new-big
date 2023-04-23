@@ -6,7 +6,7 @@ import { BtnsProps } from "../../types/Interface";
 import { useState } from "react";
 import useFavorite from "../../hooks/useFavorite";
 import { Link, useNavigate } from "react-router-dom";
-import { BsHeartFill } from "react-icons/bs";
+import { FiTrash2 } from "react-icons/fi";
 import houseConfiguration from "../../utils/configHouse";
 
 const FavoriteComponent = () => {
@@ -72,7 +72,7 @@ const FavoriteComponent = () => {
                       className="like__icon"
                       handleClick={() => removeFromFavorites(favorite)}
                     >
-                      <BsHeartFill size="1.9rem" />
+                      <FiTrash2 size="1.9rem" />
                     </Button>
                   </div>
                   <div className="card__content">
