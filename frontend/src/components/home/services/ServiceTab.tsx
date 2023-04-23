@@ -28,18 +28,24 @@ const Tab = ({ services }: ServiceProps) => {
         })}
       </div>
       <article className="services__tab__content">
-        {services.map((service, index) => (
-          <p
-            className={
-              index === value
-                ? "services__tab__P activeTab__text"
-                : "services__tab__P"
-            }
-            key={service.id}
-          >
-            {service.text}
-          </p>
-        ))}
+        {services.map((service, index) => {
+          const sentences = service.text.match(/[^.!?]+[.!?]/g);
+          const thirdSentenceIndex: number = 2;
+          sentences?.splice(thirdSentenceIndex + 1, 0, "");
+          const updatedText = sentences?.join("\n");
+          return (
+            <p
+              className={
+                index === value
+                  ? "services__tab__P activeTab__text"
+                  : "services__tab__P"
+              }
+              key={service.id}
+            >
+              {updatedText}
+            </p>
+          );
+        })}
       </article>
     </>
   );

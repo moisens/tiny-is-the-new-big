@@ -130,6 +130,7 @@
 
     .services__tab__P {
       display: none;
+      white-space: pre-line;
 
       &.activeTab__text {
         display: flex;

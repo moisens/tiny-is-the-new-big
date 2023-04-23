@@ -18,47 +18,56 @@ const Founders = (props: FoundersProps) => {
     }
   }, [index, foundersItems]);
 
+  //useEffect(() => {
+  //  let slider = setInterval(() => {
+  //    setIndex(index + 1)
+  //  }, 2000)
+  //  return () => clearInterval(slider)
+  //}, [index])
+
   return (
-    <>
-      {foundersItems.map((founder, founderIndex) => {
-        const { id, name, title, image, icons, contact } = founder;
-        let position: string = "nextSlide";
+    <section className="founderSlider__container">
+      <div className="founderSlider__content">
+        {foundersItems.map((founder, founderIndex) => {
+          const { id, name, title, image, icons, contact } = founder;
+          let position: string = "nextSlide";
 
-        if (founderIndex === index) {
-          position = "activeSlide";
-        }
-        if (
-          founderIndex === index - 1 ||
-          (index === 0 && founderIndex === foundersItems.length - 1)
-        ) {
-          position = "lastSlide";
-        }
+          if (founderIndex === index) {
+            position = "activeSlide";
+          }
+          if (
+            founderIndex === index - 1 ||
+            (index === 0 && founderIndex === foundersItems.length - 1)
+          ) {
+            position = "lastSlide";
+          }
 
-        return (
-          <div className={`about__slide ${position}`} key={id}>
-            <div className="slider__img">
-              <div className="about__avatar">
-                <img src={image} alt={name} title={name} />
+          return (
+            <div className={`about__slide ${position}`} key={id}>
+              <div className="slider__img">
+                <div className="about__avatar">
+                  <img src={image} alt={name} title={name} />
+                </div>
+                <p className="about__person">
+                  {name}
+                  <span className="about__position">{title}</span>
+                </p>
               </div>
-              <p className="about__person">
-                {name}
-                <span className="about__position">{title}</span>
-              </p>
+              <div className="slider__btn">
+                <div className="about__stars">
+                  <IconsComponent iconsItems={icons} />
+                </div>
+                <div className="about__contact">
+                  <Button className="about__a" as="a" href="#contact">
+                    {contact}
+                  </Button>
+                </div>
+              </div>
             </div>
-            <div className="slider__btn">
-              <div className="about__stars">
-                <IconsComponent iconsItems={icons} />
-              </div>
-              <div className="about__contact">
-                <Button className="about__a" as="a" href="#contact">
-                  {contact}
-                </Button>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 
