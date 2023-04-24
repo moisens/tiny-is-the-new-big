@@ -8,25 +8,26 @@ import SwissAir from "../../../assets/swissair.png";
 const Partner = () => {
   return (
     <section className="partner__container">
-      <div className="partner__clippath-1"></div>
       <div className="partner__content">
         <div className="partners__logo">
-          <img src={Airbnb} alt="airbnb-logo" />
+          <img src="" alt="" />
         </div>
         <div className="partners__logo">
-          <img src={Trip} alt="trip-advisor" />
+          <img src="" alt="" />
         </div>
         <div className="partners__logo">
-          <img src={Viarail} alt="Viarail-logo" />
+          <img src="" alt="" />
         </div>
         <div className="partners__logo">
-          <img src={IngLogo} alt="trip-advisor" />
+          <img src="" alt="" />
         </div>
         <div className="partners__logo">
-          <img src={SwissAir} alt="trip-advisor" />
+          <img src="" alt="" />
+        </div>
+        <div className="partners__logo">
+          <img src="" alt="" />
         </div>
       </div>
-      <div className="partner__clippath-2"></div>
     </section>
   );
 };
