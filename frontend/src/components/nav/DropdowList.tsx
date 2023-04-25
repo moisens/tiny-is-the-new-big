@@ -1,4 +1,5 @@
 import { ILinkProps } from "../../types/Interface";
+import { useLocation } from "react-router-dom";
 
 const DropdowList = (props: ILinkProps) => {
   const { linksData, setIsDropdown, handleSidebarAfterClick } = props;
@@ -6,6 +7,8 @@ const DropdowList = (props: ILinkProps) => {
   const handleCloseDropdown = () => {
     setIsDropdown?.(false);
   };
+
+  const location = useLocation();
 
   return (
     <>
@@ -16,7 +19,10 @@ const DropdowList = (props: ILinkProps) => {
           onClick={handleCloseDropdown}
         >
           {/*On small device, close the sidebar after clicking on link in the dropdown menu*/}
-          <a href={link.url} onClick={handleSidebarAfterClick}>
+          <a
+            href={location.pathname !== "/" ? `/${link.url}` : link.url}
+            onClick={handleSidebarAfterClick}
+          >
             {link.text}
           </a>
         </li>

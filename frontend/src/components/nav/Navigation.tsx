@@ -9,7 +9,6 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
 import { AiOutlineUser } from "react-icons/ai";
 import { useState, useEffect, useRef } from "react";
-import { FavoritesProvider } from "../../context/favoriteContext";
 
 const Nav = () => {
   const [isDropdown, setIsDropdown] = useState(false);
