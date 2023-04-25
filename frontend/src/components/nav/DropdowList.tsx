@@ -1,9 +1,11 @@
 import { ILinkProps } from "../../types/Interface";
 import { useLocation } from "react-router-dom";
 
-const DropdowList = (props: ILinkProps) => {
-  const { linksData, setIsDropdown, handleSidebarAfterClick } = props;
-
+const DropdowList = ({
+  linksData,
+  setIsDropdown,
+  handleSidebarAfterClick,
+}: ILinkProps) => {
   const handleCloseDropdown = () => {
     setIsDropdown?.(false);
   };
