@@ -5,6 +5,8 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { FiTwitter } from "react-icons/fi";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { dropdownLinks } from "../../utils/utils";
+import DropdownMenu from "./DropdownMenu";
 
 const Footer = () => {
   const newYear = new Date().getFullYear();
@@ -17,15 +19,7 @@ const Footer = () => {
             <li className="footer__li">
               <Link to="/">Home</Link>
             </li>
-            <li className="footer__li">
-              <Link to="#about">About</Link>
-            </li>
-            <li className="footer__li">
-              <Link to="#services">Services</Link>
-            </li>
-            <li className="footer__li">
-              <Link to="#contact">Contact</Link>
-            </li>
+            <DropdownMenu linksData={dropdownLinks} />
           </ul>
           <ul className="footer__ul">
             <li className="footer__li">
@@ -48,7 +42,7 @@ const Footer = () => {
               <input
                 type="text"
                 id="newsletter"
-                placeholder="lois@outlook.com"
+                placeholder="your_email@outlook.com"
                 className="newsletter__input"
               />
               <button type="submit" className="newsletter__button">
