@@ -19,16 +19,37 @@
       height: auto;
       display: flex;
       align-items: center;
+      gap: 20px;
 
-      img {
+      .slider-image-container {
+        width: 200px;
         height: 80px;
-        padding: 0 30px;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          background-size: contain;
+          object-fit: contain;
+        }
+        &:nth-child(1) {
+          margin-left: 20px;
+        }
+        &:nth-child(2) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          & img {
+            width: 140%;
+            height: 140%;
+          }
+        }
       }
       animation: slideshow 8s linear infinite;
     }
     &::before,
     &::after {
-      width: 100px;
+      width: 10px;
       height: 80px;
       position: absolute;
       content: "";
