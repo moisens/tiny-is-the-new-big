@@ -18,15 +18,13 @@ const Singleproduct = () => {
 
   return (
     <div className="home-container">
-      <FavoritesProvider>
-        <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-          <Header productData={datas} status={status} error={error} />
-        </ErrorBoundary>
+      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+        <Header productData={datas} status={status} error={error} />
+      </ErrorBoundary>
 
-        <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-          <InfoHouse productData={datas} status={status} error={error} />
-        </ErrorBoundary>
-      </FavoritesProvider>
+      <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
+        <InfoHouse productData={datas} status={status} error={error} />
+      </ErrorBoundary>
     </div>
   );
 };
