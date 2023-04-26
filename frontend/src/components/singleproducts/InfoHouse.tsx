@@ -1,17 +1,23 @@
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Housedata } from "../../types/interface-housedata";
 import useFavorite from "../../hooks/useFavorite";
+import { useState } from "react";
 
 const InfoHouse = ({ productData, status }: Housedata) => {
   const { product } = productData;
   const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
+  const [liked, setLiked] = useState(false);
 
   const catUpper = product?.category.slice(0, 1).toUpperCase();
   const restCat = product?.category.slice(1);
   const category = `${catUpper}${restCat}`;
 
   if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "rejected") throw new Error("something went wrong");//Refactor this!!!
+  if (status === "rejected") throw new Error("something went wrong"); //Refactor this!!!
+
+  const handleActiveLike = () => {
+    setLiked(!liked);
+  };
 
   return (
     <section className="info__container">
@@ -28,11 +34,19 @@ const InfoHouse = ({ productData, status }: Housedata) => {
             </p>
           </div>
           <div className="info__element info__icon">
-            <BsHeart
-              onClick={() => {
-                addToFavorites(product), console.log("SINGLE PROD", favorites);
-              }}
-            />
+            {!liked && favorites ? (
+              <BsHeart
+                onClick={() => {
+                  addToFavorites(product), handleActiveLike();
+                }}
+              />
+            ) : (
+              <BsHeartFill
+                onClick={() => {
+                  removeFromFavorites(product), handleActiveLike();
+                }}
+              />
+            )}
           </div>
         </div>
         <div className="info__description">
