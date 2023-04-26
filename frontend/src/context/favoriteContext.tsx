@@ -1,4 +1,4 @@
-import { ReactElement, createContext, useState } from "react";
+import { ReactElement, createContext, useState, useEffect } from "react";
 import { Productsdata } from "../types/interface-housedata";
 
 const initialState: Productsdata[] = [];
@@ -19,13 +19,29 @@ const initialContextState: FavoriteContextTypes = {
   removeFromFavorites: () => {},
 };
 
+interface CustomWindow extends Window {
+  localStorage: Storage;
+}
+
 const FavoritesContext =
   createContext<FavoriteContextTypes>(initialContextState);
 
 export const FavoritesProvider = ({
   children,
 }: ChildrenProviderProps): ReactElement => {
-  const [favorites, setFavorites] = useState<Productsdata[]>(initialState);
+  const [favorites, setFavorites] = useState<Productsdata[]>(() =>
+    JSON.parse(
+      (window as CustomWindow).localStorage.getItem("tiny-house") ||
+        JSON.stringify(initialState)
+    )
+  );
+
+  useEffect(() => {
+    (window as CustomWindow).localStorage.setItem(
+      "tiny-house",
+      JSON.stringify(favorites)
+    );
+  }, [favorites]);
 
   const addToFavorites = (product: Productsdata) => {
     if (!favorites.some((favorite) => favorite._id === product._id)) {
