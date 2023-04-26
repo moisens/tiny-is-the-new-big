@@ -1,7 +1,7 @@
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Housedata } from "../../types/interface-housedata";
 import useFavorite from "../../hooks/useFavorite";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const InfoHouse = ({ productData, status }: Housedata) => {
   const { product } = productData;
@@ -19,6 +19,17 @@ const InfoHouse = ({ productData, status }: Housedata) => {
     setLiked(!liked);
   };
 
+  useEffect(() => {
+    const storedLiked = window.localStorage.getItem(`liked_${product?._id}`);
+    if (storedLiked !== null) {
+      setLiked(JSON.parse(storedLiked));
+    }
+  }, [product?._id])
+
+  useEffect(() => {
+    window.localStorage.setItem(`liked_${product?._id}`, JSON.stringify(liked))
+  }, [product?._id, liked])
+
   return (
     <section className="info__container">
       <div className="info__content">
@@ -34,7 +45,7 @@ const InfoHouse = ({ productData, status }: Housedata) => {
             </p>
           </div>
           <div className="info__element info__icon">
-            {!liked && favorites ? (
+            {!liked ? (
               <BsHeart
                 onClick={() => {
                   addToFavorites(product), handleActiveLike();
