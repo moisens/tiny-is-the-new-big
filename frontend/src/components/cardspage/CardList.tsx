@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { CardDataType } from "../../types/interface-housedata";
 import houseConfiguration from "../../utils/configHouse";
 import Button from "../button/Button";
 import useFavorite from "../../hooks/useFavorite";
+import useLikedTinyHouse from "../../hooks/useLiked";
 
 const CardList = ({ product }: CardDataType) => {
   const {
@@ -18,17 +18,9 @@ const CardList = ({ product }: CardDataType) => {
     bedroom,
     bathroom,
   } = product;
-  const {
-    addToFavorites,
-    removeFromFavorites,
-    likedTinyHouse,
-    toggleLikeTinyHouse,
-  } = useFavorite();
-  const isTinyHouseLiked = likedTinyHouse.some((liked) => liked._id === _id);
-
-  const handleActiveLike = () => {
-    toggleLikeTinyHouse(product);
-  };
+  const { addToFavorites, removeFromFavorites } = useFavorite();
+  const { getLikedTinyhouse, handleActiveLike } = useLikedTinyHouse();
+  const isTinyHouseLiked = getLikedTinyhouse(product);
 
   return (
     <div className="page__card stacked" key={_id}>
@@ -46,7 +38,7 @@ const CardList = ({ product }: CardDataType) => {
             as="button"
             className="like__icon"
             handleClick={() => {
-              addToFavorites(product), handleActiveLike();
+              addToFavorites(product), handleActiveLike(product);
             }}
           >
             <BsHeart size="1.9rem" />
@@ -56,7 +48,7 @@ const CardList = ({ product }: CardDataType) => {
             as="button"
             className="like__icon"
             handleClick={() => {
-              removeFromFavorites(product), handleActiveLike();
+              removeFromFavorites(product), handleActiveLike(product);
             }}
           >
             <BsHeartFill size="1.9rem" />
