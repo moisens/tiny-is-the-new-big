@@ -2,6 +2,8 @@ import "./cardspage.scss";
 import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
+import { BsSearch } from "react-icons/bs";
+import { RiArrowDownSFill } from "react-icons/ri";
 
 const Cardspage = ({ productData, status, error }: Housedata) => {
   const { products } = productData;
@@ -11,7 +13,31 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
   return (
     <section className="page__container">
       {/*Filter component*/}
-      <div className="page__filter">Filter goes here!</div>
+      <section className="page__filter__container">
+        <form className="page__filter">
+          <div className="page__input__container">
+            <label htmlFor="saerch" />
+            <input type="search" name="search" className="page__input" />
+            <Button
+              as="button"
+              className="search__btn"
+              handleClick={() => console.log("search")}
+            >
+              <BsSearch className="search__search" size="1.8rem" />
+            </Button>
+          </div>
+        </form>
+        <div className="page__filter">
+          <Button
+            as="button"
+            className="search__btn"
+            handleClick={() => console.log("search")}
+          >
+            <span className="filter__by__span">Filter by</span>{" "}
+            <RiArrowDownSFill className="search__search" size="1.8rem" />
+          </Button>
+        </div>
+      </section>
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*Card*/}
