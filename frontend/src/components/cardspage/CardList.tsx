@@ -18,24 +18,17 @@ const CardList = ({ product }: CardDataType) => {
     bedroom,
     bathroom,
   } = product;
-  const { addToFavorites, removeFromFavorites } = useFavorite();
-
-  const [liked, setLiked] = useState(false);
+  const {
+    addToFavorites,
+    removeFromFavorites,
+    likedTinyHouse,
+    toggleLikeTinyHouse,
+  } = useFavorite();
+  const isTinyHouseLiked = likedTinyHouse.some((liked) => liked._id === _id);
 
   const handleActiveLike = () => {
-    setLiked(!liked);
+    toggleLikeTinyHouse(product);
   };
-
-  useEffect(() => {
-    const storedLiked = window.localStorage.getItem(`liked_${_id}`);
-    if (storedLiked !== null) {
-      setLiked(JSON.parse(storedLiked));
-    }
-  }, [_id])
-
-  useEffect(() => {
-    window.localStorage.setItem(`liked_${_id}`, JSON.stringify(liked))
-  }, [_id, liked])
 
   return (
     <div className="page__card stacked" key={_id}>
@@ -48,7 +41,7 @@ const CardList = ({ product }: CardDataType) => {
         />
       </Link>
       <div className="card__like">
-        {!liked ? (
+        {!isTinyHouseLiked ? (
           <Button
             as="button"
             className="like__icon"
