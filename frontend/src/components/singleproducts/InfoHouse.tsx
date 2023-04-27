@@ -19,16 +19,7 @@ const InfoHouse = ({ productData, status }: Housedata) => {
     setLiked(!liked);
   };
 
-  useEffect(() => {
-    const storedLiked = window.localStorage.getItem(`liked_${product?._id}`);
-    if (storedLiked !== null) {
-      setLiked(JSON.parse(storedLiked));
-    }
-  }, [product?._id])
-
-  useEffect(() => {
-    window.localStorage.setItem(`liked_${product?._id}`, JSON.stringify(liked))
-  }, [product?._id, liked])
+  
 
   return (
     <section className="info__container">

@@ -9,14 +9,18 @@ export interface ChildrenProviderProps {
 
 export type FavoriteContextTypes = {
   favorites: Productsdata[];
+  likedTinyHouse: Productsdata[];
   addToFavorites: (product: Productsdata) => void;
   removeFromFavorites: (product: Productsdata) => void;
+  toggleLikeTinyHouse: (productId: Productsdata) => void;
 };
 
 const initialContextState: FavoriteContextTypes = {
   favorites: [],
+  likedTinyHouse: [],
   addToFavorites: () => {},
   removeFromFavorites: () => {},
+  toggleLikeTinyHouse: () => {},
 };
 
 interface CustomWindow extends Window {
@@ -35,6 +39,12 @@ export const FavoritesProvider = ({
         JSON.stringify(initialState)
     )
   );
+  const [likedTinyHouse, setLikedTinyHouse] = useState<Productsdata[]>(() =>
+    JSON.parse(
+      (window as CustomWindow).localStorage.getItem("liked-tiny-house") ||
+        JSON.stringify(initialState)
+    )
+  );
 
   useEffect(() => {
     (window as CustomWindow).localStorage.setItem(
@@ -42,6 +52,13 @@ export const FavoritesProvider = ({
       JSON.stringify(favorites)
     );
   }, [favorites]);
+
+  useEffect(() => {
+    (window as CustomWindow).localStorage.setItem(
+      "liked-tiny-house",
+      JSON.stringify(likedTinyHouse)
+    );
+  }, [likedTinyHouse]);
 
   const addToFavorites = (product: Productsdata) => {
     if (!favorites.some((favorite) => favorite._id === product._id)) {
@@ -56,12 +73,24 @@ export const FavoritesProvider = ({
     setFavorites(newFavorite);
   };
 
+  const toggleLikeTinyHouse = (product: Productsdata) => {
+    if (likedTinyHouse.includes(product)) {
+      setLikedTinyHouse(
+        likedTinyHouse.filter((liked) => liked._id !== product._id)
+      );
+    } else {
+      setLikedTinyHouse([...likedTinyHouse, product]);
+    }
+  };
+
   return (
     <FavoritesContext.Provider
       value={{
         favorites,
         addToFavorites,
         removeFromFavorites,
+        likedTinyHouse,
+        toggleLikeTinyHouse,
       }}
     >
       {children}
