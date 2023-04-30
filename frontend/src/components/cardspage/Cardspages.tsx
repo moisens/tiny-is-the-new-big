@@ -2,7 +2,7 @@ import "./cardspage.scss";
 import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsCheck } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 
 const Cardspage = ({ productData, status, error }: Housedata) => {
@@ -27,15 +27,60 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
             </Button>
           </div>
         </form>
-        <div className="page__filter">
-          <Button
-            as="button"
-            className="search__btn"
-            handleClick={() => console.log("search")}
-          >
-            <span className="filter__by__span">Filter by</span>{" "}
-            <RiArrowDownSFill className="search__search" size="1.8rem" />
-          </Button>
+        <div className="page__filter__by">
+          <div className="filter__by__container">
+            <section className="filter__by__content">
+              <header className="filter__header">
+                <p className="filter__title">Filter by country</p>
+                <RiArrowDownSFill className="search__arrow" size="1.8rem" />
+              </header>
+              <section className="filter__section">
+                <article className="filter__article">
+                  <p>Switzerland</p>
+                  <div className="filter__icon__container">
+                    <BsCheck size="2rem" className="filter__icon" />
+                  </div>
+                </article>
+              </section>
+            </section>
+            <section className="filter__by__content">
+              <header className="filter__header">
+                <p className="filter__title">Filter by price</p>
+                <RiArrowDownSFill className="search__arrow" size="1.8rem" />
+              </header>
+              <section className="filter__section">
+                <form className="filter__form">
+                  <div>
+                    <label htmlFor="from" />
+                    <input
+                      type="text"
+                      name="from"
+                      min="10000"
+                      max="800000"
+                      placeholder="10000"
+                    />
+                  </div>
+                  <p>To</p>
+                  <div>
+                    <label htmlFor="to" />
+                    <input
+                      type="text"
+                      name="to"
+                      min="10000"
+                      max="800000"
+                      placeholder="800000"
+                    />
+                  </div>
+                  <div className="filter__icon__container">
+                    <BsCheck size="2rem" className="filter__icon" />
+                  </div>
+                </form>
+              </section>
+            </section>
+            <section className="filter__by__content">3-Reference</section>
+            <section className="filter__by__content">4-Size</section>
+            <section className="filter__by__content">5-Bedroom</section>
+          </div>
         </div>
       </section>
       <div className="page__content">
