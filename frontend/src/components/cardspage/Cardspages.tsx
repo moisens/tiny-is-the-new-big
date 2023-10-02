@@ -4,11 +4,24 @@ import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
 import { BsSearch, BsCheck } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { useState } from "react";
 
 const Cardspage = ({ productData, status, error }: Housedata) => {
   const { products } = productData;
+  const [search, setSearch] = useState("")
+
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error;
+
+  const filtredSearch =
+    search === ""
+      ? products
+      : products.filter((product) =>
+          product.country
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(search.toLowerCase().replace(/\s+/g, ""))
+        );
 
   return (
     <section className="page__container">
@@ -16,8 +29,13 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
       <section className="page__filter__container">
         <form className="page__filter">
           <div className="page__input__container">
-            <label htmlFor="saerch" />
-            <input type="search" name="search" className="page__input" />
+            <label htmlFor="search" />
+            <input
+              type="search"
+              name="search"
+              className="page__input"
+              placeholder="canada..."
+            />
             <Button
               as="button"
               className="search__btn"
@@ -29,6 +47,7 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
         </form>
         <div className="page__filter__by">
           <div className="filter__by__container">
+            {/*Start Filter by country*/}
             <section className="filter__by__content">
               <header className="filter__header">
                 <p className="filter__title">Filter by country</p>
@@ -43,6 +62,8 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 </article>
               </section>
             </section>
+            {/*End Filter by country*/}
+            {/*Start Filter by price*/}
             <section className="filter__by__content">
               <header className="filter__header">
                 <p className="filter__title">Filter by price</p>
@@ -77,9 +98,16 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 </form>
               </section>
             </section>
+            {/*End Filter by price*/}
+            {/*Start Filter by reference*/}
             <section className="filter__by__content">3-Reference</section>
+            {/*End Filter by reference*/}
+            {/*Start Filter by size*/}
             <section className="filter__by__content">4-Size</section>
+            {/*End Filter by size*/}
+            {/*Start Filter by bedroom*/}
             <section className="filter__by__content">5-Bedroom</section>
+            {/*End Filter by number of bedroom*/}
           </div>
         </div>
       </section>

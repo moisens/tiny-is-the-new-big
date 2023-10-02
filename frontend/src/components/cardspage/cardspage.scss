@@ -12,10 +12,9 @@
 
     .page__filter {
       display: flex;
-      background-color: rgb(0, 0, 255);
+      //background-color: rgb(0, 0, 255);
 
       .page__input__container {
-        //background-color: cadetblue;
         position: relative;
         display: flex;
 
@@ -40,6 +39,7 @@
           justify-content: center;
           align-items: center;
           color: #fff;
+          cursor: pointer;
         }
       }
     }
