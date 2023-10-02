@@ -3,7 +3,7 @@ import { linkNav, dropdownLinks } from "../../utils/utils";
 import LinkList from "./LinkList";
 import DropdowList from "./DropdowList";
 import Like from "./Like";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
@@ -50,7 +50,11 @@ const Nav = () => {
 
   return (
     <nav className="nav__container sticky__nav">
-      <div className="logo">tinyhousing</div>
+      <div className="logo">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          tinyhousing
+        </Link>
+      </div>
       <div className="navlink__content" ref={navbarLinksContainer}>
         <ul className="nav__ul active" ref={navbarUlLinks}>
           <li className="nav__li">
@@ -89,7 +93,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="menu__like__connect">
-          <Like />
+        <Like />
         <div className="nav__connect">
           <AiOutlineUser size="2rem" color="#FFF" />
         </div>
