@@ -5,13 +5,14 @@ import CardList from "./CardList";
 import { BsSearch, BsCheck } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { useState } from "react";
+import { BsCheckLg } from "react-icons/bs";
 
 const Cardspage = ({ productData, status, error }: Housedata) => {
   const { products } = productData;
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
 
   if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "rejected") throw error;
+  if (status === "rejected") return error;
 
   const filtredSearch =
     search === ""
@@ -53,16 +54,28 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 <p className="filter__title">Filter by country</p>
                 <RiArrowDownSFill className="search__arrow" size="1.8rem" />
               </header>
-              <section className="filter__section">
-                <article className="filter__article">
-                  <p>Switzerland</p>
-                  <div className="filter__icon__container">
-                    <BsCheck size="2rem" className="filter__icon" />
-                  </div>
-                </article>
+              <section className="filter__section filter__country">
+                {products?.map((product) => (
+                  <article className="filter__article" key={product._id}>
+                    <p>{product.country}</p>
+                    <div className="filter__icon__container">
+                      <input
+                        type="checkbox"
+                        name={product.country}
+                        value={product.country}
+                        id={product._id}
+                      />
+                    </div>
+                  </article>
+                ))}
+                <div className="apply__reset__container">
+                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Apply</Button>
+                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Reset</Button>
+                </div>
               </section>
             </section>
             {/*End Filter by country*/}
+
             {/*Start Filter by price*/}
             <section className="filter__by__content">
               <header className="filter__header">
@@ -70,7 +83,7 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 <RiArrowDownSFill className="search__arrow" size="1.8rem" />
               </header>
               <section className="filter__section">
-                <form className="filter__form">
+                <form className="filter__form price">
                   <div>
                     <label htmlFor="from" />
                     <input
@@ -93,12 +106,17 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                     />
                   </div>
                   <div className="filter__icon__container">
-                    <BsCheck size="2rem" className="filter__icon" />
+                  <input type="checkbox" name="filter-price" value="filter-price" id="filter-price" />
                   </div>
                 </form>
+                <div className="apply__reset__container">
+                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Apply</Button>
+                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Reset</Button>
+              </div>
               </section>
             </section>
             {/*End Filter by price*/}
+
             {/*Start Filter by reference*/}
             <section className="filter__by__content">3-Reference</section>
             {/*End Filter by reference*/}
