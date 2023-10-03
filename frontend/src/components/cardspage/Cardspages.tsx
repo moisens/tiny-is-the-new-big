@@ -82,12 +82,12 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 <p className="filter__title">Filter by price</p>
                 <RiArrowDownSFill className="search__arrow" size="1.8rem" />
               </header>
-              <section className="filter__section">
+              <section className="filter__section filter__price">
                 <form className="filter__form price">
                   <div>
                     <label htmlFor="from" />
                     <input
-                      type="text"
+                      type="number"
                       name="from"
                       min="10000"
                       max="800000"
@@ -98,15 +98,12 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                   <div>
                     <label htmlFor="to" />
                     <input
-                      type="text"
+                      type="number"
                       name="to"
                       min="10000"
                       max="800000"
                       placeholder="800000"
                     />
-                  </div>
-                  <div className="filter__icon__container">
-                  <input type="checkbox" name="filter-price" value="filter-price" id="filter-price" />
                   </div>
                 </form>
                 <div className="apply__reset__container">
