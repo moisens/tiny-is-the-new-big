@@ -9,10 +9,18 @@ import { BsCheckLg } from "react-icons/bs";
 
 const Cardspage = ({ productData, status, error }: Housedata) => {
   const { products } = productData;
+
+  const [toggleFilterCountry, setToggleFilterCountry] = useState(false);
+  const [toggleFilterByPrice, setToggleFilterByPrice] = useState(false);
+
   const [search, setSearch] = useState("");
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") return error;
+
+
+  const handleToggleFilterCountry = () => setToggleFilterCountry(!toggleFilterCountry);
+  const handleToggleFilterByPrice = () => setToggleFilterByPrice(!toggleFilterByPrice)
 
   const filtredSearch =
     search === ""
@@ -50,11 +58,12 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
           <div className="filter__by__container">
             {/*Start Filter by country*/}
             <section className="filter__by__content">
-              <header className="filter__header">
+              <header className="filter__header" onClick={handleToggleFilterCountry}>
                 <p className="filter__title">Filter by country</p>
-                <RiArrowDownSFill className="search__arrow" size="1.8rem" />
+                <RiArrowDownSFill className={`${toggleFilterCountry ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
               </header>
-              <section className="filter__section filter__country">
+              {toggleFilterCountry 
+              ? <section className="filter__section filter__country">
                 {products?.map((product) => (
                   <article className="filter__article" key={product._id}>
                     <p>{product.country}</p>
@@ -72,17 +81,18 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                   <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Apply</Button>
                   <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Reset</Button>
                 </div>
-              </section>
+              </section> 
+              : null}
             </section>
             {/*End Filter by country*/}
 
             {/*Start Filter by price*/}
             <section className="filter__by__content">
-              <header className="filter__header">
+              <header className="filter__header" onClick={handleToggleFilterByPrice}>
                 <p className="filter__title">Filter by price</p>
-                <RiArrowDownSFill className="search__arrow" size="1.8rem" />
+                <RiArrowDownSFill className={`${toggleFilterByPrice ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
               </header>
-              <section className="filter__section filter__price">
+              {toggleFilterByPrice ? <section className="filter__section filter__price">
                 <form className="filter__form price">
                   <div>
                     <label htmlFor="from" />
@@ -110,7 +120,8 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                   <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Apply</Button>
                   <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Reset</Button>
               </div>
-              </section>
+              </section> : null}
+              
             </section>
             {/*End Filter by price*/}
 
