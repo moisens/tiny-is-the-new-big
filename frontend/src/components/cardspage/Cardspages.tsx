@@ -2,12 +2,13 @@ import "./cardspage.scss";
 import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
-import { BsSearch, BsCheck } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { useState } from "react";
-import { BsCheckLg } from "react-icons/bs";
+import FilterWithCheckBox from "../filterComponents/FilterWithCheckBox";
+import FilterByPrice from "../filterComponents/FilterByPrice";
 
-const Cardspage = ({ productData, status, error }: Housedata) => {
+const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const { products } = productData;
 
   const [toggleFilterCountry, setToggleFilterCountry] = useState(false);
@@ -16,21 +17,21 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
   const [search, setSearch] = useState("");
 
   if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "rejected") return error;
+  if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
 
 
   const handleToggleFilterCountry = () => setToggleFilterCountry(!toggleFilterCountry);
   const handleToggleFilterByPrice = () => setToggleFilterByPrice(!toggleFilterByPrice)
 
   const filtredSearch =
-    search === ""
-      ? products
-      : products.filter((product) =>
-          product.country
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(search.toLowerCase().replace(/\s+/g, ""))
-        );
+  search === ""
+  products
+  products?.filter((product) =>
+    product.country
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(search.toLowerCase().replace(/\s+/g, ""))
+  );
 
   return (
     <section className="page__container">
@@ -63,25 +64,7 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 <RiArrowDownSFill className={`${toggleFilterCountry ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
               </header>
               {toggleFilterCountry 
-              ? <section className="filter__section filter__country">
-                {products?.map((product) => (
-                  <article className="filter__article" key={product._id}>
-                    <p>{product.country}</p>
-                    <div className="filter__icon__container">
-                      <input
-                        type="checkbox"
-                        name={product.country}
-                        value={product.country}
-                        id={product._id}
-                      />
-                    </div>
-                  </article>
-                ))}
-                <div className="apply__reset__container">
-                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Apply</Button>
-                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Reset</Button>
-                </div>
-              </section> 
+              ? <FilterWithCheckBox products={products} /> 
               : null}
             </section>
             {/*End Filter by country*/}
@@ -92,35 +75,7 @@ const Cardspage = ({ productData, status, error }: Housedata) => {
                 <p className="filter__title">Filter by price</p>
                 <RiArrowDownSFill className={`${toggleFilterByPrice ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
               </header>
-              {toggleFilterByPrice ? <section className="filter__section filter__price">
-                <form className="filter__form price">
-                  <div>
-                    <label htmlFor="from" />
-                    <input
-                      type="number"
-                      name="from"
-                      min="10000"
-                      max="800000"
-                      placeholder="10000"
-                    />
-                  </div>
-                  <p>To</p>
-                  <div>
-                    <label htmlFor="to" />
-                    <input
-                      type="number"
-                      name="to"
-                      min="10000"
-                      max="800000"
-                      placeholder="800000"
-                    />
-                  </div>
-                </form>
-                <div className="apply__reset__container">
-                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Apply</Button>
-                  <Button as="button" className="apply__reset__btn" handleClick={() => {}}>Reset</Button>
-              </div>
-              </section> : null}
+              {toggleFilterByPrice ? <FilterByPrice /> : null}
               
             </section>
             {/*End Filter by price*/}
