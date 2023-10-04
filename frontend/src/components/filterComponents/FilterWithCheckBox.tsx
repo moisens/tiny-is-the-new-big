@@ -3,20 +3,21 @@ import { HousedataType } from "../../types/interface-housedata";
 
 
 export type FilterWhithCheckboxType = {
-  products: HousedataType['products']
+  products: HousedataType['products'],
+  titleHeader: string
 }
 
-const FilterWithCheckBox = ({ products } : FilterWhithCheckboxType) => {
+const FilterWithCheckBox = ({ products, titleHeader } : FilterWhithCheckboxType) => {
   return (
     <section className="filter__section filter__country">
       {products?.map((product) => (
         <article className="filter__article" key={product._id}>
-          <p>{product.country}</p>
+          <p>{titleHeader === "country" ? product.country : product.reference}</p>
           <div className="filter__icon__container">
             <input
               type="checkbox"
               name={product.country}
-              value={product.country}
+              value={titleHeader === "country" ? product.country : product.reference}
               id={product._id}
             />
           </div>
