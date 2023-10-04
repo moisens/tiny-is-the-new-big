@@ -7,17 +7,18 @@ export type FilterWhithCheckboxType = {
   titleHeader: string
 }
 
+
 const FilterWithCheckBox = ({ products, titleHeader } : FilterWhithCheckboxType) => {
   return (
     <section className="filter__section filter__country">
       {products?.map((product) => (
         <article className="filter__article" key={product._id}>
-          <p>{titleHeader === "country" ? product.country : product.reference}</p>
+          <p>{titleHeader === "country" ? product.country : (titleHeader === "reference" ? product.reference : product.size)}</p>
           <div className="filter__icon__container">
             <input
               type="checkbox"
               name={product.country}
-              value={titleHeader === "country" ? product.country : product.reference}
+              value={product.country}
               id={product._id}
             />
           </div>
