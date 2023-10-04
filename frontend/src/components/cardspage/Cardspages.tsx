@@ -13,15 +13,17 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
 
   const [toggleFilterCountry, setToggleFilterCountry] = useState(false);
   const [toggleFilterByPrice, setToggleFilterByPrice] = useState(false);
+  const [toggleFilterByReference, setToggleFilterByReference] = useState(false);
 
   const [search, setSearch] = useState("");
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
 
-
+  //TODO: make it dynamic. Must be a better way to write the same functonality, for example with accordion!!!
   const handleToggleFilterCountry = () => setToggleFilterCountry(!toggleFilterCountry);
-  const handleToggleFilterByPrice = () => setToggleFilterByPrice(!toggleFilterByPrice)
+  const handleToggleFilterByPrice = () => setToggleFilterByPrice(!toggleFilterByPrice);
+  const handleToggleFilterByRef = () => setToggleFilterByReference(!toggleFilterByReference);
 
   const filtredSearch =
   search === ""
@@ -64,7 +66,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                 <RiArrowDownSFill className={`${toggleFilterCountry ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
               </header>
               {toggleFilterCountry 
-              ? <FilterWithCheckBox products={products} /> 
+              ? <FilterWithCheckBox products={products} titleHeader="country" /> 
               : null}
             </section>
             {/*End Filter by country*/}
@@ -81,8 +83,15 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
             {/*End Filter by price*/}
 
             {/*Start Filter by reference*/}
-            <section className="filter__by__content">3-Reference</section>
+            <section className="filter__by__content">
+            <header className="filter__header" onClick={handleToggleFilterByRef}>
+              <p className="filter__title">Filter by reference</p>
+              <RiArrowDownSFill className={`${toggleFilterByReference ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+              </header>
+              {toggleFilterByReference ? <FilterWithCheckBox products={products} titleHeader="reference" /> : null}
+            </section>
             {/*End Filter by reference*/}
+
             {/*Start Filter by size*/}
             <section className="filter__by__content">4-Size</section>
             {/*End Filter by size*/}
