@@ -9,7 +9,6 @@ import FilterWithCheckBox from "../filterComponents/FilterWithCheckBox";
 import FilterByPrice from "../filterComponents/FilterByPrice";
 import FilterByBedroom from "../filterComponents/FilterByBedroom";
 
-
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const { products } = productData;
 
@@ -25,21 +24,31 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
 
   //TODO: make it dynamic. Must be a better way to write the same functonality, for example with accordion!!!
-  const handleToggleFilterCountry = () => setToggleFilterCountry(!toggleFilterCountry);
-  const handleToggleFilterByPrice = () => setToggleFilterByPrice(!toggleFilterByPrice);
-  const handleToggleFilterByRef = () => setToggleFilterByReference(!toggleFilterByReference);
-  const handleToggleFilterBySize = () => setToggleFilterBySize(!toggleFilterBySize);
-  const handleToggleFilterByBedroom = () => setToggleFilterByBedroom(!toggleFilterByBedroom);
+  const handleToggleFilterCountry = () =>
+    setToggleFilterCountry(!toggleFilterCountry);
+  const handleToggleFilterByPrice = () =>
+    setToggleFilterByPrice(!toggleFilterByPrice);
+  const handleToggleFilterByRef = () =>
+    setToggleFilterByReference(!toggleFilterByReference);
+  const handleToggleFilterBySize = () =>
+    setToggleFilterBySize(!toggleFilterBySize);
+  const handleToggleFilterByBedroom = () =>
+    setToggleFilterByBedroom(!toggleFilterByBedroom);
 
-  const filtredSearch =
-  search === ""
-  products
-  products?.filter((product) =>
-    product.country
-      .toLowerCase()
-      .replace(/\s+/g, "")
-      .includes(search.toLowerCase().replace(/\s+/g, ""))
-  );
+  
+
+  const filtredProducts = products?.filter((product) => {
+    const filtredSearch =
+      search === ""//TODO: Add debounced function to search!
+        ? products
+        : product.country
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(search.toLowerCase().replace(/\s+/g, ""));
+    //console.log(search);
+    
+    return filtredSearch;
+  });
 
   return (
     <section className="page__container">
@@ -51,6 +60,8 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
             <input
               type="search"
               name="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               className="page__input"
               placeholder="canada..."
             />
@@ -67,52 +78,108 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
           <div className="filter__by__container">
             {/*Start Filter by country*/}
             <section className="filter__by__content">
-              <header className="filter__header" onClick={handleToggleFilterCountry}>
+              <header
+                className="filter__header"
+                onClick={handleToggleFilterCountry}
+              >
                 <p className="filter__title">Filter by country</p>
-                <RiArrowDownSFill className={`${toggleFilterCountry ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+                <RiArrowDownSFill
+                  className={`${
+                    toggleFilterCountry
+                      ? "search__arrow rotate__arrow"
+                      : "search__arrow"
+                  }`}
+                  size="1.8rem"
+                />
               </header>
-              {toggleFilterCountry 
-              ? <FilterWithCheckBox products={products} titleHeader="country" /> 
-              : null}
+              {toggleFilterCountry ? (
+                <FilterWithCheckBox products={products} titleHeader="country" />
+              ) : null}
             </section>
             {/*End Filter by country*/}
 
             {/*Start Filter by price*/}
             <section className="filter__by__content">
-              <header className="filter__header" onClick={handleToggleFilterByPrice}>
+              <header
+                className="filter__header"
+                onClick={handleToggleFilterByPrice}
+              >
                 <p className="filter__title">Filter by price</p>
-                <RiArrowDownSFill className={`${toggleFilterByPrice ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+                <RiArrowDownSFill
+                  className={`${
+                    toggleFilterByPrice
+                      ? "search__arrow rotate__arrow"
+                      : "search__arrow"
+                  }`}
+                  size="1.8rem"
+                />
               </header>
               {toggleFilterByPrice ? <FilterByPrice /> : null}
-              
             </section>
             {/*End Filter by price*/}
 
             {/*Start Filter by reference*/}
             <section className="filter__by__content">
-            <header className="filter__header" onClick={handleToggleFilterByRef}>
-              <p className="filter__title">Filter by reference</p>
-              <RiArrowDownSFill className={`${toggleFilterByReference ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+              <header
+                className="filter__header"
+                onClick={handleToggleFilterByRef}
+              >
+                <p className="filter__title">Filter by reference</p>
+                <RiArrowDownSFill
+                  className={`${
+                    toggleFilterByReference
+                      ? "search__arrow rotate__arrow"
+                      : "search__arrow"
+                  }`}
+                  size="1.8rem"
+                />
               </header>
-              {toggleFilterByReference ? <FilterWithCheckBox products={products} titleHeader="reference" /> : null}
+              {toggleFilterByReference ? (
+                <FilterWithCheckBox
+                  products={products}
+                  titleHeader="reference"
+                />
+              ) : null}
             </section>
             {/*End Filter by reference*/}
 
             {/*Start Filter by size*/}
             <section className="filter__by__content">
-            <header className="filter__header" onClick={handleToggleFilterBySize}>
-              <p className="filter__title">Filter by size</p>
-              <RiArrowDownSFill className={`${toggleFilterBySize ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+              <header
+                className="filter__header"
+                onClick={handleToggleFilterBySize}
+              >
+                <p className="filter__title">Filter by size</p>
+                <RiArrowDownSFill
+                  className={`${
+                    toggleFilterBySize
+                      ? "search__arrow rotate__arrow"
+                      : "search__arrow"
+                  }`}
+                  size="1.8rem"
+                />
               </header>
-              {toggleFilterBySize ? <FilterWithCheckBox products={products} titleHeader="size" /> : null}
+              {toggleFilterBySize ? (
+                <FilterWithCheckBox products={products} titleHeader="size" />
+              ) : null}
             </section>
             {/*End Filter by size*/}
 
             {/*Start Filter by bedroom*/}
             <section className="filter__by__content">
-            <header className="filter__header" onClick={handleToggleFilterByBedroom}>
-              <p className="filter__title">Filter by bedroom</p>
-              <RiArrowDownSFill className={`${toggleFilterByBedroom ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+              <header
+                className="filter__header"
+                onClick={handleToggleFilterByBedroom}
+              >
+                <p className="filter__title">Filter by bedroom</p>
+                <RiArrowDownSFill
+                  className={`${
+                    toggleFilterByBedroom
+                      ? "search__arrow rotate__arrow"
+                      : "search__arrow"
+                  }`}
+                  size="1.8rem"
+                />
               </header>
               {toggleFilterByBedroom ? <FilterByBedroom /> : null}
             </section>
@@ -123,11 +190,14 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
       <div className="page__content">
         <div className="page__gridcontainer">
           {/*Card*/}
-          {status === "resolved" &&
-            products?.map((product) => {
+          {status === "resolved" && filtredProducts?.length === 0 ? (
+            <p>No tiny house matches that search!</p>
+          ) : (
+            filtredProducts?.map((product) => {
               const { _id } = product;
               return <CardList product={product} key={_id} />;
-            })}
+            })
+          )}
 
           {/*Card*/}
         </div>
