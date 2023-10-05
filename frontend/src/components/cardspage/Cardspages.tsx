@@ -7,6 +7,8 @@ import { RiArrowDownSFill } from "react-icons/ri";
 import { useState } from "react";
 import FilterWithCheckBox from "../filterComponents/FilterWithCheckBox";
 import FilterByPrice from "../filterComponents/FilterByPrice";
+import FilterByBedroom from "../filterComponents/FilterByBedroom";
+
 
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const { products } = productData;
@@ -15,6 +17,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [toggleFilterByPrice, setToggleFilterByPrice] = useState(false);
   const [toggleFilterByReference, setToggleFilterByReference] = useState(false);
   const [toggleFilterBySize, setToggleFilterBySize] = useState(false);
+  const [toggleFilterByBedroom, setToggleFilterByBedroom] = useState(false);
 
   const [search, setSearch] = useState("");
 
@@ -26,6 +29,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const handleToggleFilterByPrice = () => setToggleFilterByPrice(!toggleFilterByPrice);
   const handleToggleFilterByRef = () => setToggleFilterByReference(!toggleFilterByReference);
   const handleToggleFilterBySize = () => setToggleFilterBySize(!toggleFilterBySize);
+  const handleToggleFilterByBedroom = () => setToggleFilterByBedroom(!toggleFilterByBedroom);
 
   const filtredSearch =
   search === ""
@@ -105,7 +109,13 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
             {/*End Filter by size*/}
 
             {/*Start Filter by bedroom*/}
-            <section className="filter__by__content">5-Bedroom</section>
+            <section className="filter__by__content">
+            <header className="filter__header" onClick={handleToggleFilterByBedroom}>
+              <p className="filter__title">Filter by bedroom</p>
+              <RiArrowDownSFill className={`${toggleFilterByBedroom ? "search__arrow rotate__arrow" : "search__arrow"}`} size="1.8rem" />
+              </header>
+              {toggleFilterByBedroom ? <FilterByBedroom /> : null}
+            </section>
             {/*End Filter by number of bedroom*/}
           </div>
         </div>
