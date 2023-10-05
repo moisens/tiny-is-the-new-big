@@ -8,6 +8,7 @@ import { useState } from "react";
 import FilterWithCheckBox from "../filterComponents/FilterWithCheckBox";
 import FilterByPrice from "../filterComponents/FilterByPrice";
 import FilterByBedroom from "../filterComponents/FilterByBedroom";
+import useDebouncedSearch from "../../hooks/useDebouncedSearch";
 
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const { products } = productData;
@@ -19,6 +20,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [toggleFilterByBedroom, setToggleFilterByBedroom] = useState(false);
 
   const [search, setSearch] = useState("");
+  const debouncedSearchValue = useDebouncedSearch(search, 1000)
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
@@ -39,13 +41,13 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
 
   const filtredProducts = products?.filter((product) => {
     const filtredSearch =
-      search === ""//TODO: Add debounced function to search!
+    debouncedSearchValue === ""
         ? products
         : product.country
             .toLowerCase()
             .replace(/\s+/g, "")
-            .includes(search.toLowerCase().replace(/\s+/g, ""));
-    //console.log(search);
+            .includes(debouncedSearchValue.toLowerCase().replace(/\s+/g, ""));
+    console.log("debouncedSearchValue: ", debouncedSearchValue);
     
     return filtredSearch;
   });
@@ -63,7 +65,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="page__input"
-              placeholder="canada..."
+              placeholder="Canada..."
             />
             <Button
               as="button"
