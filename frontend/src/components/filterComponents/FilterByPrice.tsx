@@ -1,6 +1,15 @@
 import Button from "../button/Button";
 
-const FilterByPrice = () => {
+
+export type MinMaxpriceType = {
+  minPrice: string,
+  maxPrice: string,
+  setMinPrice: React.Dispatch<React.SetStateAction<string>>
+  setMaxPrice: React.Dispatch<React.SetStateAction<string>>
+}
+
+
+const FilterByPrice = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }: MinMaxpriceType) => {
   return (
     <section className="filter__section filter__price">
       <form className="filter__form price">
@@ -11,6 +20,8 @@ const FilterByPrice = () => {
             name="from"
             min="10000"
             max="800000"
+            value={minPrice?.toString()}
+            onChange={(e) => setMinPrice(e.target.value)}
             placeholder="10000"
           />
         </div>
@@ -22,6 +33,8 @@ const FilterByPrice = () => {
             name="to"
             min="10000"
             max="800000"
+            value={maxPrice?.toString()}
+            onChange={(e) => setMaxPrice(e.target.value)}
             placeholder="800000"
           />
         </div>
