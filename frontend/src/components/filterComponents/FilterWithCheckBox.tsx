@@ -4,11 +4,28 @@ import { HousedataType } from "../../types/interface-housedata";
 
 export type FilterWhithCheckboxType = {
   products: HousedataType['products'],
-  titleHeader: string
+  titleHeader: string,
+  sizes: number[],
+  setSizes: React.Dispatch<React.SetStateAction<number[]>> 
 }
 
 
-const FilterWithCheckBox = ({ products, titleHeader } : FilterWhithCheckboxType) => {
+
+
+
+const FilterWithCheckBox = ({ products, titleHeader, sizes, setSizes } : FilterWhithCheckboxType) => {
+
+  const toggleSizes = (sizes: number) => {
+    setSizes((prevSizes) => {
+      if (prevSizes.includes(sizes)) {
+        return prevSizes.filter(size => size !== sizes)
+      } else {
+        return [...prevSizes, sizes]
+      }
+    })
+  }
+
+
   return (
     <section className="filter__section filter__country">
       {products?.map((product) => (
@@ -19,6 +36,8 @@ const FilterWithCheckBox = ({ products, titleHeader } : FilterWhithCheckboxType)
               type="checkbox"
               name={product.country}
               value={product.country}
+              checked={sizes?.includes(product.size)}
+              onChange={() => toggleSizes(product.size)}
               id={product._id}
             />
           </div>
