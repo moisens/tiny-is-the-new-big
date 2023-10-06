@@ -20,7 +20,12 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [toggleFilterByBedroom, setToggleFilterByBedroom] = useState(false);
 
   const [search, setSearch] = useState("");
-  const debouncedSearchValue = useDebouncedSearch(search, 1000)
+  const [minPrice, setMinPrice] = useState<string>("");
+  const [maxPrice, setMaxPrice] = useState<string>("");
+  //const [sizes, setsizes] = useState([])
+
+
+  const debouncedSearchValue = useDebouncedSearch(search, 1000);
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
@@ -37,19 +42,17 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const handleToggleFilterByBedroom = () =>
     setToggleFilterByBedroom(!toggleFilterByBedroom);
 
-  
-
   const filtredProducts = products?.filter((product) => {
-    const filtredSearch =
-    debouncedSearchValue === ""
-        ? products
-        : product.country
-            .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(debouncedSearchValue.toLowerCase().replace(/\s+/g, ""));
-    console.log("debouncedSearchValue: ", debouncedSearchValue);
-    
-    return filtredSearch;
+    const filtredSearch = product.country
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(debouncedSearchValue.toLowerCase().replace(/\s+/g, ""));
+
+    const filterByPrice =
+      (minPrice === "" || product.price.toString() >= minPrice) &&
+      (maxPrice === "" || product.price.toString() <= maxPrice);
+
+    return filtredSearch && filterByPrice;
   });
 
   return (
@@ -116,7 +119,14 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                   size="1.8rem"
                 />
               </header>
-              {toggleFilterByPrice ? <FilterByPrice /> : null}
+              {toggleFilterByPrice ? (
+                <FilterByPrice
+                  minPrice={minPrice}
+                  maxPrice={maxPrice}
+                  setMinPrice={setMinPrice}
+                  setMaxPrice={setMaxPrice}
+                />
+              ) : null}
             </section>
             {/*End Filter by price*/}
 
