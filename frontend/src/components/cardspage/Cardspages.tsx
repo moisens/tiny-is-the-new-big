@@ -20,9 +20,9 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [toggleFilterByBedroom, setToggleFilterByBedroom] = useState(false);
 
   const [search, setSearch] = useState("");
-  const [minPrice, setMinPrice] = useState<string>("");
-  const [maxPrice, setMaxPrice] = useState<string>("");
-  //const [sizes, setsizes] = useState([])
+  const [minPrice, setMinPrice] = useState<number | null>(null);
+  const [maxPrice, setMaxPrice] = useState<number | null>(null);
+  const [sizes, setSizes] = useState<number[]>([])
 
 
   const debouncedSearchValue = useDebouncedSearch(search, 1000);
@@ -49,10 +49,12 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
       .includes(debouncedSearchValue.toLowerCase().replace(/\s+/g, ""));
 
     const filterByPrice =
-      (minPrice === "" || product.price.toString() >= minPrice) &&
-      (maxPrice === "" || product.price.toString() <= maxPrice);
+    (!minPrice || product.price >= minPrice) &&
+    (!maxPrice || product.price <= maxPrice);
 
-    return filtredSearch && filterByPrice;
+    const filterCheckBySizes = sizes.length === 0 || sizes.includes(product.size)
+
+    return filtredSearch && filterByPrice && filterCheckBySizes;
   });
 
   return (
@@ -172,7 +174,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                 />
               </header>
               {toggleFilterBySize ? (
-                <FilterWithCheckBox products={products} titleHeader="size" />
+                <FilterWithCheckBox products={products} titleHeader="size" sizes={sizes} setSizes={setSizes} />
               ) : null}
             </section>
             {/*End Filter by size*/}
