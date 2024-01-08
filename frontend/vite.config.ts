@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:5000",
+        target: "http://127.0.0.1:6000",
         changeOrigin: true,
         secure: false,
       },
@@ -17,5 +17,5 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1600,
   },
-  plugins: [react()]
-})
+  plugins: [react()],
+});
