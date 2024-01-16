@@ -10,12 +10,8 @@ import FilterByPrice from "../filterComponents/FilterByPrice";
 import FilterByBedroom from "../filterComponents/FilterByBedroom";
 import useDebouncedSearch from "../../hooks/useDebouncedSearch";
 
-
-
-
-export type CheckedValuesState<T> = T[]
-export type FilterSizeCountryRefType = "size" | "country" | "reference"
-
+export type CheckedValuesState<T> = T[];
+export type FilterSizeCountryRefType = "size" | "country" | "reference";
 
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const { products } = productData;
@@ -30,14 +26,13 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [minPrice, setMinPrice] = useState<number | null>(null);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [sizes, setSizes] = useState<number[]>([]);
-  const [checkedValues, setCheckedValues] = useState<CheckedValuesState<string | number>>([])
-  const [filterType, setFilterType] = useState<FilterSizeCountryRefType>("country");
-
-
-
+  const [checkedValues, setCheckedValues] = useState<
+    CheckedValuesState<string | number>
+  >([]);
+  const [filterType, setFilterType] =
+    useState<FilterSizeCountryRefType>("country");
 
   const debouncedSearchValue = useDebouncedSearch(search, 1000);
-  
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
@@ -61,11 +56,13 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
       .includes(debouncedSearchValue.toLowerCase().replace(/\s+/g, ""));
 
     const filterByPrice =
-    (!minPrice || product.price >= minPrice) &&
-    (!maxPrice || product.price <= maxPrice);
+      (!minPrice || product.price >= minPrice) &&
+      (!maxPrice || product.price <= maxPrice);
 
-    const filterCheckBySizes = sizes.length === 0 || sizes.includes(product.size)
-    const filterCheckBySizes2 = checkedValues.length === 0 || checkedValues.includes(product.size)
+    const filterCheckBySizes =
+      sizes.length === 0 || sizes.includes(product.size);
+    const filterCheckBySizes2 =
+      checkedValues.length === 0 || checkedValues.includes(product.size);
 
     return filtredSearch && filterByPrice && filterCheckBySizes;
   });
@@ -112,9 +109,9 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                   size="1.8rem"
                 />
               </header>
-               {toggleFilterCountry ? (
+              {toggleFilterCountry ? (
                 <FilterWithCheckBox products={products} titleHeader="country" />
-              ) : null} 
+              ) : null}
             </section>
             {/*End Filter by country*/}
 
@@ -161,12 +158,12 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                   size="1.8rem"
                 />
               </header>
-               {toggleFilterByReference ? (
+              {toggleFilterByReference ? (
                 <FilterWithCheckBox
                   products={products}
                   titleHeader="reference"
                 />
-              ) : null} 
+              ) : null}
             </section>
             {/*End Filter by reference*/}
 
@@ -187,7 +184,12 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                 />
               </header>
               {toggleFilterBySize ? (
-                <FilterWithCheckBox products={products} titleHeader="size" sizes={sizes} setSizes={setSizes} />
+                <FilterWithCheckBox
+                  products={products}
+                  titleHeader="size"
+                  sizes={sizes}
+                  setSizes={setSizes}
+                />
               ) : null}
             </section>
             {/*End Filter by size*/}
