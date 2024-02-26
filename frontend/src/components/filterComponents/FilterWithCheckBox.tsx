@@ -8,8 +8,8 @@ export type FilterWhithCheckboxType = {
   setSizes?: React.Dispatch<React.SetStateAction<number[]>>;
   countries?: string[];
   setCountries?: React.Dispatch<React.SetStateAction<string[]>>;
-  references?: string[];
-  setReferences?: React.Dispatch<React.SetStateAction<string[]>>;
+  references?: number[];
+  setReferences?: React.Dispatch<React.SetStateAction<number[]>>;
 };
 
 const FilterWithCheckBox = ({
@@ -24,22 +24,24 @@ const FilterWithCheckBox = ({
 }: FilterWhithCheckboxType) => {
   const toggleFilterCheck = (value: string | number) => {
     if (titleHeader === "country") {
-      setCountries((prevCountries) =>
-        prevCountries.includes(value)
+      setCountries!((prevCountries) =>
+        prevCountries.includes(value as string)
           ? prevCountries.filter((prevValue) => prevValue !== value)
-          : [...prevCountries, value]
+          : [...prevCountries, value as string]
+      );
+    } else if (titleHeader === "reference") {
+      setReferences!((prevReferences) =>
+        prevReferences.includes(value as number)
+          ? prevReferences.filter((prevValue) => prevValue !== value)
+          : [...prevReferences, value as number]
+      );
+    } else {
+      setSizes!((prevSizes) =>
+        prevSizes.includes(value as number)
+          ? prevSizes.filter((prevValue) => prevValue !== value)
+          : [...prevSizes, value as number]
       );
     }
-  };
-
-  const toggleSizes = (sizes: number) => {
-    setSizes!((prevSizes) => {
-      if (prevSizes.includes(sizes)) {
-        return prevSizes.filter((size) => size !== sizes);
-      } else {
-        return [...prevSizes, sizes];
-      }
-    });
   };
 
   //TODO: create toggle country --> must be able to filter by country too!
