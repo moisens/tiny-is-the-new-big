@@ -10,7 +10,6 @@ import FilterByPrice from "../filterComponents/FilterByPrice";
 import FilterByBedroom from "../filterComponents/FilterByBedroom";
 import useDebouncedSearch from "../../hooks/useDebouncedSearch";
 
-export type CheckedValuesState<T> = T[];
 export type FilterSizeCountryRefType = "size" | "country" | "reference";
 
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
@@ -26,11 +25,11 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [minPrice, setMinPrice] = useState<number | null>(null);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [sizes, setSizes] = useState<number[]>([]);
-  const [checkedValues, setCheckedValues] = useState<
-    CheckedValuesState<string | number>
-  >([]);
-  const [filterType, setFilterType] =
-    useState<FilterSizeCountryRefType>("country");
+  const [countries, setCountries] = useState<number[]>([]);
+  const [references, setReferences] = useState<number[]>([]);
+
+  //const [filterType, setFilterType] =
+  //  useState<FilterSizeCountryRefType>("country");
 
   const debouncedSearchValue = useDebouncedSearch(search, 1000);
 
@@ -61,8 +60,6 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
 
     const filterCheckBySizes =
       sizes.length === 0 || sizes.includes(product.size);
-    const filterCheckBySizes2 =
-      checkedValues.length === 0 || checkedValues.includes(product.size);
 
     return filtredSearch && filterByPrice && filterCheckBySizes;
   });
@@ -232,6 +229,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
         </div>
       </div>
       <div className="lodmore__container">
+        {/* //TODO: Load more functionality -- and check that lodmore class typo*/}
         <Button
           className="lodmore__btn"
           as="button"

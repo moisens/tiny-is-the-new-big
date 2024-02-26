@@ -4,8 +4,12 @@ import { HousedataType } from "../../types/interface-housedata";
 export type FilterWhithCheckboxType = {
   products: HousedataType["products"];
   titleHeader: string;
-  sizes: number[];
-  setSizes: React.Dispatch<React.SetStateAction<number[]>>;
+  sizes?: number[];
+  setSizes?: React.Dispatch<React.SetStateAction<number[]>>;
+  countries?: string[];
+  setCountries?: React.Dispatch<React.SetStateAction<string[]>>;
+  references?: string[];
+  setReferences?: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const FilterWithCheckBox = ({
@@ -13,9 +17,23 @@ const FilterWithCheckBox = ({
   titleHeader,
   sizes,
   setSizes,
+  countries,
+  setCountries,
+  references,
+  setReferences,
 }: FilterWhithCheckboxType) => {
+  const toggleFilterCheck = (value: string | number) => {
+    if (titleHeader === "country") {
+      setCountries((prevCountries) =>
+        prevCountries.includes(value)
+          ? prevCountries.filter((prevValue) => prevValue !== value)
+          : [...prevCountries, value]
+      );
+    }
+  };
+
   const toggleSizes = (sizes: number) => {
-    setSizes((prevSizes) => {
+    setSizes!((prevSizes) => {
       if (prevSizes.includes(sizes)) {
         return prevSizes.filter((size) => size !== sizes);
       } else {
@@ -25,7 +43,6 @@ const FilterWithCheckBox = ({
   };
 
   //TODO: create toggle country --> must be able to filter by country too!
-  const toggleCountry = (country: string) => {};
 
   return (
     <section className="filter__section filter__country">
