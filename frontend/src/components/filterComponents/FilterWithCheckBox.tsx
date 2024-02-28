@@ -44,8 +44,6 @@ const FilterWithCheckBox = ({
     }
   };
 
-  //TODO: create toggle country --> must be able to filter by country too!
-
   return (
     <section className="filter__section filter__country">
       {products?.map((product) => (
@@ -83,22 +81,6 @@ const FilterWithCheckBox = ({
           </div>
         </article>
       ))}
-      <div className="apply__reset__container">
-        <Button
-          as="button"
-          className="apply__reset__btn"
-          handleClick={() => {}}
-        >
-          Apply
-        </Button>
-        <Button
-          as="button"
-          className="apply__reset__btn"
-          handleClick={() => {}}
-        >
-          Reset
-        </Button>
-      </div>
     </section>
   );
 };
