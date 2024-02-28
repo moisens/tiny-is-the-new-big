@@ -62,8 +62,22 @@ const FilterWithCheckBox = ({
               type="checkbox"
               name={product.country}
               value={product.country}
-              checked={sizes?.includes(product.size)}
-              onChange={() => toggleSizes(product.size)}
+              checked={
+                titleHeader === "country"
+                  ? countries?.includes(product.country)
+                  : titleHeader === "reference"
+                  ? references?.includes(product.reference)
+                  : sizes?.includes(product.size)
+              }
+              onChange={() =>
+                toggleFilterCheck(
+                  titleHeader === "country"
+                    ? product.country
+                    : titleHeader === "reference"
+                    ? product.reference
+                    : product.size
+                )
+              }
               id={product._id}
             />
           </div>

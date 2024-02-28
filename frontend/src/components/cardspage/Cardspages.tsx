@@ -25,7 +25,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [minPrice, setMinPrice] = useState<number | null>(null);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
   const [sizes, setSizes] = useState<number[]>([]);
-  const [countries, setCountries] = useState<number[]>([]);
+  const [countries, setCountries] = useState<string[]>([]);
   const [references, setReferences] = useState<number[]>([]);
 
   //const [filterType, setFilterType] =
@@ -61,7 +61,19 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
     const filterCheckBySizes =
       sizes.length === 0 || sizes.includes(product.size);
 
-    return filtredSearch && filterByPrice && filterCheckBySizes;
+    const checkAndFilterByCountry =
+      countries.length === 0 || countries.includes(product.country);
+
+    const checkAndFilterByReference =
+      references.length === 0 || references.includes(product.reference);
+
+    return (
+      filtredSearch &&
+      filterByPrice &&
+      filterCheckBySizes &&
+      checkAndFilterByCountry &&
+      checkAndFilterByReference
+    );
   });
 
   return (
@@ -107,7 +119,12 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                 />
               </header>
               {toggleFilterCountry ? (
-                <FilterWithCheckBox products={products} titleHeader="country" />
+                <FilterWithCheckBox
+                  products={products}
+                  titleHeader="country"
+                  countries={countries}
+                  setCountries={setCountries}
+                />
               ) : null}
             </section>
             {/*End Filter by country*/}
@@ -159,6 +176,8 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                 <FilterWithCheckBox
                   products={products}
                   titleHeader="reference"
+                  references={references}
+                  setReferences={setReferences}
                 />
               ) : null}
             </section>
