@@ -1,15 +1,16 @@
-import Button from "../button/Button";
-
-
 export type MinMaxpriceType = {
-  minPrice: number | null,
-  maxPrice: number | null,
-  setMinPrice: React.Dispatch<React.SetStateAction<number | null>>
-  setMaxPrice: React.Dispatch<React.SetStateAction<number | null>>
-}
+  minPrice: number | null;
+  maxPrice: number | null;
+  setMinPrice: React.Dispatch<React.SetStateAction<number | null>>;
+  setMaxPrice: React.Dispatch<React.SetStateAction<number | null>>;
+};
 
-
-const FilterByPrice = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }: MinMaxpriceType) => {
+const FilterByPrice = ({
+  minPrice,
+  maxPrice,
+  setMinPrice,
+  setMaxPrice,
+}: MinMaxpriceType) => {
   return (
     <section className="filter__section filter__price">
       <form className="filter__form price">
@@ -39,22 +40,6 @@ const FilterByPrice = ({ minPrice, maxPrice, setMinPrice, setMaxPrice }: MinMaxp
           />
         </div>
       </form>
-      <div className="apply__reset__container">
-        <Button
-          as="button"
-          className="apply__reset__btn"
-          handleClick={() => {}}
-        >
-          Apply
-        </Button>
-        <Button
-          as="button"
-          className="apply__reset__btn"
-          handleClick={() => {}}
-        >
-          Reset
-        </Button>
-      </div>
     </section>
   );
 };
