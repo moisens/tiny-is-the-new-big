@@ -1,4 +1,3 @@
-import Button from "../button/Button";
 import { HousedataType } from "../../types/interface-housedata";
 
 export type FilterWhithCheckboxType = {

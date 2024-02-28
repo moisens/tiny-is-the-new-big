@@ -27,9 +27,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [sizes, setSizes] = useState<number[]>([]);
   const [countries, setCountries] = useState<string[]>([]);
   const [references, setReferences] = useState<number[]>([]);
-
-  //const [filterType, setFilterType] =
-  //  useState<FilterSizeCountryRefType>("country");
+  const [bedroomNum, setBedroomNum] = useState<number>(0);
 
   const debouncedSearchValue = useDebouncedSearch(search, 1000);
 
@@ -54,6 +52,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
       .replace(/\s+/g, "")
       .includes(debouncedSearchValue.toLowerCase().replace(/\s+/g, ""));
 
+    //TODO: Use the debounced value function on price!!!
     const filterByPrice =
       (!minPrice || product.price >= minPrice) &&
       (!maxPrice || product.price <= maxPrice);
@@ -67,12 +66,26 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
     const checkAndFilterByReference =
       references.length === 0 || references.includes(product.reference);
 
+    const bedroomRange = () => {
+      if (bedroomNum >= 1 && bedroomNum <= 2) {
+        return bedroomNum;
+      } else if (bedroomNum > 2) {
+        return;
+      } else {
+        return product.bedroom;
+      }
+    };
+
+    const filterByBedroomNum =
+      bedroomRange() === null || bedroomRange() === product.bedroom;
+
     return (
       filtredSearch &&
       filterByPrice &&
       filterCheckBySizes &&
       checkAndFilterByCountry &&
-      checkAndFilterByReference
+      checkAndFilterByReference &&
+      filterByBedroomNum
     );
   });
 
@@ -226,7 +239,12 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
                   size="1.8rem"
                 />
               </header>
-              {toggleFilterByBedroom ? <FilterByBedroom /> : null}
+              {toggleFilterByBedroom ? (
+                <FilterByBedroom
+                  bedroomNum={bedroomNum}
+                  setBedroomNum={setBedroomNum}
+                />
+              ) : null}
             </section>
             {/*End Filter by number of bedroom*/}
           </div>
