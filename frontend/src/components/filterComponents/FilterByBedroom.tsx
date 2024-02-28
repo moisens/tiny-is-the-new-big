@@ -4,7 +4,7 @@ const FilterByBedroom = () => {
       <div className="filter__bedroom__container">
         <input
           type="number"
-          min="0"
+          min="1"
           max="2"
           className="filter__bedroom__input"
         />
