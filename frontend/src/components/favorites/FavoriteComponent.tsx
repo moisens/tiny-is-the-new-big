@@ -1,16 +1,12 @@
 import "./favorite.scss";
 import Button from "../button/Button";
 import { MdOutlineArrowLeft } from "react-icons/md";
-import { btnsFavorites } from "../../utils/favorites-utils";
-import { BtnsProps } from "../../types/Interface";
-import { useState } from "react";
 import useFavorite from "../../hooks/useFavorite";
 import { Link, useNavigate } from "react-router-dom";
 import { FiTrash2 } from "react-icons/fi";
 import houseConfiguration from "../../utils/configHouse";
 
 const FavoriteComponent = () => {
-  const [value, setValue] = useState<number>(0);
   const navigate = useNavigate();
   const { favorites, removeFromFavorites } = useFavorite();
 
@@ -25,20 +21,14 @@ const FavoriteComponent = () => {
         Previous page
       </Button>
       <section className="btn__container">
-        {btnsFavorites.map(({ id, text }: BtnsProps, index: number) => (
-          <Button
-            as="button"
-            className={
-              index === value ? "btn__house active__btn" : "btn__house"
-            }
-            handleClick={() => setValue(index)}
-            key={id}
-          >
-            <span className="btn__text">{text}</span>
-            {/*//TODO add a condition - house or location!!!*/}
-            <span className="btn__count">({favorites.length})</span>
-          </Button>
-        ))}
+        <span className="btn__count">
+          {`${
+            favorites.length > 1
+              ? "Favorites tiny houses"
+              : "Favorite tiny house"
+          }`}{" "}
+          ({favorites.length})
+        </span>
       </section>
       <section className="cards__container">
         <article className="favorite__cards">

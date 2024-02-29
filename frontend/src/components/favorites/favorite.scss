@@ -39,40 +39,13 @@
 .btn__container {
   padding: 80px 86px 30px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   & > * {
-    background-color: #fff;
-    border: solid 0.4px #e03e18;
-    width: 45%;
-    height: 110px;
-    cursor: pointer;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     font-size: 1.0625rem;
     font-weight: 900;
-    transition: all 0.5s;
-  }
-  .btn__house {
-    &:nth-child(1) {
-      border-top-left-radius: 22px;
-      border-bottom-left-radius: 22px;
-    }
-
-    &:nth-child(2) {
-      border-top-right-radius: 22px;
-      border-bottom-right-radius: 22px;
-    }
-
-    &.active__btn {
-      background-color: #fdf5ed;
-      color: #a23b24;
-    }
-  }
-  .btn__location {
-    border-top-right-radius: 22px;
-    border-bottom-right-radius: 22px;
+    padding-left: 20px;
   }
 }
 
