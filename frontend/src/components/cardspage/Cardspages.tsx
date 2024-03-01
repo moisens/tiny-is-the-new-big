@@ -30,6 +30,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
   const [bedroomNum, setBedroomNum] = useState<number>(0);
 
   const debouncedSearchValue = useDebouncedSearch(search, 1000);
+  const [isVisible, setIsVisible] = useState(3); //TODO: make it 9
 
   if (status === "pending") return <h2>Loading...</h2>;
   if (status === "rejected") throw error; //TODO: Check why `return` is causing a TS error!!!
@@ -88,6 +89,10 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
       filterByBedroomNum
     );
   });
+
+  const handleLoadMore = () => {
+    setIsVisible((prevValue) => prevValue + 3);
+  };
 
   return (
     <section className="page__container">
@@ -256,7 +261,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
           {status === "resolved" && filtredProducts?.length === 0 ? (
             <p>No tiny house matches that search!</p>
           ) : (
-            filtredProducts?.map((product) => {
+            filtredProducts?.slice(0, isVisible)?.map((product) => {
               const { _id } = product;
               return <CardList product={product} key={_id} />;
             })
@@ -270,9 +275,7 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
         <Button
           className="lodmore__btn"
           as="button"
-          handleClick={() => {
-            console.log("clicked");
-          }}
+          handleClick={() => handleLoadMore()}
         >
           load more
         </Button>
