@@ -7,13 +7,12 @@ export interface Housedata {
 export type HousedataType = {
   products: Productsdata[];
   totalHouses: string;
-  product: Productsdata//Single product _id
+  product: Productsdata; //Single product _id
 };
 
 export type CardDataType = {
-  product: Productsdata
-}
-
+  product: Productsdata;
+};
 
 export type Productsdata = {
   readonly _id: string;
@@ -41,5 +40,3 @@ export type TinyError = "unknown";
 export interface IsFetchingError {
   message: string;
 }
-
-

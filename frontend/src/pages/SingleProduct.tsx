@@ -9,6 +9,7 @@ import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries
 
 const Singleproduct = () => {
   const { _id } = useParams();
+
   const {
     dataHouse: datas,
     status,
