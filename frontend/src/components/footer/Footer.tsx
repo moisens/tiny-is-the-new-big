@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { dropdownLinks } from "../../utils/utils";
 import DropdownMenu from "./DropdownMenu";
 import scrollToTop from "../../utils/scrolltotp";
+import { linkNav } from "../../utils/utils";
 
 const Footer = () => {
   const newYear = new Date().getFullYear();
@@ -22,21 +23,16 @@ const Footer = () => {
             <DropdownMenu linksData={dropdownLinks} />
           </ul>
           <ul className="footer__ul">
-            <li className="footer__li">
-              <Link to="/buy" onClick={() => scrollToTop()}>
-                Buy
-              </Link>
-            </li>
-            <li className="footer__li">
-              <Link to="/rent" onClick={() => scrollToTop()}>
-                Rent
-              </Link>
-            </li>
-            <li className="footer__li">
-              <Link to="/location" onClick={() => scrollToTop()}>
-                Locations
-              </Link>
-            </li>
+            {linkNav.map((link) => {
+              const { id, text, url } = link;
+              return (
+                <li className="footer__li" key={id}>
+                  <Link to={url} onClick={() => scrollToTop()}>
+                    {text}
+                  </Link>
+                </li>
+              );
+            })}
             <li className="footer__li">Terms of use</li>
           </ul>
         </nav>

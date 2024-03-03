@@ -28,13 +28,6 @@ const Nav = () => {
     scrollToTop();
   };
 
-  //const scrollToTop = () => {
-  //  window.scrollTo({
-  //    top: 0,
-  //    behavior: "smooth",
-  //  });
-  //};
-
   //Handling sidebar nav open & close
   const navbarLinksContainer = useRef<HTMLDivElement>(null!); //When we are sure that it will never be null. No need the ?.
   const navbarUlLinks = useRef<HTMLUListElement>(null!);
