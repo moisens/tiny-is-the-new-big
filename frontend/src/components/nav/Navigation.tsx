@@ -7,8 +7,9 @@ import { Link, NavLink } from "react-router-dom";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { CgClose } from "react-icons/cg";
-import { AiOutlineUser } from "react-icons/ai";
+//import { AiOutlineUser } from "react-icons/ai";
 import { useState, useEffect, useRef } from "react";
+import scrollToTop from "../../utils/scrolltotp";
 
 const Nav = () => {
   const [isDropdown, setIsDropdown] = useState(false);
@@ -27,12 +28,12 @@ const Nav = () => {
     scrollToTop();
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  //const scrollToTop = () => {
+  //  window.scrollTo({
+  //    top: 0,
+  //    behavior: "smooth",
+  //  });
+  //};
 
   //Handling sidebar nav open & close
   const navbarLinksContainer = useRef<HTMLDivElement>(null!); //When we are sure that it will never be null. No need the ?.

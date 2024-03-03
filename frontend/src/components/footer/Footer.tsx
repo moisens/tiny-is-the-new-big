@@ -1,12 +1,10 @@
 import "./footer.scss";
 import { BiMailSend } from "react-icons/bi";
-import { SiLinkedin } from "react-icons/si";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { FiTwitter } from "react-icons/fi";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { dropdownLinks } from "../../utils/utils";
 import DropdownMenu from "./DropdownMenu";
+import scrollToTop from "../../utils/scrolltotp";
 
 const Footer = () => {
   const newYear = new Date().getFullYear();
@@ -17,19 +15,27 @@ const Footer = () => {
         <nav className="footer__nav">
           <ul className="footer__ul">
             <li className="footer__li">
-              <Link to="/">Home</Link>
+              <Link to="/" onClick={() => scrollToTop()}>
+                Home
+              </Link>
             </li>
             <DropdownMenu linksData={dropdownLinks} />
           </ul>
           <ul className="footer__ul">
             <li className="footer__li">
-              <Link to="/buy">Buy</Link>
+              <Link to="/buy" onClick={() => scrollToTop()}>
+                Buy
+              </Link>
             </li>
             <li className="footer__li">
-              <Link to="/rent">Rent</Link>
+              <Link to="/rent" onClick={() => scrollToTop()}>
+                Rent
+              </Link>
             </li>
             <li className="footer__li">
-              <Link to="/location">Locations</Link>
+              <Link to="/location" onClick={() => scrollToTop()}>
+                Locations
+              </Link>
             </li>
             <li className="footer__li">Terms of use</li>
           </ul>
