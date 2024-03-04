@@ -14,7 +14,7 @@ const LocationList = ({ locationDatas, statusType }: Locations) => {
             country,
             description,
             image,
-            reviewersImages,
+            //reviewersImages,
             numOfReviews,
           } = location;
           return (

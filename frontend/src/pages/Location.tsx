@@ -5,12 +5,20 @@ import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries
 import useFetch from "../hooks/useFetch";
 
 const Location = () => {
-  const { dataHouse: locations, status, error } = useFetch<LocationDataType>("/api/v1/locations");
+  const {
+    dataHouse: locations,
+    status,
+    error,
+  } = useFetch<LocationDataType>("/api/v1/locations");
 
   return (
     <div className="home-container">
       <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
-        <LocationPage locationDatas={locations} status={status} error={error} />
+        <LocationPage
+          locationDatas={locations}
+          statusType={status}
+          error={error}
+        />
       </ErrorBoundary>
     </div>
   );

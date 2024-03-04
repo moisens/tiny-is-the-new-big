@@ -78,7 +78,11 @@ const Location = () => {
         </div>
         <div className="location__slider">
           <div className="slider__container">
-            <LocationSlider locationDatas={datas} statusType={status} />
+            <LocationSlider
+              locationDatas={datas}
+              statusType={status}
+              error={error}
+            />
           </div>
         </div>
       </div>

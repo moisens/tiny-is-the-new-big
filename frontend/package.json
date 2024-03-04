@@ -21,7 +21,7 @@
     "sass": "^1.69.7"
   },
   "devDependencies": {
-    "@types/googlemaps": "^3.43.3",
+    "@types/google.maps": "^3.55.4",
     "@types/node": "^18.11.18",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
