@@ -28,11 +28,17 @@ const Header = () => {
           src={
             "https://res.cloudinary.com/dr7qigh2d/image/upload/v1649812416/tiny%20is%20the%20new%20big/andrea-davis-nbI8gqbBaHo-unsplash_yddx2k.jpg"
           }
-          alt=""
+          alt="tiny-house-presentation"
         />
-        <div className="header__notifications">1</div>
-        <div className="header__notifications">2</div>
-        <div className="header__notifications">3</div>
+        <div className="header__notifications">
+          😍 50 Families Found Tiny Paradise Here!
+        </div>
+        <div className="header__notifications">
+          🙂 100+ Happy Homeowners and Counting!
+        </div>
+        <div className="header__notifications">
+          🙌 Over 15,000 Visitors Love Our Tiny houses
+        </div>
       </div>
     </header>
   );
