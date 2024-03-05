@@ -1,6 +1,6 @@
 export interface Locations {
   locationDatas: LocationDataType;
-  status: string;
+  statusType: string;
   error: unknown;
 }
 
@@ -12,9 +12,9 @@ export type LocationDataType = {
 export type CardDataLocationType = {
   location: ProductLocationsdata;
   index: number;
-  value: number; 
+  value: number;
   setValue?: React.Dispatch<React.SetStateAction<number>>;
-}
+};
 
 export type ProductLocationsdata = {
   readonly _id: string;

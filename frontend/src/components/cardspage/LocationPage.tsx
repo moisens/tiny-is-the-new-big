@@ -4,17 +4,17 @@ import LocationsList from "./LocationsList";
 import LocationListFrame from "./LocationListFrame";
 import { useState } from "react";
 
-const LocationPage = ({ locationDatas, status, error }: Locations) => {
+const LocationPage = ({ locationDatas, statusType, error }: Locations) => {
   const [value, setValue] = useState(0);
   const { locations } = locationDatas;
 
-  if (status === "pending") return <h2>Loading...</h2>;
-  if (status === "rejected") throw error;
+  if (statusType === "pending") return <h2>Loading...</h2>;
+  if (statusType === "rejected") throw error;
 
   return (
     <section className="loc__container">
       <section className="loc__content">
-        {status === "resolved" &&
+        {statusType === "resolved" &&
           locations?.map((location, index) => {
             const { _id } = location;
             return (
@@ -31,17 +31,21 @@ const LocationPage = ({ locationDatas, status, error }: Locations) => {
       <section className="loc__map">
         <div className="mapouter">
           <div className="gmap_canvas">
-            {status === "resolved" ? locations?.map((location, index) => {
-              const { country } = location;
-              return (
-                <LocationListFrame
-                  location={location}
-                  index={index}
-                  value={value}
-                  key={country}
-                />
-              );
-            }) : <h2>Loanding...</h2>}
+            {statusType === "resolved" ? (
+              locations?.map((location, index) => {
+                const { country } = location;
+                return (
+                  <LocationListFrame
+                    location={location}
+                    index={index}
+                    value={value}
+                    key={country}
+                  />
+                );
+              })
+            ) : (
+              <h2>Loanding...</h2>
+            )}
           </div>
         </div>
       </section>
