@@ -35,6 +35,7 @@ const LocationPage = ({ locationDatas, statusType, error }: Locations) => {
               locations?.map((location, index) => {
                 const { country } = location;
                 return (
+                  //TODO: Modify the googleLink in db, with lat and lng for each img/map
                   <LocationListFrame
                     location={location}
                     index={index}
