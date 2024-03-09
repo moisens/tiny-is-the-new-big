@@ -16,12 +16,17 @@ export type CardDataLocationType = {
   setValue?: React.Dispatch<React.SetStateAction<number>>;
 };
 
+export type GoogleLatLng = {
+  lat: number;
+  lng: number;
+};
+
 export type ProductLocationsdata = {
   readonly _id: string;
   country: string;
   description: string;
   image: string[];
-  googolLink: string;
+  googolLink: GoogleLatLng;
   reviewersImages: string[];
   averageRating: number;
   numOfReviews: number;
