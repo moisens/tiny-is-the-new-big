@@ -285,7 +285,7 @@
       }
     }
   }
-  .lodmore__container {
+  .loadmore__container {
     width: 100vw;
     height: 400px;
     background-color: #fff;
@@ -293,22 +293,23 @@
     justify-content: center;
     align-items: flex-start;
 
-    .lodmore__btn {
+    .loadmore__btn {
       border: none;
       border-radius: 40px;
       padding: 25px 60px;
+      margin-top: 60px;
       font-size: 1.375rem;
       font-weight: 700;
-      background: linear-gradient(
-        90deg,
-        rgba(34, 193, 195, 1) 0%,
-        rgba(45, 193, 223, 1) 100%
-      );
+      background-color: #e03e18;
+      transition: all ease 0.8s;
       color: #fff;
       cursor: pointer;
 
       &:hover {
         background: #181b52;
+      }
+      &.isHidden {
+        display: none;
       }
     }
   }

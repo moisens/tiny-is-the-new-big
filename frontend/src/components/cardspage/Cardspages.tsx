@@ -2,7 +2,6 @@ import "./cardspage.scss";
 import Button from "../button/Button";
 import { Housedata } from "../../types/interface-housedata";
 import CardList from "./CardList";
-import { BsSearch } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { useState } from "react";
 import FilterWithCheckBox from "../filterComponents/FilterWithCheckBox";
@@ -13,7 +12,9 @@ import useDebouncedSearch from "../../hooks/useDebouncedSearch";
 export type FilterSizeCountryRefType = "size" | "country" | "reference";
 
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
-  const { products } = productData;
+  const { products, totalHouses } = productData;
+
+  //console.log("PROD DATA:", totalHouses);
 
   const [toggleFilterCountry, setToggleFilterCountry] = useState(false);
   const [toggleFilterByPrice, setToggleFilterByPrice] = useState(false);
@@ -263,10 +264,13 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
           {/*Card*/}
         </div>
       </div>
-      <div className="lodmore__container">
-        {/* //TODO: Load more functionality -- and check that lodmore class typo*/}
+      <div className="loadmore__container">
         <Button
-          className="lodmore__btn"
+          className={
+            isVisible === products?.length
+              ? "loadmore__btn isHidden"
+              : "loadmore__btn"
+          }
           as="button"
           handleClick={() => handleLoadMore()}
         >
