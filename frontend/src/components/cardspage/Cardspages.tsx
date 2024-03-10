@@ -107,15 +107,8 @@ const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="page__input"
-              placeholder="Canada..."
+              placeholder="Search a country..."
             />
-            <Button
-              as="button"
-              className="search__btn"
-              handleClick={() => console.log("search")}
-            >
-              <BsSearch className="search__search" size="1.8rem" />
-            </Button>
           </div>
         </form>
         <div className="page__filter__by">
