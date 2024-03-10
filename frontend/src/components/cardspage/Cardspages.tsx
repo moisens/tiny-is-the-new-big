@@ -9,12 +9,8 @@ import FilterByPrice from "../filterComponents/FilterByPrice";
 import FilterByBedroom from "../filterComponents/FilterByBedroom";
 import useDebouncedSearch from "../../hooks/useDebouncedSearch";
 
-export type FilterSizeCountryRefType = "size" | "country" | "reference";
-
 const Cardspage = ({ productData, status, error }: Housedata): JSX.Element => {
-  const { products, totalHouses } = productData;
-
-  //console.log("PROD DATA:", totalHouses);
+  const { products } = productData;
 
   const [toggleFilterCountry, setToggleFilterCountry] = useState(false);
   const [toggleFilterByPrice, setToggleFilterByPrice] = useState(false);
