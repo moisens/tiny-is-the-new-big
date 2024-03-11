@@ -5,7 +5,6 @@ import Cardspage from "../components/cardspage/Cardspages";
 import { HousedataType } from "../types/interface-housedata";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorBoundaryFallBack from "../components/errorBounderies/Errorboundaries";
-import { FavoritesProvider } from "../context/favoriteContext";
 import useFetch from "../hooks/useFetch";
 
 const Rent = () => {
