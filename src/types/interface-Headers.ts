@@ -1,7 +1,3 @@
-//export interface BaseProps {
-//  children: React.ReactNode;
-//}
-
 export interface DataHeaderProps {
   dataHeaders: {
     readonly id: string;
@@ -12,5 +8,3 @@ export interface DataHeaderProps {
     description: string;
   }[];
 }
-
-//export type HeaderProps = DataHeaderProps;

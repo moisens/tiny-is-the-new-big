@@ -7,7 +7,7 @@ export interface Housedata {
 export type HousedataType = {
   products: Productsdata[];
   totalHouses: number;
-  product: Productsdata; //Single product _id
+  product: Productsdata;
 };
 
 export type CardDataType = {
