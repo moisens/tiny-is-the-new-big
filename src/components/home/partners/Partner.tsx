@@ -1,6 +1,6 @@
 import "./partners.scss";
 import Airbnb from "../../../assets/airbnb.png";
-import Trip from "../../../assets/tripadvisor.png";
+import Trip from "../../../assets/logo-trip.png";
 import Viarail from "../../../assets/viarail-logo.png";
 import IngLogo from "../../../assets/ing-logo.png";
 import SwissAir from "../../../assets/swissair.png";
