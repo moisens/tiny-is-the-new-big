@@ -1,7 +1,6 @@
 @use "../../scss/mixins";
 @use "../../scss/variables";
 
-
 .footer__container {
   background-color: variables.$light_brown;
   font-size: 1.125rem;
@@ -12,6 +11,8 @@
   @include mixins.display-grid;
   grid-template-columns: 1fr 1fr;
   padding: 50px 100px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .footer__nav {
@@ -60,11 +61,11 @@
         background: variables.$red-autumn;
         margin-left: -55px;
         cursor: pointer;
-        transition: all ease-in .7s;
+        transition: all ease-in 0.7s;
 
         &:hover {
           background: variables.$light_green;
-          transition: all ease-in .7s;
+          transition: all ease-in 0.7s;
         }
       }
     }
