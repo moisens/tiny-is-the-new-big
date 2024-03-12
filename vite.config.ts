@@ -8,9 +8,10 @@ export default defineConfig({
     port: 8080,
     proxy: {
       "/api": {
-        target: "https://tinyhousing-backend-ezprh.ondigitalocean.app",
+        target: "https://tinyhousing-backend-ezprh.ondigitalocean.app/:splat",
         changeOrigin: true,
         secure: false,
+        rewrite: (path) => path.replace(/^\/api/, "/api"),
       },
     },
   },
