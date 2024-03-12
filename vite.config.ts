@@ -11,6 +11,7 @@ export default defineConfig({
         target: "https://tinyhousing-backend-ezprh.ondigitalocean.app",
         changeOrigin: true,
         secure: false,
+        rewrite: (path) => path.replace(/^\/api/, "/api"),
       },
     },
   },

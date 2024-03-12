@@ -5,7 +5,7 @@
 
   [[redirects]]
   from = "/api/*"
-  to = "https://tinyhousing-backend-ezprh.ondigitalocean.app"
+  to = "https://tinyhousing-backend-ezprh.ondigitalocean.app/:splat"
   status = 200
 
 
