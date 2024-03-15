@@ -1,6 +1,6 @@
 export interface Housedata {
   productData: HousedataType;
-  status: string;
+  status: StatusType;
   error: unknown;
 }
 
@@ -35,7 +35,7 @@ export type Productsdata = {
   category: string;
 };
 
-export type StatusType = "iddle" | "pending" | "resolved" | "rejected";
+export type StatusType = "idle" | "pending" | "resolved" | "rejected";
 export type TinyError = "unknown";
 export interface IsFetchingError {
   message: string;

@@ -1,11 +1,13 @@
+export type StatusLocations = "pending" | "resolved" | "rejected";
 export interface Locations {
   locationDatas: LocationDataType;
-  statusType: string;
+  statusType: StatusLocations;
   error: unknown;
 }
 
 export type LocationDataType = {
   locations: ProductLocationsdata[];
+  statusType: StatusLocations;
   totalLocations: string;
 };
 

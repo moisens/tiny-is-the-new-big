@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { isError } from "../utils/is-error";
+import { StatusType } from "../types/interface-housedata";
 
 const useFetch = <T,>(url: string) => {
   const [dataHouse, setDataHouse] = useState<T>({} as T);
-  const [status, setStatus] = useState<string>("idle");
+  const [status, setStatus] = useState<StatusType>("idle");
   const [error, setError] = useState<unknown>(null);
 
   useEffect(() => {

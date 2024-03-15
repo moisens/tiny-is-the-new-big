@@ -13,7 +13,9 @@ const Buy = () => {
     dataHouse: datas,
     status,
     error,
-  } = useFetch<HousedataType>(`/api/v1/products?category=${categories}`);
+  } = useFetch<HousedataType>(
+    `https://tinyhousing-backend-ezprh.ondigitalocean.app/api/v1/products?category=${categories}`
+  );
 
   return (
     <div className="home-container">
