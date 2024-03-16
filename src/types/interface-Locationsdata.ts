@@ -1,4 +1,4 @@
-export type StatusLocations = "pending" | "resolved" | "rejected";
+export type StatusLocations = "idle" | "pending" | "resolved" | "rejected";
 export interface Locations {
   locationDatas: LocationDataType;
   statusType: StatusLocations;
@@ -7,8 +7,8 @@ export interface Locations {
 
 export type LocationDataType = {
   locations: ProductLocationsdata[];
-  statusType: StatusLocations;
   totalLocations: string;
+  statusType: StatusLocations;
 };
 
 export type CardDataLocationType = {

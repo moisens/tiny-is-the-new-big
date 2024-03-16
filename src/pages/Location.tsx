@@ -7,10 +7,10 @@ import useFetch from "../hooks/useFetch";
 const Location = () => {
   const {
     dataHouse: locations,
-    statusType, //must be a statusType --> "pending"|"resolved"|"rejected"
+    status,
     error,
   } = useFetch<LocationDataType>(
-    "https://tinyhousing-backend-ezprh.ondigitalocean.app/v1/locations"
+    "https://tinyhousing-backend-ezprh.ondigitalocean.app/api/v1/locations"
   );
 
   return (
@@ -18,7 +18,7 @@ const Location = () => {
       <ErrorBoundary FallbackComponent={ErrorBoundaryFallBack}>
         <LocationPage
           locationDatas={locations}
-          statusType={statusType}
+          statusType={status}
           error={error}
         />
       </ErrorBoundary>

@@ -11,7 +11,7 @@ import useFetch from "../../../hooks/useFetch";
 const Location = () => {
   const {
     dataHouse: locations,
-    statusType,
+    status,
     error,
   } = useFetch<LocationDataType>(
     "https://tinyhousing-backend-ezprh.ondigitalocean.app/api/v1/locations"
@@ -51,7 +51,7 @@ const Location = () => {
           <div className="slider__container">
             <LocationSlider
               locationDatas={locations}
-              statusType={statusType}
+              statusType={status}
               error={error}
             />
           </div>
