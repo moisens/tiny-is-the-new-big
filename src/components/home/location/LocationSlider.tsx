@@ -4,7 +4,7 @@ import { Locations } from "../../../types/interface-Locationsdata";
 const LocationSlider = ({ locationDatas, statusType, error }: Locations) => {
   const { locations } = locationDatas;
   if (statusType === "pending") return <h2>Loading...</h2>;
-  if (statusType === "rejected") return <p>{error}</p>;
+  if (statusType === "rejected") throw error;
 
   return (
     <>
