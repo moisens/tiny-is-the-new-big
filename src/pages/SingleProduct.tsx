@@ -14,9 +14,7 @@ const Singleproduct = () => {
     dataHouse: datas,
     status,
     error,
-  } = useFetch<HousedataType>(
-    `https://tinyhousing-backend-ezprh.ondigitalocean.app/api/v1/products/${_id}`
-  );
+  } = useFetch<HousedataType>(`/api/v1/products/${_id}`);
 
   return (
     <div className="home-container">

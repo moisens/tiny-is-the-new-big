@@ -9,9 +9,7 @@ const Location = () => {
     dataHouse: locations,
     status,
     error,
-  } = useFetch<LocationDataType>(
-    "https://tinyhousing-backend-ezprh.ondigitalocean.app/api/v1/locations"
-  );
+  } = useFetch<LocationDataType>("/api/v1/locations");
 
   return (
     <div className="home-container">
