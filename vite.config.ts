@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     host: true,
-    port: 3000,
+    port: 8080,
     proxy: {
       "/api": {
         target: "https://tinyhousing-backend-ezprh.ondigitalocean.app",
