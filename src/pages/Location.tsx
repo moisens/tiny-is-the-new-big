@@ -9,7 +9,7 @@ const Location = () => {
     dataHouse: locations,
     status,
     error,
-  } = useFetch<LocationDataType>("/api/v1/locations");
+  } = useFetch<LocationDataType>("/locations");
 
   return (
     <div className="home-container">

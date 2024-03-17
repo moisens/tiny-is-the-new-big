@@ -13,7 +13,7 @@ const Rent = () => {
     dataHouse: datas,
     status,
     error,
-  } = useFetch<HousedataType>(`/api/v1/products?category=${categories}`);
+  } = useFetch<HousedataType>(`/products?category=${categories}`);
 
   return (
     <div className="home-container">

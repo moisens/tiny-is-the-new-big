@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { isError } from "../utils/is-error";
 import { StatusType } from "../types/interface-housedata";
+import customBaseUrl from "../utils/axios.utils";
 
 const useFetch = <T,>(url: string) => {
   const [dataHouse, setDataHouse] = useState<T>({} as T);
@@ -12,7 +12,7 @@ const useFetch = <T,>(url: string) => {
     const fetchData = async () => {
       try {
         setStatus("pending");
-        const res = await axios.get<T>(url);
+        const res = await customBaseUrl(url);
         setStatus("resolved");
         setDataHouse(res.data);
       } catch (error) {
