@@ -1,5 +1,5 @@
 @use "../../../scss/mixins";
-@use  "../../../scss/variables";
+@use "../../../scss/variables";
 
 .contact__container {
   background-color: variables.$white_color;
@@ -44,7 +44,7 @@
   }
   .contact__images {
     //background-color: lightseagreen;
-   @include mixins.flexend-nocenter;
+    @include mixins.flexend-nocenter;
     gap: 40px;
 
     img {
@@ -140,11 +140,11 @@
       font-size: 1.125rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all ease-in .7s;
+      transition: all ease-in 0.7s;
 
       &:hover {
         background: variables.$light_green;
-        transition: all ease-in .7s;
+        transition: all ease-in 0.7s;
       }
     }
   }
@@ -168,12 +168,12 @@
         color: variables.$white_color;
         font-size: 1.125rem;
         cursor: pointer;
-        transition: all ease-in .7s;
+        transition: all ease-in 0.7s;
 
         &:hover {
           background: variables.$light-green;
           border: solid 0.4px variables.$light-green;
-          transition: all ease-in .7s;
+          transition: all ease-in 0.7s;
         }
       }
       .input__container {
@@ -226,16 +226,16 @@
         border-radius: 9px;
         color: variables.$light-red-autumn;
         cursor: pointer;
-        transition: all ease-in .7s;
+        transition: all ease-in 0.7s;
 
         a {
           color: variables.$normal-green;
-          transition: all ease-in .7s;
+          transition: all ease-in 0.7s;
         }
-        
+
         &:hover {
           box-shadow: 0px 10px 15px -3px hsla(0, 0%, 0%, 0.1);
-          transition: all ease-in .7s;
+          transition: all ease-in 0.7s;
         }
       }
       .social__content:nth-child(1) {
@@ -268,3 +268,8 @@
     }
   }
 }
+
+/*================================================
+  Media Screen
+  ================================================
+*/
