@@ -8,16 +8,6 @@
   position: relative;
 }
 
-.location__triangle1 {
-  background-color: variables.$light_brown;
-  width: 100%;
-  height: 200px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  transform: skew(0deg, -8deg);
-  position: absolute;
-  top: -99px;
-}
-
 .location__content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
@@ -207,12 +197,7 @@
 }
 
 @media screen and (max-width: 530px) {
-  .location__container {
-    background-color: rgb(181, 181, 241);
-  }
-
   .location__slider {
-    background-color: #181b52;
     .slider__container {
       max-width: 80%;
     }
