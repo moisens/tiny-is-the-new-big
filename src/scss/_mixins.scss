@@ -21,13 +21,6 @@
   @include display-center;
 }
 
-@mixin illu-con-img {
-  //delete it later!!!
-  width: 70%;
-  background-size: contain;
-  object-fit: contain;
-}
-
 /*================================================
   title h1
   ================================================
@@ -107,7 +100,7 @@
 
 @mixin flexend-nocenter {
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
 }
 
 @mixin display-between {

@@ -76,6 +76,8 @@
   @include mixins.display-grid;
   grid-template-columns: 1fr 1fr;
   padding-bottom: 200px;
+  background-color: red;
+  //TODO: @media
 
   .form__content {
     @include mixins.display-start;
