@@ -76,7 +76,6 @@
   @include mixins.display-grid;
   grid-template-columns: 1fr 1fr;
   padding-bottom: 200px;
-  background-color: red;
   //TODO: @media
 
   .form__content {
@@ -275,3 +274,9 @@
   Media Screen
   ================================================
 */
+
+@media screen and (max-width: 1140px) {
+  .form__container {
+    grid-template-columns: 1fr;
+  }
+}
